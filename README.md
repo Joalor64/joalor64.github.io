@@ -8,4 +8,4 @@ And of course, to have full control over it. :trollface:
 
 That's pretty much it, but I hope you enjoy the new website!
 
-*© 2021-2025 Joalor64, All rights reserved.*
+*© 2021-2026 Joalor64, All rights reserved.*

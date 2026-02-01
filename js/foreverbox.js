@@ -38,7 +38,7 @@ function renderVersion(data) {
                 </svg>
         </div>
     ` : '';
-    const incredimodsIcon = version.meta.isApproved ? `<div class="version-icon-top-right" id="incredimods" ${(version.meta.isNew ? 'style="right: 70px;"' : version.meta.isModIo ? 'style="right: 60px;"' : '')}></div>` : '';
+    const incredimodsIcon = version.meta.isApproved ? `<div class="version-icon-top-right" id="incredimods" ${(version.meta.isNew ? 'style="right: 110px;"' : version.meta.isModIo ? 'style="right: 60px;"' : '')}></div>` : '';
     container.innerHTML = `
         <div class="version-container" style="background-color: ${version.visu.colCont};" 
             data-download-windows-url="${version.meta.downloadWin}"

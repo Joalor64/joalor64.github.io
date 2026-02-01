@@ -1,6 +1,37 @@
 {
     "news": [
         {
+            "date": "February 1, 2026",
+            "posts": [
+                {
+                    "img": "img/thumbnails/eternyx.png",
+                    "title": "Eternyx Demo Release",
+                    "info": "The demo for Eternyx is out now! Hope you guys enjoy it, and stay tuned for the full version!",
+                    "buttons": [
+                        {
+                            "text": "► Preview",
+                            "link": "https://youtu.be/Vh4K2LxwzaQ"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "January 27, 2026",
+            "posts": [
+                {
+                    "title": "Mod Teasers Galore!",
+                    "info": "Three teasers in one video! Check out the teasers for Sunlight Shore, Eternyx, and Soleil!",
+                    "buttons": [
+                        {
+                            "text": "► Teasers",
+                            "link": "https://youtu.be/pwA97gDc_2k"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "date": "December 31, 2025",
             "posts": [
                 {
