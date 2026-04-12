@@ -1,6 +1,22 @@
 {
     "news": [
         {
+            "date": "April 12, 2026",
+            "posts": [
+                {
+                    "img": "img/faviconOops.png",
+                    "title": "Website Changes in Progress",
+                    "info": "I've sort of been a bit inactive lately because I'm working on a bunch of stuff, including changes to my website! Since I wouldn't want you guys to keep waiting too long, I've decided to update my website early with the current changes made to see what you guys think! Obviously, it's not finished yet, so if there are any issues, report them on the GitHub page!",
+                    "buttons": [
+                        {
+                            "text": "Report an Issue",
+                            "link": "https://github.com/Joalor64GH/joalor64gh.github.io/issues"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "date": "February 1, 2026",
             "posts": [
                 {
@@ -135,12 +151,12 @@
                     "buttons": [
                         {
                             "text": "Socials",
-                            "link": "https://joalor64gh.github.io/socials.html"
+                            "link": "https://joalor64gh.github.io/socials"
                         }
                     ]
                 },
                 {
-                    "img": "buttons/socials/bilibili.png",
+                    "img": "img/buttons/socials/bilibili.png",
                     "title": "BiliBili Account",
                     "info": "I got bored so I decided to make an account on BiliBili for some reason. I might upload some stuff there soon, so why don't you check it out?",
                     "buttons": [
@@ -177,7 +193,7 @@
                     "buttons": [
                         {
                             "text": "My Cool Creations",
-                            "link": "https://joalor64gh.github.io/my-cool-creations.html"
+                            "link": "https://joalor64gh.github.io/projects"
                         }
                     ]
                 }
@@ -256,7 +272,7 @@
                     "buttons": [
                         {
                             "text": "Random Comic Generator",
-                            "link": "https://joalor64gh.github.io/random-comic-generator.html"
+                            "link": "https://joalor64gh.github.io/fun/comic"
                         },
                         {
                             "text": "Submit an Idea",
@@ -275,7 +291,7 @@
                     "buttons": [
                         {
                             "text": "Foreverbox",
-                            "link": "https://joalor64gh.github.io/foreverbox.html"
+                            "link": "https://joalor64gh.github.io/projects/foreverbox"
                         }
                     ]
                 }
@@ -311,7 +327,7 @@
                     "buttons": [
                         {
                             "text": "Generate a Comic",
-                            "link": "https://joalor64gh.github.io/random-comic-generator.html"
+                            "link": "https://joalor64gh.github.io/fun/comic"
                         }
                     ]
                 }
@@ -449,7 +465,7 @@
                     "buttons": [
                         {
                             "text": "Play the Mod",
-                            "link": "https://joalor64gh.github.io/foreverbox.html"
+                            "link": "https://joalor64gh.github.io/projects/foreverbox"
                         }
                     ]
                 }
@@ -480,7 +496,7 @@
                     "buttons": [
                         {
                             "text": "Play the Mod",
-                            "link": "https://joalor64gh.github.io/foreverbox.html"
+                            "link": "https://joalor64gh.github.io/projects/foreverbox"
                         }
                     ]
                 }
@@ -542,7 +558,7 @@
                     "buttons": [
                         {
                             "text": "Play",
-                            "link": "https://joalor64gh.github.io/foreverbox.html"
+                            "link": "https://joalor64gh.github.io/projects/foreverbox"
                         },
                         {
                             "text": "► Preview",

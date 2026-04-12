@@ -8,14 +8,14 @@
             "downloadWin": "https://www.mediafire.com/file/nglaegagumyecnq/Foreverbox_RMB.zip/file",
             "downloadAnd": "https://www.mediafire.com/file/lhxir18z9zj0812/Foreverbox-RMB_signed.apk/file",
             "downloadModIo": "https://mod.io/g/incredibox/m/new-era",
+			"modioID": "5631955",
             "previewID": "RLg2tuNSmKA",
             "isNew": false,
-            "isModIo": true,
-            "isApproved": true
+            "isModIo": true
         },
         "visu": {
             "img": "new-era1.png",
-            "colCont": "#3a364e",
+            "colCont": "#39354e",
             "colVerIcon": "#57556a"
         }
     },
@@ -105,7 +105,7 @@
             "age": 21
         },
         {
-            "name": "Choku",
+            "name": "Quasi-Bot",
             "desc": "We don't know what this thing is. He just showed up one day and decided to reside with the other civillians.",
             "imgs": [
                 {

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Joalor64's Website - Foreverbox</title>
+    <meta name='author' content='Joalor64'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allan'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Urbanist'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joalor64gh.github.io">
+    <meta property="og:title" content="Joalor64's Website">
+    <meta property="og:description" content="My personal website where I share my projects, art, and more!">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Joalor64GH/joalor64gh.github.io/main/img/favicon.png">
+    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+</head>
+
+<body>
+    <div id="topnav-container"></div>
+    <h1 class="logo">Foreverbox</h1>
+    <h2 class="sub-head">My cool Incredibox mod that's better to be enjoyed than to be explained.</h2>
+    <hr>
+    <h1 id="header" class="headerMove">Select a Version</h1>
+
+    <div class="fvbxVersionsArray">
+        <div class="foreverbox-icons-row">
+            <div class="foreverbox-icon-col" data-icon="1">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Battle</div>
+            </div>
+
+            <div class="foreverbox-icon-col" data-icon="2">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Ascension</div>
+            </div>
+
+            <div class="foreverbox-icon-col" data-icon="3">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">New Era</div>
+            </div>
+
+            <div class="foreverbox-icon-col" data-icon="4">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Golden Sands</div>
+            </div>
+        </div>
+
+        <div class="foreverbox-icons-row">
+            <div class="foreverbox-icon-col" data-icon="5">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Quartzland</div>
+            </div>
+
+            <div class="foreverbox-icon-col" data-icon="6">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Sunlight Shore</div>
+            </div>
+
+            <div class="foreverbox-icon-col" data-icon="7">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Mountains</div>
+            </div>
+
+            <div class="foreverbox-icon-col" data-icon="8">
+                <div class="foreverbox-icon"></div>
+                <div class="foreverbox-icon-label">Faded Horizons</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="version-dynamic-content"></div>
+    <div id="characters-header" style="display: none">
+        <div class="hr-container"><span>• Characters •</span></div>
+    </div>
+    <div id="characters-grid"></div>
+    <div id="character-modal" class="character-modal" style="display: none;"></div>
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Select your Platform</h2>
+            <div class="modal-buttons">
+                <a id="windowsDownload" target="_blank">
+                    <div class="platform-icon" id="windows"></div>
+                </a>
+                <a id="androidDownload" target="_blank">
+                    <div class="platform-icon" id="android"></div>
+                </a>
+                <a id="modIoDownload" target="_blank">
+                    <div class="platform-icon" id="modio"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="previewModal" class="modal">
+        <div class="modal-content preview-modal-content">
+            <span class="close-btn" onclick="closePreviewModal()">&times;</span>
+            <div class="video-wrapper">
+                <iframe id="previewVideo" src="" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="blankIconModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn"
+                onclick="document.getElementById('blankIconModal').style.display='none'">&times;</span>
+            <h2>Coming Soon!</h2>
+            <p style="color: black">This version is not available yet. Stay tuned!</p>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/foreverbox/main.js"></script>
+    <script src="../js/foreverbox/icons.js"></script>
+</body>
+
+</html>

@@ -1,15 +1,72 @@
+const sfsgModApi = "https://www.incredibox.com/ph4/api.php?q=modio";
+const isOffline = !navigator.onLine;
+
+let versionCache = {};
+let modApprovalCache = {};
+let preloaded = false;
+
+let cachedModList = null;
+let modListTimestamp = 0;
+const MOD_CACHE_DURATION = 5 * 60 * 1000;
+
+async function fetchModList() {
+    if (isOffline) return [];
+    if (cachedModList && (Date.now() - modListTimestamp) < MOD_CACHE_DURATION) {
+        return cachedModList;
+    }
+
+    try {
+        const res = await fetch(sfsgModApi);
+        if (!res.ok) throw new Error("Failed to fetch mod list");
+
+        const data = await res.json();
+        const mods = data?.data || data?.modslist?.data || [];
+
+        cachedModList = mods;
+        modListTimestamp = Date.now();
+
+        return mods;
+
+    } catch (err) {
+        return [];
+    }
+}
+
+async function isApprovedMod(modId, platform = "windows") {
+    if (!modId || isOffline) return false;
+
+    const mods = await fetchModList();
+    const mod = mods.find(m => Number(m.id) === Number(modId));
+    if (!mod) return false;
+
+    if (mod.status !== 1 || mod.visible !== 1) return false;
+
+    const platformStatus = mod.modfile?.platforms?.find(p => p.platform === platform)?.status;
+    return platformStatus === 1;
+}
+
 function getVersionParam() {
     const params = new URLSearchParams(window.location.search);
-    return parseInt(params.get('v'), 10) || 1;
+    return parseInt(params.get('v'), 10) || null;
 }
 
 function renderVersion(data) {
-    const version = data.versionInfo;
     const container = document.getElementById('version-dynamic-content');
-    if (!version) {
+    const charHeader = document.getElementById('characters-header');
+    if (!data || !data.versionInfo) {
         container.innerHTML = "<p>Version not found.</p>";
+        document.getElementById('characters-header').innerHTML = '';
         return;
+    } else {
+        charHeader.style.display = '';
     }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('v')) {
+        addVersionHr();
+    }
+
+    const version = data.versionInfo;
 
     const newIcon = version.meta.isNew ? `
         <div class="version-icon-top-right">
@@ -38,7 +95,12 @@ function renderVersion(data) {
                 </svg>
         </div>
     ` : '';
-    const incredimodsIcon = version.meta.isApproved ? `<div class="version-icon-top-right" id="incredimods" ${(version.meta.isNew ? 'style="right: 110px;"' : version.meta.isModIo ? 'style="right: 60px;"' : '')}></div>` : '';
+
+    let incredimodsIcon = '';
+    if (version.meta.modioID && modApprovalCache[version.meta.version]) {
+        incredimodsIcon = `<div class="version-icon-top-right" style="${version.meta.isNew ? 'right: 110px;' : version.meta.isModIo ? 'right: 60px;' : ''}" id="incredimods"></div>`;
+    }
+
     container.innerHTML = `
         <div class="version-container" style="background-color: ${version.visu.colCont};" 
             data-download-windows-url="${version.meta.downloadWin}"
@@ -46,7 +108,7 @@ function renderVersion(data) {
             data-download-modio-url="${version.meta.downloadModIo}">
             <div class="version-content">
                 <div class="version-image">
-                    <img src="/img/wallpapers/${version.visu.img}" alt="${version.meta.name}">
+                    <img src="../img/foreverbox/splashes/${version.meta.name.toLowerCase().replace(' ', '-')}.jpg" alt="${version.meta.name}">
                 </div>
                 <div class="version-info">
                     <div class="version-name-container">
@@ -132,88 +194,106 @@ function renderVersion(data) {
 
 function renderCharacters(characters, versionId) {
     const grid = document.getElementById('characters-grid');
-    if (!characters || !Array.isArray(characters)) {
+    if (!characters || !Array.isArray(characters) || characters.length === 0) {
         grid.innerHTML = '';
         return;
     }
-    const columns = (versionId === 6) ? 6 : 5;
-    let html = '<div class="characters-table">';
-    characters.forEach((char, i) => {
-        if (i % columns === 0) html += '<div class="character-row">';
-        html += `
-            <div class="character-cell" data-index="${i}">
-                <img src="img/foreverbox/characters/${char.imgs[0].img}" alt="${char.name}" class="character-thumb">
-                <div class="character-name">${char.name}</div>
-            </div>
-        `;
-        if ((i + 1) % columns === 0) html += '</div>';
-    });
-    if (characters.length % columns !== 0) html += '</div>';
-    html += '</div>';
-    grid.innerHTML = html;
 
-    grid.querySelectorAll('.character-cell .character-thumb').forEach(img => {
-        img.addEventListener('click', function () {
-            const idx = parseInt(this.parentElement.getAttribute('data-index'), 10);
-            showCharacterModal(characters[idx]);
-        });
-    });
-}
+    const slidesHtml = characters.map((char, i) => {
+        const appearances = Array.isArray(char.imgs) ? char.imgs : [];
+        const appearanceButtons = appearances.map((img, idx) => `
+            <button class="appearance-btn" data-char-index="${i}" data-img-index="${idx}">${img.title || `Look ${idx+1}`}</button>
+        `).join('');
 
-function showCharacterModal(char) {
-    const modal = document.getElementById('character-modal');
-    let tabsHtml = '';
-    let imgsHtml = '';
-    if (Array.isArray(char.imgs)) {
-        if (char.imgs.length > 1) {
-            tabsHtml = `<div class="character-modal-tabs">` +
-                char.imgs.map((img, idx) =>
-                    `<button class="character-modal-tab${idx === 0 ? ' active' : ''}" data-tab="${idx}">${img.title}</button>`
-                ).join('') +
-                `</div>`;
-        } else {
-            tabsHtml = '';
-        }
-        imgsHtml = `<div class="character-modal-imgs">` +
-            char.imgs.map((img, idx) =>
-                `<div class="character-modal-img-block" style="display:${idx === 0 ? 'block' : 'none'}" data-img="${idx}">
-                <img src="img/foreverbox/characters/${img.img}" alt="${char.name}">
-            </div>`
-            ).join('') +
-            `</div>`;
-    }
-    modal.innerHTML = `
-        <div class="character-modal-content">
-            <span class="character-modal-close" id="character-modal-close">&times;</span>
-            <h2>${char.name}</h2>
-            ${tabsHtml}
-            ${imgsHtml}
-            <p class="character-modal-desc">${char.desc}</p>
-            <div class="character-modal-meta">
-                <span><b>Age:</b> ${char.age}</span> | 
-                <span><b>Gender:</b> ${getCharacterGender(char.gender)}</span>
+        return `
+        <div class="slide" data-index="${i}" style="display:${i === 0 ? 'flex' : 'none'}">
+            <div class="slide-img">
+                <img src="../img/foreverbox/characters/${appearances[0]?.img || ''}" alt="${char.name}">
             </div>
+            <div class="slide-info">
+                <h3 class="character-name">${char.name}</h3>
+                <p class="character-modal-desc">${char.desc || ''}</p>
+                <div class="character-modal-meta">
+                    <span><b>Age:</b> ${char.age || '-'}</span> |
+                    <span><b>Gender:</b> ${getCharacterGender(char.gender)}</span>
+                </div>
+                ${appearances.length > 1 ? `<div class="appearance-buttons">${appearanceButtons}</div>` : ''}
+            </div>
+        </div>`;
+    }).join('');
+
+    grid.innerHTML = `
+        <div class="character-slideshow">
+            <button class="slide-nav prev" aria-label="Previous">◀</button>
+            <div class="slides-wrapper">${slidesHtml}</div>
+            <button class="slide-nav next" aria-label="Next">▶</button>
         </div>
     `;
-    modal.style.display = 'flex';
-    document.getElementById('character-modal-close').onclick = () => {
-        modal.style.display = 'none';
-    };
-    modal.onclick = (e) => {
-        if (e.target === modal) modal.style.display = 'none';
-    };
 
-    const tabs = modal.querySelectorAll('.character-modal-tab');
-    const imgBlocks = modal.querySelectorAll('.character-modal-img-block');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            tabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            const idx = this.getAttribute('data-tab');
-            imgBlocks.forEach((block, i) => {
-                block.style.display = (i == idx) ? 'block' : 'none';
-            });
+    let currentIndex = 0;
+    const slides = grid.querySelectorAll('.slide');
+
+    function showSlide(idx) {
+        if (idx < 0) idx = slides.length - 1;
+        if (idx >= slides.length) idx = 0;
+        slides.forEach((s, i) => {
+            s.style.display = (i === idx) ? 'flex' : 'none';
         });
+        currentIndex = idx;
+        const visibleSlide = slides[idx];
+        if (visibleSlide) {
+            const imgEl = visibleSlide.querySelector('.slide-img img');
+            const btns = visibleSlide.querySelectorAll('.appearance-btn');
+            if (btns && btns.length > 0) {
+                const src = imgEl?.getAttribute('src') || '';
+                const currentFile = src.split('/').pop();
+                let matched = false;
+                btns.forEach(b => b.classList.remove('active'));
+                btns.forEach(b => {
+                    const imgIdx = parseInt(b.getAttribute('data-img-index'), 10);
+                    const appearances = characters[idx].imgs || [];
+                    const expected = appearances[imgIdx]?.img || '';
+                    if (expected && expected === currentFile) {
+                        b.classList.add('active');
+                        matched = true;
+                    }
+                });
+                if (!matched) {
+                    btns[0].classList.add('active');
+                }
+            }
+        }
+    }
+
+    const prevBtn = grid.querySelector('.slide-nav.prev');
+    const nextBtn = grid.querySelector('.slide-nav.next');
+    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+    grid.querySelectorAll('.appearance-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const charIdx = parseInt(this.getAttribute('data-char-index'), 10);
+            const imgIdx = parseInt(this.getAttribute('data-img-index'), 10);
+            const slide = grid.querySelector(`.slide[data-index="${charIdx}"]`);
+            const imgEl = slide.querySelector('.slide-img img');
+            const appearances = characters[charIdx].imgs || [];
+            const selected = appearances[imgIdx];
+            if (selected) {
+                imgEl.src = `../img/foreverbox/characters/${selected.img}`;
+                imgEl.alt = characters[charIdx].name + (selected.title ? ' - ' + selected.title : '');
+            }
+
+            const siblingBtns = slide.querySelectorAll('.appearance-btn');
+            siblingBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    showSlide(0);
+
+    grid.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
     });
 }
 
@@ -227,19 +307,6 @@ function getCharacterGender(gender) {
             return gender;
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const v = getVersionParam();
-    fetch(`./data/foreverbox/v${v}.json`)
-        .then(res => {
-            if (!res.ok) throw new Error("Version not found");
-            return res.json();
-        })
-        .then(data => renderVersion(data))
-        .catch(() => {
-            document.getElementById('version-dynamic-content').innerHTML = "<p>Version not found.</p>";
-        });
-});
 
 function closeModal() {
     document.getElementById('downloadModal').style.display = 'none';
@@ -265,3 +332,64 @@ window.addEventListener("click", (event) => {
         closePreviewModal();
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    initForeverbox();
+});
+
+async function initForeverbox() {
+    await fetchModList();
+
+    const versionsToPreload = ["1", "2", "3", "4", "5", "6", "7", "8"];
+
+    await Promise.all(
+        versionsToPreload.map(async (v) => {
+            try {
+                const res = await fetch(`../data/foreverbox/v${v}.json`);
+                if (!res.ok) return;
+
+                const json = await res.json();
+                versionCache[v] = json;
+
+                const modioID = json.versionInfo?.meta?.modioID;
+                if (modioID) {
+                    try {
+                        modApprovalCache[v] = await isApprovedMod(modioID);
+                    } catch {
+                        modApprovalCache[v] = false;
+                    }
+                }
+            } catch (err) {
+                console.log(`V${v} is not found`);
+            }
+        })
+    );
+
+    preloaded = true;
+    handleRoute();
+}
+
+function handleRoute() {
+    const v = getVersionParam();
+
+    if (v && versionCache[v]) {
+        renderVersion(versionCache[v]);
+
+        document.querySelectorAll('.foreverbox-icons-row')
+            .forEach(row => row.style.display = 'none');
+
+        document.getElementById('version-dynamic-content').style.display = '';
+        document.getElementById('characters-header').style.display = '';
+        document.getElementById('characters-grid').style.display = '';
+    } else {
+        document.getElementById('version-dynamic-content').innerHTML = '';
+        document.getElementById('version-dynamic-content').style.display = 'none';
+        document.getElementById('characters-header').style.display = 'none';
+        document.getElementById('characters-grid').style.display = 'none';
+
+        document.querySelectorAll('.foreverbox-icons-row')
+            .forEach(row => row.style.display = '');
+    }
+}
+
+window.addEventListener("popstate", handleRoute);

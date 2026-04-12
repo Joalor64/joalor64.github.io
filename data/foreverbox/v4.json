@@ -9,13 +9,13 @@
             "downloadAnd": "https://www.mediafire.com/file/lhxir18z9zj0812/Foreverbox-RMB_signed.apk/file",
             "downloadModIo": "https://mod.io/g/incredibox/m/golden-sands",
             "previewID": "LAxmwmfpQ8w",
+			"modioID": "5637381",
             "isNew": false,
-            "isModIo": true,
-            "isApproved": true
+            "isModIo": true
         },
         "visu": {
             "img": "golden-sands1.png",
-            "colCont": "#5f4d18",
+            "colCont": "#5f4b19",
             "colVerIcon": "#bd8d14"
         }
     },

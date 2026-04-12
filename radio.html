@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Joalor64's Website - Radio Chat</title>
+    <meta name='author' content='Joalor64'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joalor64gh.github.io">
+    <meta property="og:title" content="Joalor64's Website">
+    <meta property="og:description" content="My personal website where I share my projects, art, and more!">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Joalor64GH/joalor64gh.github.io/main/img/favicon.png">
+    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+</head>
+
+<body>
+    <div id="topnav-container"></div>
+    <h1 class="header">Radio Chat</h1>
+    <h2 class="sub-head">Listen to some music and chat with others!</h2>
+    <hr>
+    <div class="outer-container">
+        <div class="content-container">
+            <div class="music-player" aria-label="Radio player">
+                <h3>📻 Joalor64's Radio Player™ 📻</h3>
+
+                <div class="radio-ui">
+                    <div class="track-info" aria-live="polite">
+                        <p id="track-title">Now Playing: Sample Music</p>
+                    </div>
+
+                    <audio id="audio-player"></audio>
+
+                    <div class="progress-wrap" aria-hidden="false">
+                        <div id="progress-bar" class="progress-bar" role="slider" aria-valuemin="0" aria-valuemax="100"
+                            tabindex="0"></div>
+                        <div class="time-info">
+                            <span id="current-time">0:00</span>
+                            <span id="duration-time">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="controls" role="group" aria-label="Player controls">
+                        <button id="prev-btn" type="button" aria-label="Previous track">⏮ Previous</button>
+                        <button id="play-btn" type="button" aria-label="Play" aria-pressed="false">▶ Play</button>
+                        <button id="pause-btn" type="button" aria-label="Pause" hidden>⏸ Pause</button>
+                        <button id="next-btn" type="button" aria-label="Next track">⏭ Next</button>
+
+                        <div class="volume-control" style="margin-top:10px;">
+                            <label for="volume-slider">🔊 Volume:</label>
+                            <input id="volume-slider" type="range" min="0" max="1" step="0.05" value="0.8" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <iframe style="border-radius: 15px;" src="https://foreverbox-chatroom.onrender.com" width="500" height="600"
+                allowtransparency="true" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/radio.js"></script>
+</body>
+
+</html>

@@ -19,68 +19,46 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <a class="active" href="./index.html">Home</a>
-        <a href="./socials.html">Socials</a>
-        <a href="./my-cool-creations.html">My Cool Creations</a>
-        <a href="./art-gallery.html">Art Gallery</a>
-        <a href="./foreverbox.html">Foreverbox</a>
-        <a href="./wallpapers.html">Wallpapers</a>
-        <a href="./news.html">News</a>
-        <div class="dropdown">
-            <button class="dropbtn">More
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="./radio-chat.html">Radio Chat</a>
-                <a href="./random-comic-generator.html">Random Comic Generator</a>
-                <a href="https://joalor64gh.github.io/Modbox" target="_blank">Modbox</a>
-            </div>
-        </div>
-        <div class="topnav-right">
-            <a id="toggle-text" onclick="toggleTheme()">☀️</a>
-        </div>
-    </div>
+    <div id="topnav-container"></div>
     <header class="banner">
-        <div class="txt">Joalor64's Official<br>Website</div>
+        <div class="txt">Joalor64's Website</div>
     </header>
-    <h1>Welcome to Joalor64's Official Website!</h1>
-    <p style="font-size: 24px;">A hub for my projects, art, and more!<br>Explore and have fun!</p>
+    <h1>Welcome to my website!</h1>
     <hr>
     <div class="content">
         <a href="foreverbox.html" id="img01">
             <div class="box-select01">
-                <img src="buttons/main/foreverbox.png" class="menu-image">
+                <img src="img/buttons/main/foreverbox.png" class="menu-image">
                 <p id="small-title">Foreverbox</p>
             </div>
         </a>
         <a href="art-gallery.html" id="img01">
             <div class="box-select01">
-                <img src="buttons/main/art-gallery.png" class="menu-image">
-                <p id="small-title">Art Gallery</p>
+                <img src="img/buttons/main/gallery.png" class="menu-image">
+                <p id="small-title">Gallery</p>
             </div>
         </a>
         <a href="socials.html" id="img01">
             <div class="box-select01">
-                <img src="buttons/main/socials.png" class="menu-image">
+                <img src="img/buttons/main/socials.png" class="menu-image">
                 <p id="small-title">Socials</p>
             </div>
         </a>
         <a href="wallpapers.html" id="img01">
             <div class="box-select01">
-                <img src="buttons/main/wallpapers.png" class="menu-image">
+                <img src="img/buttons/main/wallpapers.png" class="menu-image">
                 <p id="small-title">Wallpapers</p>
             </div>
         </a>
         <a href="my-cool-creations.html" id="img01">
             <div class="box-select01">
-                <img src="buttons/main/cool-creations.png" class="menu-image">
-                <p id="small-title">My Cool Creations</p>
+                <img src="img/buttons/main/projects.png" class="menu-image">
+                <p id="small-title">Projects</p>
             </div>
         </a>
         <a href="news.html" id="img01">
             <div class="box-select01">
-                <img src="buttons/main/news.png" class="menu-image">
+                <img src="img/buttons/main/news.png" class="menu-image">
                 <p id="small-title">News</p>
             </div>
         </a>
@@ -98,7 +76,7 @@
         <div class="box-container">
             <div class="icon-container">
                 <a href="https://sites.google.com/view/joalor64website-new/" target="_blank">
-                    <img src="buttons/main/website.png" class="menu-image">
+                    <img src="img/buttons/main/website.png" class="menu-image">
                 </a>
             </div>
             <div class="text-container">
@@ -112,7 +90,7 @@
         <div class="box-container">
             <div class="icon-container">
                 <a href="https://discord.gg/rd7ZnnfN5c" target="_blank">
-                    <img src="buttons/socials/discord.png" class="menu-image">
+                    <img src="img/buttons/socials/discord.png" class="menu-image">
                 </a>
             </div>
             <div class="text-container">
@@ -125,7 +103,7 @@
         <div class="box-container">
             <div class="icon-container">
                 <a href="mailto:rhgarcon@gmail.com">
-                    <img src="buttons/socials/gmail.png" class="menu-image">
+                    <img src="img/buttons/socials/gmail.png" class="menu-image">
                 </a>
             </div>
             <div class="text-container">
@@ -138,20 +116,7 @@
             </div>
         </div>
     </div>
-    <footer>
-        <br>
-        <p>© 2021-2026 | Joalor64<br>Since March 21, 2021</p>
-    </footer>
-    <div class="progress-circle-wrapper" id="progressCircle">
-        <div class="progress-circle">
-            <svg width="40" height="40">
-                <circle cx="20" cy="20" r="18" stroke="#1976d2" stroke-width="4" fill="none" opacity="0.15" />
-                <circle id="progressBar" cx="20" cy="20" r="18" stroke="#1976d2" stroke-width="4" fill="none"
-                    stroke-linecap="round" stroke-dasharray="113.097" stroke-dashoffset="113.097" />
-            </svg>
-            <span class="progress-arrow"><i class="fa fa-caret-up"></i></span>
-        </div>
-    </div>
+
     <script src="js/script.js"></script>
 </body>
 

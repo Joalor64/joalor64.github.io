@@ -19,65 +19,44 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="./index.html">Home</a>
-        <a class="active" href="./socials.html">Socials</a>
-        <a href="./my-cool-creations.html">My Cool Creations</a>
-        <a href="./art-gallery.html">Art Gallery</a>
-        <a href="./foreverbox.html">Foreverbox</a>
-        <a href="./wallpapers.html">Wallpapers</a>
-        <a href="./news.html">News</a>
-        <div class="dropdown">
-            <button class="dropbtn">More
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="./radio-chat.html">Radio Chat</a>
-                <a href="./random-comic-generator.html">Random Comic Generator</a>
-                <a href="https://joalor64gh.github.io/Modbox" target="_blank">Modbox</a>
-            </div>
-        </div>
-        <div class="topnav-right">
-            <a id="toggle-text" onclick="toggleTheme()">☀️</a>
-        </div>
-    </div>
-    <h1>✨My Socials✨</h1>
+    <div id="topnav-container"></div>
+    <h1 class="header">My Socials</h1>
     <h2 class="sub-head">Here, you can find where to contact/interact with me, or just check out my cool stuff!
     </h2>
     <hr>
     <section class="section" id="socials-online">
         <h2>Social Medias</h2>
         <div class="grid">
-            <div class="card brand-bluesky" data-href="https://bsky.app/profile/joalor64.bsky.social">
-                <img src="buttons/socials/bluesky.png">
+            <div class="card brand-bluesky">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Bluesky</div>
                     <div class="sub">@joalor64.bsky.social</div>
                 </div>
             </div>
-            <div class="card brand-youtube" data-href="https://www.youtube.com/@joalor64ytofficial">
-                <img src="buttons/socials/youtube.png">
+            <div class="card brand-youtube">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">YouTube</div>
                     <div class="sub">@joalor64ytofficial</div>
                 </div>
             </div>
-            <div class="card brand-discord" data-href="https://discordapp.com/users/584516163296559117/">
-                <img src="buttons/socials/discord.png">
+            <div class="card brand-discord">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Discord</div>
                     <div class="sub">p00p36</div>
                 </div>
             </div>
-            <div class="card brand-tiktok" data-href="https://www.tiktok.com/@joalor64">
-                <img src="buttons/socials/tiktok.png">
+            <div class="card brand-tiktok">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">TikTok</div>
                     <div class="sub">@joalor64</div>
                 </div>
             </div>
-            <div class="card brand-bilibili" data-href="https://space.bilibili.com/3546728714209872">
-                <img src="buttons/socials/bilibili.png">
+            <div class="card brand-bilibili">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">BiliBili</div>
                     <div class="sub">Joalor64Bili</div>
@@ -89,43 +68,43 @@
     <section class="section" id="gaming">
         <h2>Gaming</h2>
         <div class="grid">
-            <div class="card brand-nintendo-switch" data-href="#">
-                <img src="buttons/socials/nintendo-switch.png">
+            <div class="card brand-nintendo-switch">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Nintendo Switch</div>
                     <div class="sub">SW-0431-7762-6424</div>
                 </div>
             </div>
-            <div class="card brand-xbox" data-href="#">
-                <img src="buttons/socials/xbox.png">
+            <div class="card brand-xbox">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Xbox</div>
                     <div class="sub">Joalor64MC</div>
                 </div>
             </div>
-            <div class="card brand-playstation" data-href="#">
-                <img src="buttons/socials/playstation.png">
+            <div class="card brand-playstation">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">PlayStation</div>
                     <div class="sub">HOMIES2020xx</div>
                 </div>
             </div>
-            <div class="card brand-steam" data-href="https://steamcommunity.com/profiles/76561199148819551">
-                <img src="buttons/socials/steam.png">
+            <div class="card brand-steam">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Steam</div>
                     <div class="sub">fnfkeith19</div>
                 </div>
             </div>
-            <div class="card brand-roblox" data-href="https://www.roblox.com/users/431005833/profile">
-                <img src="buttons/socials/roblox.png">
+            <div class="card brand-roblox">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Roblox</div>
                     <div class="sub">P00P36</div>
                 </div>
             </div>
-            <div class="card brand-roblox" data-href="https://www.roblox.com/users/7631341417/profile">
-                <img src="buttons/socials/roblox.png">
+            <div class="card brand-roblox-alt">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Roblox (Alt)</div>
                     <div class="sub">Joalor64Alt</div>
@@ -137,36 +116,36 @@
     <section class="section" id="others">
         <h2>Other Accounts</h2>
         <div class="grid">
-            <div class="card brand-github" data-href="https://github.com/Joalor64GH">
-                <img src="buttons/socials/github.png">
+            <div class="card brand-github">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">GitHub</div>
                     <div class="sub">Joalor64GH</div>
                 </div>
             </div>
-            <div class="card brand-itch" data-href="https://joalor64.itch.io/">
-                <img src="buttons/socials/itch.png">
+            <div class="card brand-itch">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">itch.io</div>
                     <div class="sub">joalor64.itch.io</div>
                 </div>
             </div>
-            <div class="card brand-modio" data-href="https://mod.io/g/incredibox/u/joalor64">
-                <img src="buttons/socials/modio.png">
+            <div class="card brand-modio">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">mod.io</div>
                     <div class="sub">joalor64</div>
                 </div>
             </div>
-            <div class="card brand-gamebanana" data-href="https://gamebanana.com/members/1987843">
-                <img src="buttons/socials/gamebanana.png">
+            <div class="card brand-gamebanana">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">GameBanana</div>
                     <div class="sub">Joalor64</div>
                 </div>
             </div>
-            <div class="card brand-scratch" data-href="https://scratch.mit.edu/users/Joalor64Scratch/">
-                <img src="buttons/socials/scratch.png">
+            <div class="card brand-scratch">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Scratch</div>
                     <div class="sub">Joalor64Scratch</div>
@@ -178,15 +157,15 @@
     <section class="section" id="inactive">
         <h2>Inactive</h2>
         <div class="grid">
-            <div class="card brand-bandlab" data-href="https://www.bandlab.com/joalor64bl">
-                <img src="buttons/socials/bandlab.png">
+            <div class="card brand-bandlab">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">BandLab</div>
                     <div class="sub">joalor64bl</div>
                 </div>
             </div>
-            <div class="card brand-tumblr" data-href="https://joalor64tumb.tumblr.com/">
-                <img src="buttons/socials/tumblr.png">
+            <div class="card brand-tumblr">
+                <div class="img"></div>
                 <div class="meta">
                     <div class="title">Tumblr</div>
                     <div class="sub">joalor64tumb</div>
@@ -194,27 +173,8 @@
             </div>
         </div>
     </section>
-    <footer>
-        <br>
-        <p>© 2021-2026 | Joalor64<br>Since March 21, 2021</p>
-    </footer>
-    <div class="progress-circle-wrapper" id="progressCircle">
-        <div class="progress-circle">
-            <svg width="40" height="40">
-                <circle cx="20" cy="20" r="18" stroke="#1976d2" stroke-width="4" fill="none" opacity="0.15" />
-                <circle id="progressBar" cx="20" cy="20" r="18" stroke="#1976d2" stroke-width="4" fill="none"
-                    stroke-linecap="round" stroke-dasharray="113.097" stroke-dashoffset="113.097" />
-            </svg>
-            <span class="progress-arrow"><i class="fa fa-caret-up"></i></span>
-        </div>
-    </div>
-    <script>
-        document.querySelectorAll('.card').forEach(card => {
-            const url = card.dataset.href;
-            if (!url || url === '#') return;
-            card.addEventListener('click', () => window.open(url, '_blank'));
-        });
-    </script>
+
+    <script src="js/socials.js"></script>
     <script src="js/script.js"></script>
 </body>
 

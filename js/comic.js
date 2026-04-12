@@ -36,7 +36,7 @@ function randomizeComic() {
         if (!locks[i]) {
             const randIndex = Math.floor(Math.random() * panelData[i].length);
             const img = document.querySelector(`#panel${i + 1} img`);
-            img.src = `img/comics/panel${i + 1}/${panelData[i][randIndex]}.png`;
+            img.src = `../img/comics/panel${i + 1}/${panelData[i][randIndex]}.png`;
         }
     }
     showComicId();
