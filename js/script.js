@@ -84,8 +84,8 @@ function createNav() {
     if (pathParts.length > 1) {
         const directory = pathParts[pathParts.length - 2];
         const directoryMap = {
-            "fun": "fun.html",
-            "projects": "projects.html"
+            "fun": "fun",
+            "projects": "projects"
         };
         if (directoryMap[directory]) {
             currentPage = directoryMap[directory];
