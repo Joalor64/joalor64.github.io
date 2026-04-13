@@ -1,4 +1,4 @@
-# https://joalor64gh.github.io/
+# https://joalor64.github.io/
 A full HTML-based remake of my [website](https://sites.google.com/view/joalor64website-new/)! <br>
 
 ## "Why the change?"

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function createAnnouncementBanner() {
-    const announcementText = "NOTICE: The website is undergoing some changes! <u>Report issues on <a href='https://github.com/Joalor64GH/joalor64gh.github.io/issues' target='_blank'>GitHub</a>.</u>";
+    const announcementText = "NOTICE: The website is undergoing some changes! <u>Report issues on <a href='https://github.com/Joalor64/joalor64.github.io/issues' target='_blank'>GitHub</a>.</u>";
     if (!announcementText) return;
 
     const banner = document.createElement('div');
@@ -82,10 +82,11 @@ function createNav() {
     let currentPage = pathParts[pathParts.length - 1] || "index.html";
 
     if (pathParts.length > 1) {
+        let suffix = allowedHosts.contains(location.hostname) ? ".html" : "";
         const directory = pathParts[pathParts.length - 2];
         const directoryMap = {
-            "fun": "fun",
-            "projects": "projects"
+            "fun": "fun" + suffix,
+            "projects": "projects" + suffix
         };
         if (directoryMap[directory]) {
             currentPage = directoryMap[directory];

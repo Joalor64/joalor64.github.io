@@ -90,13 +90,13 @@ const links = {
         github: "https://github.com/JoaTH-Team/Rhythmo"
     },
     "2DHorror": {
-        github: "https://github.com/Joalor64GH/Simple2DHorror"
+        github: "https://github.com/Joalor64/Simple2DHorror"
     },
     "math-game": {
-        github: "https://github.com/Joalor64GH/SimpleMathGame"
+        github: "https://github.com/Joalor64/SimpleMathGame"
     },
     "2048-clicker": {
-        github: "https://github.com/Joalor64GH/2048-Clicker"
+        github: "https://github.com/Joalor64/2048-Clicker"
     },
     percush: {
         modio: "https://mod.io/g/incredibox/m/percush",
@@ -118,57 +118,57 @@ const links = {
     },
     "VSRobReboot": {
         itch: "https://joalor64.itch.io/vs-rob-rebooted-demo",
-        github: "https://github.com/Joalor64GH/VS-Rob-Rebooted/",
+        github: "https://github.com/Joalor64/VS-Rob-Rebooted/",
         gamebanana: "https://gamebanana.com/mods/602704"
     },
     "Joalor64Engine": {
         itch: "https://joalor64.itch.io/joalor64-engine-rewritten",
-        github: "https://github.com/Joalor64GH/Joalor64-Engine-Rewrite",
+        github: "https://github.com/Joalor64/Joalor64-Engine-Rewrite",
         gamebanana: "https://gamebanana.com/tools/17185"
     },
     "VSJoalor64": {
         itch: "https://joalor64.itch.io/vs-joalor64",
-        github: "https://github.com/Joalor64GH/VSJoalor64-SourceCode",
+        github: "https://github.com/Joalor64/VSJoalor64-SourceCode",
         gamebanana: "https://gamebanana.com/mods/417238"
     },
     "ChocolateEngine": {
         itch: "https://joalor64.itch.io/chocolate-engine",
-        github: "https://github.com/Joalor64GH/Chocolate-Engine",
+        github: "https://github.com/Joalor64/Chocolate-Engine",
         gamebanana: "https://gamebanana.com/tools/10774",
         mega: "https://mega.nz/folder/CXwCSbzI#Wzro2ssEjDNsw0-KBy0gSQ"
     },
     "Joalor64EngineLegacy": {
         itch: "https://joalor64.itch.io/joalor64-engine",
-        github: "https://github.com/Joalor64GH/Joalor64-Engine"
+        github: "https://github.com/Joalor64/Joalor64-Engine"
     },
     "HaxeTemplate": {
-        github: "https://github.com/Joalor64GH/Haxe-Template"
+        github: "https://github.com/Joalor64/Haxe-Template"
     },
     "SimpleLocalization": {
-        github: "https://github.com/Joalor64GH/SimpleLocalization"
+        github: "https://github.com/Joalor64/SimpleLocalization"
     },
     "modbox": {
-        website: "https://joalor64gh.github.io/Modbox",
-        github: "https://github.com/Joalor64GH/Modbox"
+        website: "https://joalor64.github.io/Modbox",
+        github: "https://github.com/Joalor64/Modbox"
     },
     "alura": {
-        github: "https://github.com/Joalor64GH/alura"
+        github: "https://github.com/Joalor64/alura"
     },
     "visionsphere": {
-        github: "https://github.com/Joalor64GH/VisionSphere"
+        github: "https://github.com/Joalor64/VisionSphere"
     },
     "processCreations": {
-        github: "https://github.com/Joalor64GH/Processing-Creations"
+        github: "https://github.com/Joalor64/Processing-Creations"
     },
     "BandlabRadioPlayer": {
-        github: "https://github.com/Joalor64GH/BandLab-Radio-Player"
+        github: "https://github.com/Joalor64/BandLab-Radio-Player"
     },
     "FlashCreations": {
-        website: "https://joalor64gh.github.io/FlashCreationsWebsite",
-        github: "https://github.com/Joalor64GH/Flash-Creations"
+        website: "https://joalor64.github.io/FlashCreationsWebsite",
+        github: "https://github.com/Joalor64/Flash-Creations"
     },
     "BandlabOSTPlayer": {
-        github: "https://github.com/Joalor64GH/BandLabOST-Player"
+        github: "https://github.com/Joalor64/BandLabOST-Player"
     }
 };
 
