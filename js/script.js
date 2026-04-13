@@ -43,13 +43,13 @@ function createNav() {
 	    <div class="topnav-middle">
 	        <div class="nav-links">
                 <a href="../">Home</a>
-                <a href="../socials.html">Socials</a>
-                <a href="../projects.html">Projects</a>
-                <a href="../fun.html">Fun Stuff</a>
-                <a href="../gallery.html">Gallery</a>
-                <a href="../wallpapers.html">Wallpapers</a>
-                <a href="../radio.html">Radio Chat</a>
-                <a href="../news.html">News</a>
+                <a href="../socials">Socials</a>
+                <a href="../projects">Projects</a>
+                <a href="../fun">Fun Stuff</a>
+                <a href="../gallery">Gallery</a>
+                <a href="../wallpapers">Wallpapers</a>
+                <a href="../radio">Radio Chat</a>
+                <a href="../news">News</a>
 	        </div>
 
             <div class="topnav-right">
@@ -61,13 +61,13 @@ function createNav() {
 	
 	    <div class="mobile-nav">
             <a href="../">Home</a>
-            <a href="../socials.html">Socials</a>
-            <a href="../projects.html">Projects</a>
-            <a href="../fun.html">Fun Stuff</a>
-            <a href="../gallery.html">Gallery</a>
-            <a href="../wallpapers.html">Wallpapers</a>
-            <a href="../radio.html">Radio Chat</a>
-            <a href="../news.html">News</a>
+            <a href="../socials">Socials</a>
+            <a href="../projects">Projects</a>
+            <a href="../fun">Fun Stuff</a>
+            <a href="../gallery">Gallery</a>
+            <a href="../wallpapers">Wallpapers</a>
+            <a href="../radio">Radio Chat</a>
+            <a href="../news">News</a>
 	    </div>
     </div>
     `;
