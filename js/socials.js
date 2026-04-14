@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "steam": "https://steamcommunity.com/profiles/76561199148819551",
         "roblox": "https://www.roblox.com/users/431005833/profile",
         "roblox-alt": "https://www.roblox.com/users/7631341417/profile",
-        "github": "https://github.com/Joalor64GH",
+        "github": "https://github.com/Joalor64",
         "itch": "https://joalor64.itch.io/",
         "modio": "https://mod.io/g/incredibox/u/joalor64",
         "gamebanana": "https://gamebanana.com/members/1987843",
