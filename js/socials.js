@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const socialRedirect = {
         "bluesky": "https://bsky.app/profile/joalor64.bsky.social",
-        "youtube": "https://www.youtube.com/@joalor64ytofficial",
+        "youtube": "https://www.youtube.com/@joalor64",
         "discord": "https://discordapp.com/users/584516163296559117/",
         "tiktok": "https://www.tiktok.com/@joalor64",
         "bilibili": "https://space.bilibili.com/3546728714209872",
