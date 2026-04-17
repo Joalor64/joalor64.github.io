@@ -3,7 +3,7 @@ const allowedHosts = ["10.5.0.2", "192.168.43.160", "127.0.0.1", "localhost"];
 
 if (!allowedHosts.includes(location.hostname)) {
     const extRemover = document.createElement("script");
-    extRemover.src = "./js/urlExtRemover.js";
+    extRemover.src = "../js/urlExtRemover.js";
     document.head.appendChild(extRemover);
 }
 
