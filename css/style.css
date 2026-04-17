@@ -1909,6 +1909,16 @@ button.homeButton:hover {
  | |  | | |__| | |_) || |_| |____| |____   ____) | |__| | |    | |    | |__| | | \ \  | |   
  |_|  |_|\____/|____/_____|______|______| |_____/ \____/|_|    |_|     \____/|_|  \_\ |_|   
 */
+@media (max-width: 412px) {
+    .hr-container span {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: inherit;
+        white-space: nowrap;
+        padding: 0 12px;
+    }
+}
+
 @media (max-width: 420px) {
     body {
         padding: 10px;

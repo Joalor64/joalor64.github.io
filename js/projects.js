@@ -173,7 +173,7 @@ const links = {
 };
 
 const projectPages = {
-    "foreverbox": "projects/foreverbox.html"
+    "foreverbox": "projects/foreverbox"
 };
 
 document.querySelectorAll(".game-gallery-item").forEach(item => {
