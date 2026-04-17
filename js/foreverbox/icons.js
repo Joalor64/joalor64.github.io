@@ -29,7 +29,7 @@ function switchVersion(version) {
         return;
     }
 
-    history.pushState(null, "", version ? `foreverbox.html?v=${version}` : `foreverbox.html`);
+    history.pushState(null, "", version ? `foreverbox?v=${version}` : `foreverbox`);
 
     if (version) {
         document.querySelectorAll('.foreverbox-icons-row').forEach(row => row.style.display = 'none');
