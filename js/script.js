@@ -82,7 +82,7 @@ function createNav() {
     let currentPage = pathParts[pathParts.length - 1] || "index.html";
 
     if (pathParts.length > 1) {
-        let suffix = allowedHosts.contains(location.hostname) ? ".html" : "";
+        let suffix = allowedHosts.includes(location.hostname) ? ".html" : "";
         const directory = pathParts[pathParts.length - 2];
         const directoryMap = {
             "fun": "fun" + suffix,
