@@ -1296,7 +1296,8 @@ footer p {
 .game-gallery-item#VSRobReboot .game-thumbnail .img,
 .game-gallery-item#Joalor64Engine .game-thumbnail .img,
 .game-gallery-item#Joalor64EngineLegacy .game-thumbnail .img,
-.game-gallery-item#ChocolateEngine .game-thumbnail .img {
+.game-gallery-item#ChocolateEngine .game-thumbnail .img,
+.game-gallery-item#SynapseEngine .game-thumbnail .img {
     transform: scale(2.5);
     border-radius: 15%;
     width: 60px;
