@@ -62,6 +62,7 @@ const thumbnails = {
     "ChocolateEngine": "img/wallpapers/CE.png",
     "Joalor64Engine": "img/wallpapers/J64EREgitcover1.png",
     "Joalor64EngineLegacy": "img/wallpapers/J64EL.png",
+    "SynapseEngine": "img/thumbnails/synapse-engine.png",
     "modbox": "img/thumbnails/modbox.png",
     "alura": "img/thumbnails/alura.png",
     "visionsphere": "img/thumbnails/visionsphere.png",
@@ -140,6 +141,10 @@ const links = {
     "Joalor64EngineLegacy": {
         itch: "https://joalor64.itch.io/joalor64-engine",
         github: "https://github.com/Joalor64/Joalor64-Engine"
+    },
+    "SynapseEngine": {
+        gamebanana: "https://gamebanana.com/tools/22532",
+        github: "https://github.com/Joalor64/FNF-SynapseEngine"
     },
     "HaxeTemplate": {
         github: "https://github.com/Joalor64/Haxe-Template"
