@@ -1,0 +1,167 @@
+{
+    "versionInfo": {
+        "meta": {
+            "version": 3,
+            "name": "Eternyx",
+            "desc": "A mod about a mystical underground society, where creatures roam, secrets lie, and ancient powers awaken. Then again, should all mysteries be uncovered?",
+            "date": "2026-02-01 (Demo)",
+            "downloadWin": "https://www.mediafire.com/file/rey4iokrje0h3ju/Dreambox_%2528PC%2529.zip/file",
+            "downloadAnd": "https://www.mediafire.com/file/haw6jvyvpea6d9f/Dreambox_signed.apk/file",
+            "downloadModIo": "https://mod.io/g/incredibox/m/eternyx",
+            "previewID": "Vh4K2LxwzaQ",
+            "isNew": false,
+            "isModIo": true,
+            "isApproved": false
+        },
+        "visu": {
+            "colCont": "#0a0120",
+            "colVerIcon": "#7700dd"
+        }
+    },
+    "characters": [
+        {
+            "name": "Ashton",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/01_pututu-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 17
+        },
+        {
+            "name": "Desmond",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/02_kauh-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 16
+        },
+        {
+            "name": "Jasper",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/03_gas-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 18
+        },
+        {
+            "name": "Wendin",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/04_indiginous-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 21
+        },
+        {
+            "name": "Sakura",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/05_nekobass-sprite.png"
+                }
+            ],
+            "gender": "Female (Demigirl)",
+            "age": 2000
+        },
+        {
+            "name": "Arachnu",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/06_spider-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 19
+        },
+        {
+            "name": "Anomaly-X23G",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/07_yooreek-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 105
+        },
+        {
+            "name": "Seishin",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/08_flames-sprite.png"
+                }
+            ],
+            "gender": "None",
+            "age": 1044
+        },
+        {
+            "name": "Jiro",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/09_pluckat-sprite.png"
+                }
+            ],
+            "gender": "Male (Demiboy)",
+            "age": 18
+        },
+        {
+            "name": "Mozaika",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/10_mozaika-sprite.png"
+                }
+            ],
+            "gender": "Male (Any pronouns)",
+            "age": 16
+        },
+        {
+            "name": "Hunter",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/11_heya-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 20
+        },
+        {
+            "name": "Kaiju",
+            "desc": "Lore coming in full version!",
+            "imgs": [
+                {
+                    "title": "V3",
+                    "img": "v3/12_imp-sprite.png"
+                }
+            ],
+            "gender": "Male (Libramasculine)",
+            "age": ">2500"
+        }
+    ]
+}

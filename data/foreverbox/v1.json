@@ -9,12 +9,11 @@
             "downloadAnd": "https://www.mediafire.com/file/lhxir18z9zj0812/Foreverbox-RMB_signed.apk/file",
             "downloadModIo": "https://mod.io/g/incredibox/m/battle",
             "previewID": "b9-pdZtukX8",
-			"modioID": "5372387",
             "isNew": false,
-            "isModIo": true
+            "isModIo": true,
+            "isApproved": true
         },
         "visu": {
-            "img": "battleR1.png",
             "colCont": "#15003b",
             "colVerIcon": "#320169"
         }

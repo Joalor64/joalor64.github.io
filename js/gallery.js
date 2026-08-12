@@ -1,157 +1,190 @@
-const galleryData = [
-    { src: "accord", name: "Accord" },
-    { src: "akashi", name: "Akashi" },
-    { src: "alpha", name: "Alpha" },
-    { src: "amelia", name: "Amelia" },
-    { src: "anomaly-x23g", name: "Anomaly-X23G" },
-    { src: "aquarion", name: "Aquarion" },
-    { src: "ari", name: "Ari" },
-    { src: "aris", name: "Aris" },
-    { src: "armen", name: "Armen" },
-    { src: "asadullah", name: "Asadullah" },
-    { src: "astroboy", name: "AstroBoy" },
-    { src: "axol", name: "Axol" },
-    { src: "ayun", name: "Ayun" },
-    { src: "bandit", name: "Bandit Guy" },
-    { src: "basya", name: "Basya" },
-    { src: "bellboy", name: "Belldam" },
-    { src: "benji", name: "Benji" },
-    { src: "blair", name: "Blair" },
-    { src: "bor", name: "boR" },
-    { src: "bugger", name: "Bugger" },
-    { src: "buzzle", name: "Buzzle" },
-    { src: "charis", name: "Charis" },
-    { src: "chiffon", name: "Chiffon" },
-    { src: "chiko", name: "Chiko" },
-    { src: "", name: "Chiyo" },
-    { src: "circleguy", name: "Circle Guy" },
-    { src: "clementina", name: "Clementina" },
-    { src: "copykat", name: "CopyKat" },
-    { src: "corruptus", name: "Corruptus" },
-    { src: "creator", name: "Creator!Memphis" },
-    { src: "crescendo", name: "Crescendo" },
-    { src: "cubic", name: "Cubic" },
-    { src: "", name: "Cumulus" },
-    { src: "dagon", name: "Dagon" },
-    { src: "dango", name: "Dango" },
-    { src: "dayaram", name: "Dayaram" },
-    { src: "delta", name: "Delta" },
-    { src: "demetrius", name: "Demetrius" },
-    { src: "dendi", name: "Dendi" },
-    { src: "deutera", name: "Deutera" },
-    { src: "court", name: "Diamond!Memphis" },
-    { src: "dillon", name: "Dillon" },
-    { src: "doc", name: "Doc" },
-    { src: "dune", name: "Dunic" },
-    { src: "echo", name: "Echo" },
-    { src: "edgar", name: "Edgar" },
-    { src: "elle", name: "Elle" },
-    { src: "emptier", name: "Emptier" },
-    { src: "envy", name: "Envy" },
-    { src: "espresso", name: "Espresso" },
-    { src: "explorer", name: "Explorer" },
-    { src: "flambu", name: "Flambu" },
-    { src: "global", name: "Global" },
-    { src: "goatis", name: "Goatis" },
-    { src: "goldie", name: "Goldie" },
-    { src: "grey", name: "Grey" },
-    { src: "hanna", name: "Hanna" },
-    { src: "healer", name: "Healer" },
-    { src: "heliosol", name: "Heliosol" },
-    { src: "hikari", name: "Hikari" },
-    { src: "hilarion", name: "Hilarion" },
-    { src: "homo", name: "Homo!Memphis" },
-    { src: "hoodedspy", name: "Hooded Spy" },
-    { src: "hoppa", name: "Hoppa" },
-    { src: "ikram", name: "Ikram" },
-    { src: "inflictor", name: "Inflictor" },
-    { src: "iriseis", name: "Iriseis" },
-    { src: "isamu", name: "Isamu" },
-    { src: "isedroid", name: "Isedroid" },
-    { src: "ixaptron", name: "Ixaptron" },
-    { src: "javi", name: "Javi" },
-    { src: "jyoti", name: "Jyoti" },
-    { src: "kabuki", name: "Kabuki" },
-    { src: "kento", name: "Kento" },
-    { src: "", name: "Kiko" },
-    { src: "kiowa", name: "Kiowa" },
-    { src: "kit", name: "Kit" },
-    { src: "", name: "Krys" },
-    { src: "leah", name: "Leah" },
-    { src: "legendarius", name: "Legendarius" },
-    { src: "liquaxis", name: "Liquaxis" },
-    { src: "louloudi", name: "Louloudi" },
-    { src: "lucian", name: "Lucian" },
-    { src: "masked", name: "Masked!Memphis" },
-    { src: "mauzie", name: "Mauzie" },
-    { src: "memphis", name: "Memphis" },
-    { src: "michiko", name: "Michiko" },
-    { src: "misty", name: "Misty" },
-    { src: "mono", name: "Mono" },
-    { src: "moxie", name: "Moxie" },
-    { src: "mosaic", name: "Mozaika" },
-    { src: "ms.clockworks", name: "Ms. Clockworks" },
-    { src: "mumtaz", name: "Mumtaz" },
-    { src: "", name: "Nekoro" },
-    { src: "neo", name: "Neo" },
-    { src: "nylon", name: "Nylon" },
-    { src: "nyxauris", name: "Nyxauris" },
-    { src: "oliver", name: "Oliver" },
-    { src: "", name: "Olivia" },
-    { src: "omega", name: "Omega" },
-    { src: "pandora", name: "Pandora" },
-    { src: "polychroma", name: "Polychroma" },
-    { src: "prototot", name: "Prototot" },
-    { src: "quasibot", name: "Quasibot" },
-    { src: "quodara", name: "Quodara" },
-    { src: "rachel", name: "Rachel" },
-    { src: "rainbowpicasso", name: "Rainbow Picasso" },
-    { src: "ramachandra", name: "Ramachandra" },
-    { src: "red", name: "Red" },
-    { src: "ringo", name: "Ringo" },
-    { src: "rob", name: "Rob" },
-    { src: "roku", name: "Roku" },
-    { src: "ruby", name: "Ruby" },
-    { src: "rui", name: "Rui" },
-    { src: "sapphire", name: "Sapphire" },
-    { src: "", name: "Serpin" },
-    { src: "simon", name: "Simon" },
-    { src: "skybot", name: "Skybot" },
-    { src: "slabby", name: "Slabby" },
-    { src: "spectrum", name: "Spectrum" },
-    { src: "stavros", name: "Stavros" },
-    { src: "subble", name: "Subble" },
-    { src: "tahir", name: "Tahir" },
-    { src: "tetranoid", name: "Tetranoid" },
-    { src: "time", name: "Time" },
-    { src: "tohomari", name: "Tohomari" },
-    { src: "tots", name: "Tots" },
-    { src: "ucunoid", name: "Ucunoid" },
-    { src: "ulloriaq", name: "Ulloriaq" },
-    { src: "usitron", name: "Usitron" },
-    { src: "victor", name: "Victor" },
-    { src: "vivian", name: "Vivian" },
-    { src: "xander", name: "Xander" },
-    { src: "xzavis", name: "Xzavis" },
-    { src: "yovy", name: "Yovy" },
-    { src: "yurei", name: "Yurei" },
-    { src: "zendy", name: "Zendy" }
-];
+(function () {
+    const wall = document.getElementById('gallery-wall');
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
 
-const galleryContainer = document.getElementById("gallery-container");
+    let items = [];
+    let currentIndex = 0;
 
-galleryData.forEach((item, index) => {
-    if (index % 4 === 0) {
-        const galleryDiv = document.createElement("div");
-        galleryDiv.className = "gallery";
-        galleryContainer.appendChild(galleryDiv);
+    const defaultData = [
+        {
+            name: "Sun Monk",
+            img: "img/gallery/sun-monk.png"
+        },
+        {
+            name: "Saro",
+            img: "img/gallery/saro.png"
+        },
+        {
+            name: "Memphis (New)",
+            img: "img/gallery/ayyitsMEE.png"
+        },
+        {
+            name: "Bouba and Kiki",
+            img: "img/gallery/boubaandkiki.png"
+        },
+        {
+            name: "Cyrus, Nekoro, Yurei, and Jiro",
+            img: "img/gallery/myfellas.png"
+        },
+        {
+            name: "Michael and Fang (Wonderland)",
+            img: "img/gallery/wonderland.png"
+        },
+        {
+            name: "Kodon's Haven",
+            img: "img/gallery/kodon.png"
+        },
+        {
+            name: "Neosurf",
+            img: "img/gallery/neosurf.png"
+        },
+        {
+            name: "Ho-Ho (2 Much 2mfoolery)",
+            img: "img/gallery/hoho.png"
+        },
+        {
+            name: "Cyrus, God of Lightning",
+            img: "img/gallery/cyrus.png"
+        },
+        {
+            name: "Piter and Zotta",
+            img: "img/gallery/piter-and-zotta.png"
+        },
+        {
+            name: "Kino's Harvest",
+            img: "img/gallery/kino.png"
+        },
+        {
+            name: "Lyrian",
+            img: "img/gallery/the-fallen.png"
+        },
+        {
+            name: "Reggie, Mozaika, and Aayam",
+            img: "img/gallery/mygang.png"
+        },
+        {
+            name: "Voyager (JTA)",
+            img: "img/gallery/voyager.png"
+        },
+        {
+            name: "Shpongle",
+            img: "img/gallery/shpongleyay.png"
+        },
+        {
+            name: "Uike",
+            img: "img/gallery/uike.png"
+        },
+        {
+            name: "Full Body Attempt",
+            img: "img/gallery/vic.png"
+        },
+        {
+            name: "Elemonsters Logo",
+            img: "img/gallery/elemonsters_logo.png"
+        },
+        {
+            name: "Mendil Cutlogs",
+            img: "img/gallery/mendil.png"
+        },
+        {
+            name: "BANAN",
+            img: "img/gallery/banan.png"
+        },
+        {
+            name: "he",
+            img: "img/gallery/he.png"
+        },
+        {
+            name: "Memphis (2023-2026)",
+            img: "img/gallery/memphis-2023.png"
+        },
+        {
+            name: "Memphis Redesign Concept (2023)",
+            img: "img/gallery/concept.png"
+        },
+        {
+            name: "Memphis (2022-2023)",
+            img: "img/gallery/memphis-2022.png"
+        }
+    ];
+
+    async function init() {
+        try {
+            const res = await fetch('data/gallery.json');
+            const data = await res.json();
+            items = (data.gallery && data.gallery.length) ? data.gallery : defaultData;
+        } catch (e) {
+            items = defaultData;
+        }
+        render();
+        setupLightbox();
     }
 
-    const galleryImg = item.src
-        ? `img/gallery/characters/${item.src}.png`
-        : "https://dummyimage.com/1100x1100/000/fff.png&text=WIP";
-    const galleryItem = document.createElement("div");
-    galleryItem.className = "gallery-item";
-    galleryItem.innerHTML = `<img src="${galleryImg}"> <p>${item.name}</p>`;
-    galleryContainer.lastChild.appendChild(galleryItem);
-});
+    function render() {
+        wall.innerHTML = '';
+        items.forEach((item, index) => {
+            const frame = document.createElement('div');
+            frame.className = 'gallery-frame';
+            frame.setAttribute('data-index', index);
+            frame.innerHTML = `
+                <img src="${item.img}" alt="${item.name}" loading="lazy">
+                <div class="frame-overlay"><i class="fa fa-search-plus"></i></div>
+                <div class="frame-caption">${item.name}</div>
+            `;
+            frame.addEventListener('click', () => openLightbox(index));
+            wall.appendChild(frame);
+        });
+    }
+
+    function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+        const item = items[currentIndex];
+        lightboxImg.src = item.img;
+        lightboxImg.alt = item.name;
+        lightboxCaption.textContent = item.name;
+        lightboxCounter.textContent = `${currentIndex + 1} / ${items.length}`;
+    }
+
+    function next() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateLightbox();
+    }
+
+    function prev() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateLightbox();
+    }
+
+    function setupLightbox() {
+        document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); next(); });
+        document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') next();
+            if (e.key === 'ArrowLeft') prev();
+        });
+    }
+
+    init();
+})();

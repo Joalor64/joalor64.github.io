@@ -6,6 +6,7 @@
     <title>Joalor64's Website - Gallery</title>
     <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My personal website where I share my projects, art, and more!">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
@@ -13,41 +14,31 @@
     <meta property="og:url" content="https://joalor64.github.io">
     <meta property="og:title" content="Joalor64's Website">
     <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/Joalor64/joalor64.github.io/main/img/favicon.png">
+    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
     <meta data-react-helmet="true" name="theme-color" content="#0000ff">
 </head>
 
 <body>
-	<div id="topnav-container"></div>
+    <div id="topnav-container"></div>
     <h1 class="header">Gallery</h1>
-    <h2 class="sub-head">Random art I made that I think you guys might like!</h2>
-    <div class="hr-container"><span>• Random Stuff •</span></div>
-    <div class="gallery" id="gall-misc">
-        <div class="gallery-item">
-            <img src="img/gallery/misc/shpongleyay.png">
-            <p>Shpongle</p>
-            <img src="img/gallery/misc/uike.png">
-            <p>Uike</p>
+    <h2 class="sub-head">Art I made that I think you guys might like!</h2>
+    <hr>
+    <div class="gallery-wall grid-layout" id="gallery-wall"></div>
+
+    <div id="gallery-lightbox" class="gallery-lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" aria-label="Next">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
-        <div class="gallery-item">
-            <img src="img/gallery/misc/vic.png">
-            <p>Full Body Attempt</p>
-            <img src="img/gallery/misc/cringe.png">
-            <p>Cringe</p>
-        </div>
-        <div class="gallery-item">
-            <img src="img/gallery/misc/concept.png">
-            <p>Memphis Concept</p>
-            <img src="img/gallery/misc/elemonsters_logo.png">
-            <p>Elemonsters Logo</p>
-            <img src="img/gallery/misc/mendil.png">
-            <p>Mendil Cutlogs</p>
-        </div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
-	
-    <div class="hr-container"><span>• Original Characters (LEGACY) •</span></div>
-    <div id="gallery-container"></div>
 
     <script src="js/script.js"></script>
     <script src="js/gallery.js"></script>

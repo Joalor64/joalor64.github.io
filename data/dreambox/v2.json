@@ -1,0 +1,263 @@
+{
+    "versionInfo": {
+        "meta": {
+            "version": 2,
+            "name": "Soleil",
+            "desc": "When the fog just won't go away, listen to some sweet reggaeton beats and explore the vibrant Hoshi City! Until then, surely we'll see the next sunrise?",
+            "date": "2026-08-12",
+            "downloadWin": "https://www.mediafire.com/file/rey4iokrje0h3ju/Dreambox_%2528PC%2529.zip/file",
+            "downloadAnd": "https://www.mediafire.com/file/haw6jvyvpea6d9f/Dreambox_signed.apk/file",
+            "downloadModIo": "https://mod.io/g/incredibox/m/soleil",
+            "previewID": "b7RWhEquTT0",
+            "isNew": true,
+            "isModIo": true,
+            "isApproved": false
+        },
+        "visu": {
+            "colCont": "#310d01",
+            "colVerIcon": "#c0392b"
+        }
+    },
+    "characters": [
+        {
+            "name": "Beau",
+            "desc": "A trainee journalist for the local newspaper in Hoshi City. They mostly make articles about the weather and such, unless something important has happened.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/drum1_clave-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 15
+        },
+        {
+            "name": "Kyle",
+            "desc": "A graffiti artist and professional skateboarder. He, Saro, and Carlos occasionally meet up at Skate Central for skateboarding and/or rollerblading. Otherwise, he likes to make abstract graffiti art.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/drum2_kick-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 19
+        },
+        {
+            "name": "Saro",
+            "desc": "One of the most popular professional beatboxers and music producers in Hoshi City. Yes, there are other inferior producers, but they're not *that* important, are they?",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/drum3_snare-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 21
+        },
+        {
+            "name": "Carlos",
+            "desc": "Despite being known as one of the best snowboarders in the state, his favorite hobby is actually sledding. Also, for whatever reason, people almost never see him without his hoodie.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/drum4_clap-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 17
+        },
+        {
+            "name": "Shep",
+            "desc": "A biker who is also a member of the H.C.B.A. (Hoshi City Biker's Association). All they really do is ride their motorcycles wherever, and occasionally meet up at a local 24/7 diner. They're all pretty chill, though.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/drum5_shake-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 18
+        },
+        {
+            "name": "Cptn. Electro",
+            "desc": "If it wasn't obvious by his name, this guy is the captain of the Star Division Space Force. He and his crew have recently begun a voyage to the nearest star system for research purposes, as well as “looking for a backup Earth.”",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/effet1_zereese-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 20
+        },
+        {
+            "name": "Tr1cl0ps",
+            "desc": "A cyborg and a technician for the S.D.S.F. Spacecraft. They don't seem to talk much, but from what we know, they have a particular fondness towards technology in general, and birds.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/effet2_pop-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 23
+        },
+        {
+            "name": "Daft-Bot",
+            "desc": "Some robot built without a concrete purpose? If anything, they're kind of just here for moral support and looking cool.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/effet3_lead-sprite.png"
+                }
+            ],
+            "gender": "None",
+            "age": "Built 4 Years Ago"
+        },
+        {
+            "name": "Distotut",
+            "desc": "The pilot and warning coordinator of the S.D.S.F. spacecraft. Yes, there is a built-in warning system in the craft, but it's really only used for dire emergencies, which is why he's here for any general warnings or notifications.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/effet4_disto-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 21
+        },
+        {
+            "name": "Rev. Xavyir",
+            "desc": "The overseer of the S.D.S.F. crew and an ordained priest back on Earth. He does help with any of the crew's missions and such, but he also occasionally gives advice to those in need of it. He also has surprisingly elite combat skills.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/effet5_slap-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 25
+        },
+        {
+            "name": "Aayam",
+            "desc": "The leader of the Phoenix Tribe, located on Mt. Igneus. Other than keeping everything in order, they're really into astrology and stargazing, as he has many notes with observations of specific constellation formations.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/melo1_guit-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 21
+        },
+        {
+            "name": "Kai",
+            "desc": "A hunter and gatherer of the Phoenix Tribe. The mountain they reside on is full of many different resources, so really, anyone can just take whatever as they please. He's important because he's the main hunter of animals to gather food or animal hides.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/melo2_indyen-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 18
+        },
+        {
+            "name": "Takoda",
+            "desc": "Not actually a tribe member, but a cowboy. We're not sure how he ended up here, but he's just here to protect the tribe from any potential dangers and whatnot.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/melo3_westerner-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 19
+        },
+        {
+            "name": "Atohi",
+            "desc": "A priest and the second highest in ranking in the Phoenix Tribe. They usually hold religious ceremonies and rituals, but they also have meditation and yoga sessions for when you need to be relaxed.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/melo4_clav-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 20
+        },
+        {
+            "name": "Nenyehi",
+            "desc": "A shepherd and farmer in the Phoenix Tribe. He tends to one of the tribe's many, and biggest, farmlands, while also occasionally weaving pretty little patterns with his loom. Fun Fact: He's the one who made Kai's sash.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/melo5_hatter-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 17
+        },
+        {
+            "name": "Raymond",
+            "desc": "A tourist in Hoshi City and a jazz musician, though their favorite music genre is actually Blues. They're mostly here for the vibrant city life, and the comedy clubs.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/voix1_aye-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 18
+        },
+        {
+            "name": "Domenic",
+            "desc": "A boxer and occasional tattoo artist. Surprisingly, he sometimes does both at the same time, as he has one section in his shop for tattoo artists, and another for everything boxing.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/voix2_houha-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 26
+        },
+        {
+            "name": "Vixen",
+            "desc": "An avid disco dancer who's really into the ‘90s aesthetic, he's centered his go-to outfit around it. He and Skylar usually go to dance classes together, or just sell paintings in their free-time.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/coeur1_euh-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 16
+        },
+        {
+            "name": "Skylar",
+            "desc": "A young artist who's recently started doing digital and physical commissions. This is usually in their free time, as they have dance classes with Vixen, though they like tap dancing and ballet more.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/coeur2_uooh-sprite.png"
+                }
+            ],
+            "gender": "Male (FTM)",
+            "age": 22
+        },
+        {
+            "name": "Alexandre",
+            "desc": "A breakdancer and volleyball enthusiast who really seems to like clouds for whatever reason. He does like sunny days, though they're right behind cloudy and rainy days on his tier list he just so happens to have.",
+            "imgs": [
+                {
+                    "title": "V2",
+                    "img": "v2/coeur3_sunrise-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 20
+        }
+    ]
+}

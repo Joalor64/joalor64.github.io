@@ -1,0 +1,263 @@
+{
+    "versionInfo": {
+        "meta": {
+            "version": 1,
+            "name": "Sprunki",
+            "desc": "It's just another Sprunki remake, so not really much to say here. Also check out the original by nyankobflol!",
+            "date": "2025-10-18",
+            "downloadWin": "https://www.mediafire.com/file/rey4iokrje0h3ju/Dreambox_%2528PC%2529.zip/file",
+            "downloadAnd": "https://www.mediafire.com/file/haw6jvyvpea6d9f/Dreambox_signed.apk/file",
+            "downloadModIo": "https://mod.io/g/incredibox/m/yet-another-generic-sprunki-remake",
+            "previewID": "_UZzEuzzEbA",
+            "isNew": false,
+            "isModIo": true,
+            "isApproved": false
+        },
+        "visu": {
+            "colCont": "#000d30",
+            "colVerIcon": "#0044aa"
+        }
+    },
+    "characters": [
+        {
+            "name": "Oren",
+            "desc": "An avid beatboxer and occansional DJ who's actually pretty famous around these parts, though enjoy beatboxing more. They're also in a relationship with Pinki.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/01_oren-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 18
+        },
+        {
+            "name": "Raddy",
+            "desc": "Though he seems tough like he claims, Raddy actually just likes to play sports, exercise, and hang out with Oren, Durple, and Simon. He also spray-paints walls for some reason.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/02_raddy-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 20
+        },
+        {
+            "name": "Clukr",
+            "desc": "A scientist and engineer currently working with Garnold to make robots and stuff. For what, you might ask? Great question.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/03_clukr-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 16
+        },
+        {
+            "name": "Fun-Bot",
+            "desc": "A robot built by Clukr and Garnold mostly made as a test of some sorts, but now they spread fun and joy wherever they can, hence their name. They also seem to have a father-son relationship with said creators.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/04_fun-bot-sprite.png"
+                }
+            ],
+            "gender": "Non-Binary",
+            "age": "Built 2 Years Ago"
+        },
+        {
+            "name": "Vineria",
+            "desc": "I don't have much info on her, but she mostly seems to be really into gardening and plants in general. So much, in fact, she has many plant themed outfits to wear.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/05_vineria-sprite.png"
+                }
+            ],
+            "gender": "F",
+            "age": 17
+        },
+        {
+            "name": "Gray",
+            "desc": "Despite being a bit of an introvert, he's a pretty chill guy who gets along with others well. They also happen to be a fan of rock music, apparently.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/06_gray-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 19
+        },
+        {
+            "name": "brud",
+            "desc": "A naive guy who co-owns a farm with Mr. Tree and Vineria, yet he's not the sharpest tool in the shed. How ironic.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/07_brud-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 15
+        },
+        {
+            "name": "Garnold",
+            "desc": "An engineer and programmer working with Clukr making robots and such. He actually also made his own cool headgear that makes sound.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/08_garnold-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 17
+        },
+        {
+            "name": "OWAKCX",
+            "desc": "He's, needless to say, a little messed up in the head, as he sort of got hit in the head by a wooden plank while he was near a construction site. Otherwise, actually a nice person.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/09_OWAKCX-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 18
+        },
+        {
+            "name": "Sky",
+            "desc": "A little dreamer who really likes anything bear-themed, as he is a bear himself. I actually also babysit him sometimes, and I do enjoy spending time with him.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/10_sky-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 12
+        },
+        {
+            "name": "Mr. Sun",
+            "desc": "This is literally the sun. The only reason we actually have a daylight cycle is because he just so happens to have a clone of the sun at the ready, just in case he wants to come down to Earth.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/11_mr-sun-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": "Like, a lot"
+        },
+        {
+            "name": "Durple",
+            "desc": "A dragon who has a weird fascination for orchestral instruments. Despite being able to fly, he sometimes prefers to walk. But other than that, he's great friends with Simon.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/12_durple-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 21
+        },
+        {
+            "name": "Mr. Tree",
+            "desc": "A wise guy occasionally giving out pieces of wisdom to those in need of it. They also own a farm with brud and Vineria.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/13_mr-tree-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 30
+        },
+        {
+            "name": "Simon",
+            "desc": "A real video-game nerd, who also happens to have ADHD. He sometimes talks to Durple about some of his favorite games, and Durple is more than happy to listen to him.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/14_simon-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 19
+        },
+        {
+            "name": "Tunner",
+            "desc": "The self-proclaimed sheriff around here, though we're not in a desert. He actually just deals with any quarrels and such to prevent them from escalating to a fight, and he's pretty good at it.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/15_tunner-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 22
+        },
+        {
+            "name": "Mr. Fun Computer",
+            "desc": "Another robot created by Clukr and Garnold who actually wasn't a robot first, but was a computer program on Garnold's laptop transfered to a robot body. They also have the same father-son relationship with said creators like Fun-Bot.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/16_mr-fun-computer-sprite.png"
+                }
+            ],
+            "gender": "Non-Binary",
+            "age": "Built 1 Year Ago"
+        },
+        {
+            "name": "Wenda",
+            "desc": "An artist who likes to make really abstract paintings, and sometimes self-portraits. They also seem to have a crush on Gray, but he doesn't know that yet.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/17_wenda-sprite.png"
+                }
+            ],
+            "gender": "F",
+            "age": 20
+        },
+        {
+            "name": "Pinki",
+            "desc": "A former jeweler who now works as a popular model around here. Suprisingly, she sometimes makes her own clothes and shows them off as well.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/18_pinki-sprite.png"
+                }
+            ],
+            "gender": "F",
+            "age": 18
+        },
+        {
+            "name": "Jevin",
+            "desc": "Have you seen someone in an empty church recently? If so, that was probably me. I'm a cultist, and the one documenting everyone in the Grassland. Despite my \"weird\" activities, I care for everyone here deeply.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/19_jevin-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 22
+        },
+        {
+            "name": "Black",
+            "desc": "None of us know who he is, or what he does. He just claims to be from another part of the Grasslands. I have been looking into this a bit, and he doesn't seem to have any negative intentions, but we can't be too sure.",
+            "imgs": [
+                {
+                    "title": "V1",
+                    "img": "v1/20_black-sprite.png"
+                }
+            ],
+            "gender": "M",
+            "age": 24
+        }
+    ]
+}

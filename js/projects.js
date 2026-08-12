@@ -53,10 +53,9 @@ const thumbnails = {
     "rhythmo": "img/thumbnails/rhythmo.png",
     "math-game": "img/thumbnails/math-game.png",
     "2048-clicker": "img/thumbnails/2048-clicker.png",
-    "eternyx": "img/thumbnails/eternyx.png",
     "percush": "img/thumbnails/percush.png",
     "foreverbox": "img/thumbnails/foreverbox.png",
-    "yagsr": "img/thumbnails/yagsr.png",
+    "dreambox": "img/thumbnails/dreambox.png",
     "VSRobReboot": "img/thumbnails/vs-rob-rebooted.png",
     "VSJoalor64": "img/thumbnails/vs-joalor64.png",
     "ChocolateEngine": "img/wallpapers/CE.png",
@@ -84,6 +83,7 @@ document.querySelectorAll(".game-gallery-item").forEach(item => {
 
 const links = {
     "JTA": {
+        itch: "https://joalor64.itch.io/journey-through-aubekhia",
         github: "https://github.com/JoaTH-Team/JTA/"
     },
     "rhythmo": {
@@ -104,18 +104,14 @@ const links = {
         windows: "https://www.mediafire.com/file/r6mntviyazlgla4/Percush+PC.zip/file",
         android: "https://www.mediafire.com/file/5oepi4i0hkkc2mp/Percush_signed.apk/file"
     },
-    eternyx: {
-        windows: "https://www.mediafire.com/file/x1wa8mc049fjpbx/Eternyx_Demo_%2528PC%2529.zip/file",
-        android: "https://www.mediafire.com/file/qphuang1b4iedjt/Eternyx-Demo_signed.apk/file"
-    },
-    yagsr: {
-        modio: "https://mod.io/g/incredibox/m/yet-another-generic-sprunki-remake",
-        windows: "https://www.mediafire.com/file/vps924lwi8vtu3r/Incredibox_-_YAGSR_%2528PC%2529.zip/file",
-        android: "https://www.mediafire.com/file/ndmpjlv4wo80jq4/Incredibox_-_YAGSR_%2528Android%2529.apk/file"
-    },
     foreverbox: {
+        page: "projects/mod.html?mod=foreverbox",
         modio: "https://mod.io/g/incredibox/c/foreverbox",
         itch: "https://joalor64.itch.io/foreverbox"
+    },
+    dreambox: {
+        page: "projects/mod.html?mod=dreambox",
+        modio: "https://mod.io/g/incredibox/m/dreambox"
     },
     "VSRobReboot": {
         itch: "https://joalor64.itch.io/vs-rob-rebooted-demo",
@@ -177,33 +173,22 @@ const links = {
     }
 };
 
-const projectPages = {
-    "foreverbox": "projects/foreverbox"
-};
+document.addEventListener("click", (e) => {
+    const item = e.target.closest(".game-gallery-item");
+    if (!item) return;
 
-document.querySelectorAll(".game-gallery-item").forEach(item => {
+    const linkIcon = e.target.closest(".link-icon");
     const id = item.id;
-    if (projectPages[id]) {
-        item.classList.add("has-page");
-        item.addEventListener("click", function (e) {
-            if (e.target.closest(".link-icon")) {
-                return;
-            }
-            window.location.href = projectPages[id];
-        });
+
+    if (linkIcon) {
+        const type = linkIcon.id;
+        const url = links[id]?.[type];
+        if (url) window.open(url, "_blank");
+        return;
     }
-});
 
-document.querySelectorAll(".link-icon").forEach(el => {
-    el.addEventListener("click", function () {
-        const project = this.closest(".game-gallery-item")?.id;
-        const type = this.id;
-
-        if (!project || !type) return;
-
-        const url = links[project]?.[type];
-        if (!url) return;
-
-        window.open(url, "_blank");
-    });
+    const page = links[id]?.page;
+    if (page) {
+        window.location.href = page;
+    }
 });

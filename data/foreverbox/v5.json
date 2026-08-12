@@ -9,12 +9,11 @@
             "downloadAnd": "https://www.mediafire.com/file/lhxir18z9zj0812/Foreverbox-RMB_signed.apk/file",
             "downloadModIo": "https://mod.io/g/incredibox/m/quartzland",
             "previewID": "M1pGsvyVu74",
-			"modioID": "5640142",
             "isNew": true,
-            "isModIo": true
+            "isModIo": true,
+            "isApproved": true
         },
         "visu": {
-            "img": "quartzland1.png",
             "colCont": "#082948",
             "colVerIcon": "#007694"
         }

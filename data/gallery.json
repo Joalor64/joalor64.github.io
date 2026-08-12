@@ -1,0 +1,104 @@
+{
+    "gallery": [
+        {
+            "name": "Sun Monk",
+            "img": "img/gallery/sun-monk.png"
+        },
+        {
+            "name": "Saro",
+            "img": "img/gallery/saro.png"
+        },
+        {
+            "name": "Memphis (New)",
+            "img": "img/gallery/ayyitsMEE.png"
+        },
+        {
+            "name": "Bouba, Kiki and some Others",
+            "img": "img/gallery/boubaandkiki_allcharacters.png"
+        },
+        {
+            "name": "Cyrus, Nekoro, Yurei, and Jiro",
+            "img": "img/gallery/myfellas.png"
+        },
+        {
+            "name": "Michael and Fang (Wonderland)",
+            "img": "img/gallery/wonderland.png"
+        },
+        {
+            "name": "Kodon's Haven",
+            "img": "img/gallery/kodon.png"
+        },
+        {
+            "name": "Neosurf",
+            "img": "img/gallery/neosurf.png"
+        },
+        {
+            "name": "Ho-Ho (2 Much 2mfoolery)",
+            "img": "img/gallery/hoho.png"
+        },
+        {
+            "name": "Cyrus, God of Lightning",
+            "img": "img/gallery/cyrus.png"
+        },
+        {
+            "name": "Piter and Zotta",
+            "img": "img/gallery/piter-and-zotta.png"
+        },
+        {
+            "name": "Kino's Harvest",
+            "img": "img/gallery/kino.png"
+        },
+        {
+            "name": "Lyrian",
+            "img": "img/gallery/the-fallen.png"
+        },
+        {
+            "name": "Reggie, Mozaika, and Aayam",
+            "img": "img/gallery/mygang.png"
+        },
+        {
+            "name": "Voyager (JTA)",
+            "img": "img/gallery/voyager.png"
+        },
+        {
+            "name": "Shpongle",
+            "img": "img/gallery/shpongleyay.png"
+        },
+        {
+            "name": "Uike",
+            "img": "img/gallery/uike.png"
+        },
+        {
+            "name": "Full Body Attempt",
+            "img": "img/gallery/vic.png"
+        },
+        {
+            "name": "Elemonsters Logo",
+            "img": "img/gallery/elemonsters_logo.png"
+        },
+        {
+            "name": "Mendil Cutlogs",
+            "img": "img/gallery/mendil.png"
+        },
+        {
+            "name": "BANAN",
+            "img": "img/gallery/banan.png"
+        },
+        {
+            "name": "he",
+            "img": "img/gallery/he.png"
+        },
+        {
+            "name": "Memphis (2023-2026)",
+            "img": "img/gallery/memphis-2023.png"
+        },
+        {
+            "name": "Memphis Redesign Concept (2023)",
+            "img": "img/gallery/concept.png"
+        },
+        {
+            "name": "Memphis (2022-2023)",
+            "img": "img/gallery/memphis-2022.png"
+        }
+    ]
+}

@@ -1,6 +1,44 @@
 {
     "news": [
         {
+            "date": "August 12, 2026",
+            "posts": [
+                {
+                    "img": "img/dreambox/icons/v2.png",
+                    "title": "Dreambox V2 Release",
+                    "info": "Dreambox V2: Soleil has finally released, after 6 whole months since it was announced! Go check it out!",
+                    "buttons": [
+                        {
+                            "text": "► Preview",
+                            "link": "https://youtu.be/b7RWhEquTT0"
+                        }
+                    ]
+                },
+                {
+                    "img": "img/thumbnails/eternyx.png",
+                    "title": "Eternyx on mod.io!",
+                    "info": "Eternyx is now on mod.io! ...Or at least the demo is. The full version will come out soon!",
+                    "buttons": [
+                        {
+                            "text": "Eternyx on mod.io",
+                            "link": "https://mod.io/g/incredibox/m/eternyx"
+                        }
+                    ]
+                },
+                {
+                    "img": "img/favicon.png",
+                    "title": "Major Website Update!",
+                    "info": "The new update for my website is finished at last! Go through the site as you please to see what's been changed, and report any issues on GitHub!",
+                    "buttons": [
+                        {
+                            "text": "Report an Issue",
+                            "link": "https://github.com/Joalor64/joalor64.github.io/issues"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "date": "April 12, 2026",
             "posts": [
                 {
@@ -10,7 +48,7 @@
                     "buttons": [
                         {
                             "text": "Report an Issue",
-                            "link": "https://github.com/Joalor64GH/joalor64gh.github.io/issues"
+                            "link": "https://github.com/Joalor64/joalor64.github.io/issues"
                         }
                     ]
                 }
@@ -151,7 +189,7 @@
                     "buttons": [
                         {
                             "text": "Socials",
-                            "link": "https://joalor64gh.github.io/socials"
+                            "link": "https://joalor64.github.io/socials"
                         }
                     ]
                 },
@@ -193,7 +231,7 @@
                     "buttons": [
                         {
                             "text": "My Cool Creations",
-                            "link": "https://joalor64gh.github.io/projects"
+                            "link": "https://joalor64.github.io/projects"
                         }
                     ]
                 }
@@ -272,7 +310,7 @@
                     "buttons": [
                         {
                             "text": "Random Comic Generator",
-                            "link": "https://joalor64gh.github.io/fun/comic"
+                            "link": "https://joalor64.github.io/fun/comic"
                         },
                         {
                             "text": "Submit an Idea",
@@ -291,7 +329,7 @@
                     "buttons": [
                         {
                             "text": "Foreverbox",
-                            "link": "https://joalor64gh.github.io/projects/foreverbox"
+                            "link": "https://joalor64.github.io/projects/foreverbox"
                         }
                     ]
                 }
@@ -301,7 +339,7 @@
             "date": "July 25, 2025",
             "posts": [
                 {
-                    "img": "img/wallpapers/quartzland2.png",
+                    "img": "img/foreverbox/albums/quartzland.png",
                     "title": "Foreverbox V5 Release",
                     "info": "Foreverbox V5: Quartzland has finally released today! Go and explore the utopia!",
                     "buttons": [
@@ -327,7 +365,7 @@
                     "buttons": [
                         {
                             "text": "Generate a Comic",
-                            "link": "https://joalor64gh.github.io/fun/comic"
+                            "link": "https://joalor64.github.io/fun/comic"
                         }
                     ]
                 }
@@ -392,7 +430,7 @@
             "date": "February 1, 2025",
             "posts": [
                 {
-                    "img": "img/wallpapers/battleR2.png",
+                    "img": "img/foreverbox/albums/battle.png",
                     "title": "Foreverbox V1 Remaster",
                     "info": "Battle has officially been remastered!<br>Check out the two new characters in the mod or something, it's cool!",
                     "buttons": [
@@ -419,7 +457,7 @@
             "date": "September 28, 2024",
             "posts": [
                 {
-                    "img": "img/wallpapers/golden-sands2.png",
+                    "img": "img/foreverbox/albums/golden-sands.png",
                     "title": "Foreverbox V4 Release",
                     "info": "The prophecy has been foretold! Foreverbox V4: Golden Sands has released today!",
                     "buttons": [
@@ -465,7 +503,7 @@
                     "buttons": [
                         {
                             "text": "Play the Mod",
-                            "link": "https://joalor64gh.github.io/projects/foreverbox"
+                            "link": "https://joalor64.github.io/projects/foreverbox"
                         }
                     ]
                 }
@@ -475,7 +513,7 @@
             "date": "May 4, 2024",
             "posts": [
                 {
-                    "img": "img/wallpapers/new-era2.png",
+                    "img": "img/foreverbox/albums/new-era.png",
                     "title": "Foreverbox V3 Release",
                     "info": "Foreverbox V3: New Era is out now! Go check it out! Now!",
                     "buttons": [
@@ -496,7 +534,7 @@
                     "buttons": [
                         {
                             "text": "Play the Mod",
-                            "link": "https://joalor64gh.github.io/projects/foreverbox"
+                            "link": "https://joalor64.github.io/projects/foreverbox"
                         }
                     ]
                 }
@@ -521,7 +559,7 @@
             "date": "December 25, 2023",
             "posts": [
                 {
-                    "img": "img/wallpapers/ascension2.png",
+                    "img": "img/foreverbox/albums/ascension.png",
                     "title": "Foreverbox V2 Release",
                     "info": "Foreverbox V2: Ascension is out now! Check it out!<br>And Merry Christmas! 🎄",
                     "buttons": [
@@ -552,13 +590,13 @@
             "date": "October 14, 2023",
             "posts": [
                 {
-                    "img": "img/wallpapers/battle2.png",
+                    "img": "img/foreverbox/albums/battle-old.png",
                     "title": "Foreverbox V1 Full Release",
                     "info": "It's finally here!<br>Have fun and stay cool!",
                     "buttons": [
                         {
                             "text": "Play",
-                            "link": "https://joalor64gh.github.io/projects/foreverbox"
+                            "link": "https://joalor64.github.io/projects/foreverbox"
                         },
                         {
                             "text": "► Preview",
@@ -572,7 +610,7 @@
             "date": "August 10, 2023",
             "posts": [
                 {
-                    "img": "img/wallpapers/battle2.png",
+                    "img": "img/foreverbox/albums/battle-old.png",
                     "title": "Foreverbox V1 Demo Release",
                     "info": "My first Incredibox mod!<br>I hope you enjoy!",
                     "buttons": [

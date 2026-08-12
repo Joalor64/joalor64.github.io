@@ -6,6 +6,7 @@
     <title>Joalor64's Website</title>
     <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My personal website where I share my projects, art, and more!">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
@@ -13,25 +14,17 @@
     <meta property="og:url" content="https://joalor64.github.io">
     <meta property="og:title" content="Joalor64's Website">
     <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/Joalor64/joalor64.github.io/main/img/favicon.png">
+    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
     <meta data-react-helmet="true" name="theme-color" content="#0000ff">
 </head>
 
 <body>
     <div id="topnav-container"></div>
-    <header class="banner">
-        <div class="txt">Joalor64's Website</div>
-    </header>
+    <header class="banner"></header>
     <h1>Welcome to my website!</h1>
+    <p style="font-size: 20px;">Here, you can find all of my projects, art, and a lot more!</p>
     <hr>
     <div class="content">
-        <a href="projects/foreverbox" id="img01">
-            <div class="box-select01">
-                <img src="img/buttons/main/foreverbox.png" class="menu-image">
-                <p id="small-title">Foreverbox</p>
-            </div>
-        </a>
         <a href="gallery" id="img01">
             <div class="box-select01">
                 <img src="img/buttons/main/gallery.png" class="menu-image">
@@ -71,6 +64,10 @@
         actually been coding since 2022, so since then I've made a few cool projects which I think you should check out!
         I'm trying to learn a whole bunch of new things to make my content better and it really means a lot to me when
         you guys support me. ❤</p>
+    <div class="hr-container"><span>• Featured Projects •</span></div>
+    <div id="featuredProjects" class="game-gallery featured-gallery"></div>
+    <div class="hr-container"><span>• Latest News •</span></div>
+    <div class="news-container home-news-container"></div>
     <div class="hr-container"><span>• More •</span></div>
     <div class="content2">
         <div class="box-container">
@@ -118,6 +115,7 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

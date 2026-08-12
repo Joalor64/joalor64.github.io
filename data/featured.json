@@ -1,0 +1,31 @@
+{
+    "featured": [
+        {
+            "name": "Dreambox",
+            "desc": "An Incredibox mod featuring random versions made for fun, with cool and unique themes.",
+            "img": "img/thumbnails/dreambox.png",
+            "links": {
+                "modio": "https://mod.io/g/incredibox/c/dreambox"
+            }
+        },
+        {
+            "name": "Journey Through Aubekhia",
+            "desc": "A simple, silly little platformer game where you explore!",
+            "img": "img/thumbnails/jtaItchCover.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/journey-through-aubekhia",
+                "github": "https://github.com/JoaTH-Team/JTA"
+            }
+        },
+        {
+            "name": "VS Rob: REBOOTED!",
+            "desc": "A high quality remake of the VS Rob mod from 2022!",
+            "img": "img/thumbnails/robItchCover.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/vs-rob-rebooted-demo",
+                "github": "https://github.com/Joalor64/VS-Rob-Rebooted",
+                "gamebanana": "https://gamebanana.com/mods/602704"
+            }
+        }
+    ]
+}

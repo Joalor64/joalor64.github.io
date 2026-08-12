@@ -9,12 +9,11 @@
             "downloadAnd": "https://www.mediafire.com/file/lhxir18z9zj0812/Foreverbox-RMB_signed.apk/file",
             "downloadModIo": "https://mod.io/g/incredibox/m/ascension",
             "previewID": "siJqzpB51nU",
-			"modioID": "5417975",
             "isNew": false,
-            "isModIo": true
+            "isModIo": true,
+            "isApproved": true
         },
         "visu": {
-            "img": "ascension1.png",
             "colCont": "#0d374d",
             "colVerIcon": "#006071"
         }

@@ -13,7 +13,6 @@ function adjustGrids() {
     observer.disconnect();
 
     document.querySelectorAll('.section').forEach(section => {
-
         const twoBottomGrids = section.querySelectorAll('.grid.two-bottom');
         if (twoBottomGrids.length > 1) {
             for (let i = 1; i < twoBottomGrids.length; i++) {
@@ -90,7 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "gamebanana": "https://gamebanana.com/members/1987843",
         "scratch": "https://scratch.mit.edu/users/Joalor64Scratch/",
         "bandlab": "https://www.bandlab.com/joalor64bl",
-        "tumblr": "https://joalor64tumb.tumblr.com/"
+        "tumblr": "https://joalor64.tumblr.com/",
+        "strawpage": "https://joalor64.straw.page/"
     };
 
     document.querySelectorAll('.card').forEach(card => {

@@ -8,13 +8,12 @@
             "downloadWin": "https://www.mediafire.com/file/nglaegagumyecnq/Foreverbox_RMB.zip/file",
             "downloadAnd": "https://www.mediafire.com/file/lhxir18z9zj0812/Foreverbox-RMB_signed.apk/file",
             "downloadModIo": "https://mod.io/g/incredibox/m/new-era",
-			"modioID": "5631955",
             "previewID": "RLg2tuNSmKA",
             "isNew": false,
-            "isModIo": true
+            "isModIo": true,
+            "isApproved": true
         },
         "visu": {
-            "img": "new-era1.png",
             "colCont": "#39354e",
             "colVerIcon": "#57556a"
         }
