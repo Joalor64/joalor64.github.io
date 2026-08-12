@@ -62,6 +62,7 @@ const thumbnails = {
     "Joalor64Engine": "img/wallpapers/J64EREgitcover1.png",
     "Joalor64EngineLegacy": "img/wallpapers/J64EL.png",
     "SynapseEngine": "img/thumbnails/synapse-engine.png",
+    "jmb": "img/thumbnails/JMB.png",
     "modbox": "img/thumbnails/modbox.png",
     "alura": "img/thumbnails/alura.png",
     "visionsphere": "img/thumbnails/visionsphere.png",
@@ -147,6 +148,9 @@ const links = {
     },
     "SimpleLocalization": {
         github: "https://github.com/Joalor64/SimpleLocalization"
+    },
+    "jmb": {
+        github: "https://github.com/Joalor64/Joalor64s-Modding-Build"
     },
     "modbox": {
         website: "https://joalor64.github.io/Modbox",

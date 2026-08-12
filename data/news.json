@@ -4,6 +4,17 @@
             "date": "August 12, 2026",
             "posts": [
                 {
+                    "img": "img/thumbnails/JMB.png",
+                    "title": "Joalor64's Modding Build Release",
+                    "info": "With the release of Soleil also comes the official release of Joalor64's Modding Build, which is an expanded and improved version of Rem's Modding Build with bugfixes, new additions, and much more!",
+                    "buttons": [
+                        {
+                            "text": "GitHub",
+                            "link": "https://github.com/Joalor64/Joalor64s-Modding-Build"
+                        }
+                    ]
+                },
+                {
                     "img": "img/dreambox/icons/v2.png",
                     "title": "Dreambox V2 Release",
                     "info": "Dreambox V2: Soleil has finally released, after 6 whole months since it was announced! Go check it out!",
