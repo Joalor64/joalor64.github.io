@@ -3,45 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Joalor64's Website - Gallery</title>
-    <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My personal website where I share my projects, art, and more!">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <title>Joalor64's Website - Gallery</title>
+    <meta name="author" content="Joalor64">
+    <meta name="description" content="Check out my arts and doodles!">
+    <meta name="theme-color" content="#0000ff">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://joalor64.github.io">
-    <meta property="og:title" content="Joalor64's Website">
-    <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
-    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+    <meta property="og:site_name" content="Joalor64's Website">
+    <meta property="og:url" content="https://joalor64.github.io/gallery">
+    <meta property="og:title" content="Joalor64's Website - Gallery">
+    <meta property="og:description" content="Check out my arts and doodles!">
+    <meta property="og:image" content="https://joalor64.github.io/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Joalor64's Website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/img/favicon-64.png" type="image/png">
+    <script>(function () { var d = document.documentElement; d.classList.add("preload"); try { if (localStorage.getItem("lightmode") === "enabled") d.classList.add("lightmode"); } catch (e) { } })();</script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/socials.css">
+    <link rel="stylesheet" href="/css/gallery.css">
 </head>
 
 <body>
     <div id="topnav-container"></div>
-    <h1 class="header">Gallery</h1>
-    <h2 class="sub-head">Art I made that I think you guys might like!</h2>
-    <hr>
-    <div class="gallery-wall grid-layout" id="gallery-wall"></div>
+    <main>
+        <h1 class="header">Gallery</h1>
+        <p class="sub-head">Art and/or little doodles I made that I think you guys might like!</p>
+        <hr>
+        <div class="gallery-info-panel-container">
+            <div class="gallery-info-panel">
+                <div class="gallery-info-badge">Art info</div>
+                <p>If you want to know how I make my art, here's what I normally use:</p>
+                <ul>
+                    <li>Softwares: Paint 3D/Pixlr/Photopea</li>
+                    <li>Brush:
+                        <ul>
+                            <li>Paint 3D: Marker 5px or Line Tools 10px</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>...Yeah.</p>
+            </div>
+            <div class="gallery-info-panel">
+                <div class="gallery-info-badge">Where I post</div>
+                <p>If you want to check out more of my art, I normally post on BlueSky or TikTok!</p>
+                <a class="card brand-bluesky" href="https://bsky.app/profile/joalor64.bsky.social" target="_blank"
+                    rel="noopener">
+                    <img class="img" src="/img/buttons/socials/bluesky.png" alt="" loading="lazy">
+                    <span class="meta">
+                        <span class="title">Bluesky</span>
+                        <span class="sub">@joalor64.bsky.social</span>
+                    </span>
+                </a>
+                <a class="card brand-tiktok" href="https://www.tiktok.com/@joalor64" target="_blank" rel="noopener">
+                    <img class="img" src="/img/buttons/socials/tiktok.png" alt="" loading="lazy">
+                    <span class="meta">
+                        <span class="title">TikTok</span>
+                        <span class="sub">@joalor64</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="gallery-wall grid-layout" id="gallery-wall"></div>
+    </main>
 
-    <div id="gallery-lightbox" class="gallery-lightbox">
-        <button class="lightbox-close" aria-label="Close">&times;</button>
-        <button class="lightbox-nav lightbox-prev" aria-label="Previous">
-            <i class="fa fa-chevron-left"></i>
-        </button>
-        <button class="lightbox-nav lightbox-next" aria-label="Next">
-            <i class="fa fa-chevron-right"></i>
-        </button>
+    <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer"
+        hidden>
+        <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+        <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
+        <button type="button" class="lightbox-nav lightbox-next" aria-label="Next"></button>
         <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
+            <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                alt="">
             <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-share" id="lightbox-share"></div>
         </div>
         <div class="lightbox-counter" id="lightbox-counter"></div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/gallery.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/gallery.js"></script>
 </body>
 
 </html>

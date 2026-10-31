@@ -1,0 +1,55 @@
+.wallpaper-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.wallpaper-item {
+    margin: 0;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.wallpaper-gallery.compact .wallpaper-item {
+    width: 220px;
+}
+
+.wallpaper-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.wallpaper-item img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .wallpaper-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .wallpaper-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+}
+
+.wallpaper-item figcaption {
+    margin: 1em 0;
+}
+
+.wallpaper-item>a {
+    display: block;
+}
+
+.wallpaper-alt {
+    text-decoration: underline !important;
+}

@@ -3,67 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Joalor64's Website - Random Comic Generator</title>
-    <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>Joalor64's Website - Random Comic Generator</title>
+    <meta name="author" content="Joalor64">
+    <meta name="description" content="Mix and match silly panels to make your own random three-panel comic.">
+    <meta name="theme-color" content="#0000ff">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://joalor64.github.io">
-    <meta property="og:title" content="Joalor64's Website">
-    <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
-    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+    <meta property="og:site_name" content="Joalor64's Website">
+    <meta property="og:url" content="https://joalor64.github.io/fun/comic">
+    <meta property="og:title" content="Joalor64's Website - Random Comic Generator">
+    <meta property="og:description" content="Mix and match silly panels to make your own random three-panel comic.">
+    <meta property="og:image" content="https://joalor64.github.io/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Joalor64's Website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/img/favicon-64.png" type="image/png">
+    <script>(function () { var d = document.documentElement; d.classList.add("preload"); try { if (localStorage.getItem("lightmode") === "enabled") d.classList.add("lightmode"); } catch (e) { } })();</script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/fun.css">
 </head>
 
 <body>
     <div id="topnav-container"></div>
+    <main>
     <h1 class="header">Random Comic Generator</h1>
-    <h2 class="sub-head">Make your own comic with some silly and probably stupid panels!</h2>
+    <p class="sub-head">Make your own comic with some silly and probably stupid panels!</p>
     <hr>
     <div id="comic-generator">
         <div class="panel-container">
             <div class="comic-panel" id="panel1">
-                <img src="https://dummyimage.com/400x400/000/fff.png&text=Loading...">
-                <button onclick="toggleLock(0)">🔓</button>
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Comic panel 1" width="400" height="400">
+                <button type="button" class="lock-btn" data-panel="0" aria-pressed="false" aria-label="Lock panel 1">🔓</button>
             </div>
             <div class="comic-panel" id="panel2">
-                <img src="https://dummyimage.com/400x400/000/fff.png&text=Loading...">
-                <button onclick="toggleLock(1)">🔓</button>
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Comic panel 2" width="400" height="400">
+                <button type="button" class="lock-btn" data-panel="1" aria-pressed="false" aria-label="Lock panel 2">🔓</button>
             </div>
             <div class="comic-panel" id="panel3">
-                <img src="https://dummyimage.com/400x400/000/fff.png&text=Loading...">
-                <button onclick="toggleLock(2)">🔓</button>
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Comic panel 3" width="400" height="400">
+                <button type="button" class="lock-btn" data-panel="2" aria-pressed="false" aria-label="Lock panel 3">🔓</button>
             </div>
         </div>
         <div class="controls" id="comic">
-            <button onclick="randomizeComic()">🎲 Generate New Comic</button>
-            <button onclick="saveComic(false)">💾 Save (No Watermark)</button>
-            <button onclick="saveComic(true)">💾 Save (With Watermark)</button>
+            <button type="button" id="randomizeButton">🎲 Generate New Comic</button>
+            <button type="button" id="saveButton">💾 Save (No Watermark)</button>
+            <button type="button" id="saveWatermarkButton">💾 Save (With Watermark)</button>
         </div>
     </div>
-    <div class="comic-id-controls">
+    <form class="comic-id-controls" id="comicIdForm">
         <span id="comicIdDisplay">Comic ID: Loading...</span>
         <br>
-        <input type="text" id="comicIdInput" placeholder="Enter Comic ID (e.g. 4-1-5)">
-        <button onclick="setComicById(document.getElementById('comicIdInput').value); showComicId();">Load
-            Comic</button>
-    </div>
+        <label for="comicIdInput" class="visually-hidden">Comic ID</label>
+        <input type="text" id="comicIdInput" placeholder="Enter Comic ID (e.g. 4-1-5)" pattern="\d+-\d+-\d+"
+            title="Three panel numbers separated by dashes, like 4-1-5">
+        <button type="submit">Load Comic</button>
+        <p class="comic-id-error" id="comicIdError" aria-live="polite"></p>
+    </form>
     <br>
     <br>
     <hr>
     <div class="submit-panel-section">
         <h2>Submit a Panel Idea!</h2>
         <p>If you have an idea for a new panel, submit it in this Google Form!</p>
-        <a href="https://forms.gle/ynpe1Bt3Ruynzvk17" target="_blank">https://forms.gle/ynpe1Bt3Ruynzvk17</a>
+        <a href="https://forms.gle/ynpe1Bt3Ruynzvk17" target="_blank" rel="noopener">https://forms.gle/ynpe1Bt3Ruynzvk17</a>
         <hr>
         <h3>Idea Submitters</h3>
         <p>Chester - P1-30</p>
     </div>
+    </main>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/fun/comic.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/fun/comic.js"></script>
 </body>
 
 </html>

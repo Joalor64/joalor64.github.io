@@ -1,0 +1,304 @@
+{
+    "sections": [
+        {
+            "title": "VS Joalor64",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Room (Desktop)",
+                            "img": "img/wallpapers/room_1280x720.png"
+                        },
+                        {
+                            "name": "Russia (Desktop)",
+                            "img": "img/wallpapers/russia_1280x720.png"
+                        },
+                        {
+                            "name": "Logo (Desktop)",
+                            "img": "img/wallpapers/logo_1280x720.png"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Room (Desktop Large / Tablet)",
+                            "img": "img/wallpapers/room_1280x844.png"
+                        },
+                        {
+                            "name": "Russia (Desktop Large / Tablet)",
+                            "img": "img/wallpapers/russia_1280x844.png"
+                        },
+                        {
+                            "name": "Logo (Desktop Large / Tablet)",
+                            "img": "img/wallpapers/logo_1280x844.png"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Room (Phone)",
+                            "img": "img/wallpapers/room_1066x2048.png"
+                        },
+                        {
+                            "name": "Russia (Phone)",
+                            "img": "img/wallpapers/russia_1066x2048.png"
+                        },
+                        {
+                            "name": "Logo (Phone)",
+                            "img": "img/wallpapers/logo_1066x2048.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Friday Night Funkin' Engines",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Joalor64 Engine Rewritten",
+                            "img": "img/wallpapers/J64EREgitcover1.png"
+                        },
+                        {
+                            "name": "Joalor64 Engine Rewritten (Old)",
+                            "img": "img/wallpapers/J64EREgitcover2.png"
+                        },
+                        {
+                            "name": "Joalor64 Engine Legacy",
+                            "img": "img/wallpapers/J64EL.png"
+                        },
+                        {
+                            "name": "Chocolate Engine",
+                            "img": "img/wallpapers/CE.png"
+                        },
+                        {
+                            "name": "Synapse Engine",
+                            "img": "img/thumbnails/synapse-engine.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Random Backgrounds",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Unforgiving Frost",
+                            "img": "img/wallpapers/unforgiving-frost.png"
+                        },
+                        {
+                            "name": "The Moon and The Sea",
+                            "img": "img/wallpapers/moon-and-sea.png"
+                        },
+                        {
+                            "name": "Memorable Dorms",
+                            "img": "img/wallpapers/dorms.png"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Golden Gates",
+                            "img": "img/wallpapers/golden-gates.png"
+                        },
+                        {
+                            "name": "Nightly Stargazing",
+                            "img": "img/wallpapers/stargazing.png"
+                        },
+                        {
+                            "name": "Gem City",
+                            "img": "img/wallpapers/gemcity.png"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Robo Buds",
+                            "img": "img/wallpapers/robo-buds.png"
+                        },
+                        {
+                            "name": "Pyramid",
+                            "img": "img/wallpapers/pyramid.png"
+                        },
+                        {
+                            "name": "The Diamonds",
+                            "img": "img/wallpapers/diamonds.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Gradients",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Neon Atlantic",
+                            "img": "img/wallpapers/neon-atlantic.png"
+                        },
+                        {
+                            "name": "Diagonally Blueish",
+                            "img": "img/wallpapers/blueish.png"
+                        },
+                        {
+                            "name": "Purple Berry",
+                            "img": "img/wallpapers/purple-berry.png"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Heavenly Bliss",
+                            "img": "img/wallpapers/heavenly-bliss.png"
+                        },
+                        {
+                            "name": "Northern Beach",
+                            "img": "img/wallpapers/northernbeach.png"
+                        },
+                        {
+                            "name": "Sandstone",
+                            "img": "img/wallpapers/sandstone.png"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Gristly Ice",
+                            "img": "img/wallpapers/gristly-ice.png"
+                        },
+                        {
+                            "name": "Fruits in the Dark",
+                            "img": "img/wallpapers/dark-fruits.png"
+                        },
+                        {
+                            "name": "Sunset",
+                            "img": "img/wallpapers/sunset.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Frutiger Aero",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Bubbles",
+                            "img": "img/wallpapers/bubbles.png"
+                        },
+                        {
+                            "name": "Windows Orb",
+                            "img": "img/wallpapers/orb.png"
+                        },
+                        {
+                            "name": "Glossy Interface",
+                            "img": "img/wallpapers/glossy-interface.png",
+                            "alt": {
+                                "label": "No UI Version",
+                                "img": "img/wallpapers/glossy-interface-no-ui.png"
+                            }
+                        },
+                        {
+                            "name": "MSN Guys",
+                            "img": "img/wallpapers/msn-guys.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Foreverbox",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Battle",
+                            "img": "img/foreverbox/splashes/battle.jpg",
+                            "alt": {
+                                "label": "Old",
+                                "img": "img/foreverbox/splashes/battle-old.jpg"
+                            }
+                        },
+                        {
+                            "name": "Ascension",
+                            "img": "img/foreverbox/splashes/ascension.jpg"
+                        },
+                        {
+                            "name": "New Era",
+                            "img": "img/foreverbox/splashes/new-era.jpg"
+                        },
+                        {
+                            "name": "Golden Sands",
+                            "img": "img/foreverbox/splashes/golden-sands.jpg"
+                        },
+                        {
+                            "name": "Quartzland",
+                            "img": "img/foreverbox/splashes/quartzland.jpg"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "name": "Battle Album Cover",
+                            "img": "img/foreverbox/albums/battle.png",
+                            "alt": {
+                                "label": "Old",
+                                "img": "img/foreverbox/albums/battle-old.png"
+                            }
+                        },
+                        {
+                            "name": "Ascension Album Cover",
+                            "img": "img/foreverbox/albums/ascension.png"
+                        },
+                        {
+                            "name": "New Era Album Cover",
+                            "img": "img/foreverbox/albums/new-era.png"
+                        },
+                        {
+                            "name": "Golden Sands Album Cover",
+                            "img": "img/foreverbox/albums/golden-sands.png"
+                        },
+                        {
+                            "name": "Quartzland Album Cover",
+                            "img": "img/foreverbox/albums/quartzland.png"
+                        }
+                    ],
+                    "compact": true
+                }
+            ]
+        },
+        {
+            "title": "Dreambox",
+            "rows": [
+                {
+                    "items": [
+                        {
+                            "name": "Yet Another Generic Sprunki Remake",
+                            "img": "img/dreambox/splashes/sprunki.jpg"
+                        },
+                        {
+                            "name": "Soleil",
+                            "img": "img/dreambox/splashes/soleil.jpg"
+                        },
+                        {
+                            "name": "Eternyx",
+                            "img": "img/dreambox/splashes/eternyx.jpg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,566 @@
+:root {
+    --panel-bg:
+        radial-gradient(circle at top right, rgba(120, 160, 255, 0.18), transparent 55%),
+        linear-gradient(150deg, rgba(38, 48, 78, 0.96), rgba(26, 33, 55, 0.92));
+    --panel-border: rgba(255, 255, 255, 0.10);
+    --panel-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 20px 45px rgba(8, 12, 22, 0.55);
+    --panel-fg: #eef2ff;
+    --panel-heading: #ffffff;
+    --panel-p: #dfe6ff;
+    --panel-li: #e6ecff;
+    --badge-bg: linear-gradient(135deg, rgba(90, 140, 255, 0.28), rgba(60, 100, 220, 0.18));
+    --badge-border: rgba(140, 180, 255, 0.35);
+    --badge-fg: #cfe0ff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.09);
+    --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    --card-hover-bg: rgba(255, 255, 255, 0.09);
+    --card-hover-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    --card-title: #ffffff;
+    --card-sub: #c3cbe8;
+    --frame-bg: #f4f4f4;
+    --frame-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+    --frame-hover-shadow: 0 16px 32px rgba(0, 0, 0, 0.14), 0 32px 64px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+    --caption-fg: #444;
+}
+
+html.lightmode {
+    --panel-bg:
+        radial-gradient(circle at top right, rgba(120, 160, 255, 0.12), transparent 55%),
+        linear-gradient(150deg, #ffffff, #eef3ff);
+    --panel-border: rgba(60, 100, 220, 0.15);
+    --panel-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 18px 40px rgba(60, 100, 220, 0.12);
+    --panel-fg: #1b2340;
+    --panel-heading: #16204a;
+    --panel-p: #2a3556;
+    --panel-li: #2a3556;
+    --badge-bg: linear-gradient(135deg, rgba(90, 140, 255, 0.18), rgba(60, 100, 220, 0.10));
+    --badge-border: rgba(60, 100, 220, 0.28);
+    --badge-fg: #2d4ea8;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(60, 100, 220, 0.14);
+    --card-shadow: 0 4px 14px rgba(60, 100, 220, 0.1);
+    --card-hover-bg: rgba(255, 255, 255, 0.75);
+    --card-hover-shadow: 0 4px 14px rgba(60, 100, 220, 0.1);
+    --card-title: #16204a;
+    --card-sub: #4a5578;
+    --frame-bg: #ffffff;
+    --frame-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --frame-hover-shadow: 0 10px 28px rgba(0, 0, 0, 0.10), 0 20px 48px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+    --caption-fg: #333;
+}
+
+.gallery-info-panel-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 900px;
+    margin: 30px auto 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.gallery-info-panel {
+    flex: 1 1 340px;
+    max-width: 400px;
+    min-width: 280px;
+    position: relative;
+    padding: 26px 28px 24px;
+    border-radius: 18px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--panel-shadow);
+    color: var(--panel-fg);
+    text-align: left;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-info-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3a7cff, #6a5cff, #00c2ff);
+    opacity: 0.9;
+}
+
+.gallery-info-panel::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(90, 140, 255, 0.22), transparent 70%);
+    pointer-events: none;
+}
+
+.gallery-info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--badge-fg);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(60, 100, 220, 0.2);
+}
+
+.gallery-info-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6ea8ff;
+    box-shadow: 0 0 8px #6ea8ff;
+}
+
+.gallery-info-panel h3 {
+    margin: 0 0 14px;
+    font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--panel-heading);
+    letter-spacing: 0.2px;
+}
+
+.gallery-info-panel p {
+    margin: 0;
+    opacity: 0.92;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--panel-p);
+}
+
+.gallery-info-panel p+p {
+    margin-top: 12px;
+}
+
+.gallery-info-panel ul {
+    margin: 8px 0 14px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.gallery-info-panel li {
+    position: relative;
+    padding: 4px 0 4px 20px;
+    line-height: 1.6;
+    font-size: 0.96rem;
+    color: var(--panel-li);
+}
+
+.gallery-info-panel li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #6ea8ff, #3a7cff);
+    box-shadow: 0 0 6px rgba(110, 168, 255, 0.6);
+    transform: rotate(45deg);
+}
+
+.gallery-info-panel ul ul {
+    margin: 6px 0 2px 6px;
+}
+
+.gallery-info-panel ul ul li {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    padding-left: 18px;
+}
+
+.gallery-info-panel ul ul li::before {
+    width: 5px;
+    height: 5px;
+    background: #8fb8ff;
+    box-shadow: none;
+}
+
+.gallery-info-panel .card {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-left-width: 4px;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-info-panel .card:hover {
+    transform: translateY(-3px);
+    background: var(--card-hover-bg);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.gallery-info-panel .card .img {
+    width: 36px;
+    height: 36px;
+}
+
+.gallery-info-panel .card .title {
+    font-size: 14px;
+    color: var(--card-title);
+}
+
+.gallery-info-panel .card .sub {
+    font-size: 12px;
+    color: var(--card-sub);
+    opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .gallery-info-panel-container {
+        gap: 18px;
+        margin: 24px auto 32px;
+        padding: 0 14px;
+    }
+
+    .gallery-info-panel {
+        padding: 22px 20px 20px;
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.gallery-wall {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+    column-count: 4;
+    column-gap: 35px;
+}
+
+@media (max-width: 1024px) {
+    .gallery-wall {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-wall {
+        column-count: 1;
+    }
+}
+
+.gallery-frame {
+    display: block;
+    width: 100%;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    text-align: center;
+    break-inside: avoid;
+    margin-bottom: 35px;
+    background: var(--frame-bg);
+    padding: 14px 14px 70px 14px;
+    border-radius: 3px;
+    box-shadow: var(--frame-shadow);
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.35s ease;
+    cursor: pointer;
+}
+
+.gallery-frame::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 70px;
+    box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.04);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-frame:hover {
+    transform: translateY(-10px) scale(1.015);
+    box-shadow: var(--frame-hover-shadow);
+}
+
+.gallery-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+    background: #ddd;
+    position: relative;
+    z-index: 0;
+}
+
+.frame-overlay {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 70px;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+.gallery-frame:hover .frame-overlay {
+    opacity: 1;
+}
+
+.frame-overlay svg {
+    color: #fff;
+    font-size: 36px;
+    opacity: 0.95;
+}
+
+.frame-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--caption-fg);
+    padding: 12px 14px 14px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.frame-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    line-height: 1.4;
+}
+
+.frame-date {
+    font-size: 11px;
+    opacity: 0.8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.gallery-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background: rgba(8, 8, 10, 0.96);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: lbFadeIn 0.25s ease;
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+@keyframes lbFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 92vw;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 64vh;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+    flex-shrink: 0;
+}
+
+.lightbox-caption {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    opacity: 0.92;
+    max-width: 700px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: min(100%, 700px);
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+.lightbox-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.lightbox-date {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.72;
+    line-height: 1.4;
+}
+
+.lightbox-desc {
+    font-size: 15px;
+    max-width: 620px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.lightbox-desc a {
+    color: #9dc2ff;
+}
+
+.lightbox-share {
+    margin-top: 6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+}
+
+.lightbox-share-btn {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.lightbox-share-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+.lightbox-counter {
+    position: static;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 42px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    z-index: 10001;
+    line-height: 1;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10001;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev {
+    left: 24px;
+}
+
+.lightbox-next {
+    right: 24px;
+}
+
+
+
+
+.frame-overlay {
+    color: #fff;
+}
+
+.lightbox-nav svg {
+    display: block;
+}

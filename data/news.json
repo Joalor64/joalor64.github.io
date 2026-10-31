@@ -1,6 +1,56 @@
 {
     "news": [
         {
+            "date": "October 31, 2026",
+            "posts": [
+                {
+                    "img": "img/thumbnails/oktober.png",
+                    "title": "Oktober Release",
+                    "info": "A fall and October inspired mod I've been working on in the background, made in under a month! Enjoy and Happy Halloween!",
+                    "buttons": [
+                        {
+                            "text": "► Preview",
+                            "link": "https://youtu.be/TIeBD-45_bg"
+                        }
+                    ]
+                },
+                {
+                    "title": "Website Update",
+                    "info": "Made another major update to my website! It's mainly just reworking and adding a whole bunch of things. Be sure to report any issues on GitHub!",
+                    "buttons": [
+                        {
+                            "text": "Report an Issue",
+                            "link": "https://github.com/Joalor64/joalor64.github.io/issues"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "date": "September 27, 2026",
+            "posts": [
+                {
+                    "img": "https://raw.githubusercontent.com/JoaTH-Team/JTA/refs/heads/main/icon.png",
+                    "title": "Journey Through Aubekhia - Demo 1 Release",
+                    "info": "The first demo of Journey Through Aubekhia is out now! Note that not everything in the game will be final, and more content will come soon!",
+                    "buttons": [
+                        {
+                            "text": "► Preview",
+                            "link": "https://youtu.be/Gf--A1MXdDU"
+                        },
+                        {
+                            "text": "itch.io",
+                            "link": "https://joalor64.itch.io/journey-through-aubekhia"
+                        },
+                        {
+                            "text": "GitHub",
+                            "link": "https://github.com/JoaTH-Team/JTA"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "date": "August 12, 2026",
             "posts": [
                 {
@@ -315,7 +365,7 @@
             "date": "August 24, 2025",
             "posts": [
                 {
-                    "img": "img/comics/panel2/9.png",
+                    "img": "img/thumbnails/rcg.png",
                     "title": "RCG Update",
                     "info": "The random comic generator page has gotten a new makeover and TWO new panels! But there can be more since you can now submit your own ideas! Check the Google Form below!",
                     "buttons": [
@@ -370,7 +420,7 @@
             "date": "May 26, 2025",
             "posts": [
                 {
-                    "img": "img/comics/panel1/2.png",
+                    "img": "img/thumbnails/rcg.png",
                     "title": "Random Comic Generator",
                     "info": "Not huge news, but I've added a silly little random comic generator to my website! Make your own comic with these somewhat nonsensical panels to complete the adventures of Blue and Green!",
                     "buttons": [

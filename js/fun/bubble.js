@@ -1,30 +1,23 @@
 (function () {
+    const wrapper = document.getElementById('bubble-game-wrapper');
+    if (!wrapper) return;
+
     const canvas = document.createElement('canvas');
     canvas.id = 'bubbleCanvas';
-
-    const wrapper = document.createElement('div');
-    wrapper.id = 'bubble-game-wrapper';
-    wrapper.style.cssText = 'position:relative;width:90%;max-width:900px;height:500px;margin:20px auto;border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(58,124,255,0.2);border:3px solid #fff;background:linear-gradient(135deg,#a1c4fd 0%,#3a7cff 100%);';
+    canvas.setAttribute('aria-label', 'Bubble Pop game area');
     wrapper.appendChild(canvas);
-
-    const firstScript = document.querySelector('script');
-    if (firstScript) {
-        firstScript.parentNode.insertBefore(wrapper, firstScript);
-    } else {
-        document.body.appendChild(wrapper);
-    }
 
     const ui = document.createElement('div');
     ui.id = 'bubble-ui';
     ui.innerHTML = `
-        <div style="position:absolute;top:12px;left:20px;font-family:'Poppins','Jua',sans-serif;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3);pointer-events:none;user-select:none;">
-            <div style="font-size:2em;font-weight:bold;">Score: <span id="bubbleScore">0</span></div>
-            <div style="font-size:1.1em;opacity:0.9;">Best: <span id="bubbleBest">0</span></div>
-            <div id="comboDisplay" style="font-size:1.3em;color:#ffeb3b;opacity:0;transition:opacity 0.3s;font-weight:bold;margin-top:4px;">x1 Combo</div>
+        <div class="bubble-hud bubble-hud-left">
+            <div class="bubble-score">Score: <span id="bubbleScore">0</span></div>
+            <div class="bubble-best">Best: <span id="bubbleBest">0</span></div>
+            <div id="comboDisplay" class="bubble-combo">x1 Combo</div>
         </div>
-        <div style="position:absolute;top:12px;right:20px;font-family:'Poppins','Jua',sans-serif;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3);pointer-events:none;user-select:none;text-align:right;">
-            <div style="font-size:0.9em;opacity:0.8;">Click bubbles to pop!</div>
-            <div id="frenzyDisplay" style="font-size:1.2em;color:#ff4081;font-weight:bold;opacity:0;transition:opacity 0.3s;margin-top:4px;">🔥 FRENZY MODE 🔥</div>
+        <div class="bubble-hud bubble-hud-right">
+            <div class="bubble-hint">Click bubbles to pop!</div>
+            <div id="frenzyDisplay" class="bubble-frenzy">🔥 FRENZY MODE 🔥</div>
         </div>
     `;
     wrapper.appendChild(ui);
@@ -34,15 +27,25 @@
 
     function resize() {
         const rect = wrapper.getBoundingClientRect();
-        W = canvas.width = rect.width;
-        H = canvas.height = rect.height;
+        const dpr = window.devicePixelRatio || 1;
+        W = rect.width;
+        H = rect.height;
+        canvas.width = Math.round(W * dpr);
+        canvas.height = Math.round(H * dpr);
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     resize();
     window.addEventListener('resize', resize);
 
+    const BEST_KEY = 'bubblePopBest';
+    let savedBest = 0;
+    try { savedBest = Number(localStorage.getItem(BEST_KEY)) || 0; } catch (e) { }
+
     const state = {
         score: 0,
-        best: 0,
+        best: savedBest,
         combo: 0,
         comboTimer: 0,
         bubbles: [],
@@ -62,7 +65,7 @@
     document.getElementById('bubbleBest').textContent = state.best;
 
     const bubbleImg = new Image();
-    bubbleImg.src = '../img/bubble.png';
+    bubbleImg.src = '/img/bubble.png';
     let imgReady = false;
     bubbleImg.onload = () => { imgReady = true; };
 
@@ -364,6 +367,7 @@
 
         if (state.score > state.best) {
             state.best = state.score;
+            try { localStorage.setItem(BEST_KEY, String(state.best)); } catch (e) { }
         }
 
         document.getElementById('bubbleScore').textContent = state.score;
@@ -432,8 +436,9 @@
 
     function getMousePos(e) {
         const rect = canvas.getBoundingClientRect();
-        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        const point = e.touches && e.touches.length ? e.touches[0] : e;
+        const clientX = point.clientX;
+        const clientY = point.clientY;
         return {
             x: clientX - rect.left,
             y: clientY - rect.top
@@ -460,8 +465,7 @@
         }
     }
 
-    canvas.addEventListener('mousedown', handleInput);
-    canvas.addEventListener('touchstart', handleInput, { passive: false });
+    canvas.addEventListener('pointerdown', handleInput);
 
     function loop() {
         state.bgHue += 0.2;

@@ -1,261 +1,286 @@
-const isLocal =
-    location.hostname === "localhost" ||
-    location.hostname === "127.0.0.1" ||
-    location.hostname === "::1" ||
-    location.hostname.startsWith("192.168.") ||
-    location.hostname.startsWith("10.") ||
-    location.hostname.startsWith("172.");
+const NAV_LINKS = [
+    { href: "/", label: "Home" },
+    { href: "/socials", label: "Socials" },
+    { href: "/projects", label: "Projects" },
+    { href: "/fun", label: "Fun Stuff" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/wallpapers", label: "Wallpapers" },
+    { href: "/radio", label: "Radio Chat" },
+    { href: "/news", label: "News" }
+];
 
-const body = document.body || document.documentElement;
+const ICONS = {
+    bars: '<svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="currentColor"><rect x="3" y="5" width="18" height="2.4" rx="1.2"/><rect x="3" y="10.8" width="18" height="2.4" rx="1.2"/><rect x="3" y="16.6" width="18" height="2.4" rx="1.2"/></svg>',
+    caretUp: '<svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="currentColor"><path d="M12 7l7 9H5z"/></svg>',
+    home: '<svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="currentColor"><path d="M12 3l9 8h-2.5v9h-5v-6h-3v6h-5v-9H3z"/></svg>',
+    chevronLeft: '<svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
+    chevronRight: '<svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
+    zoom: '<svg viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></svg>'
+};
 
-document.addEventListener('DOMContentLoaded', function () {
-    if (localStorage.getItem('lightmode') === 'enabled') {
-        body.classList.add('lightmode');
-    }
-
-    createNav();
-    loadBanner();
-    createFooterAndProgress();
-    initFooterAndProgress();
-    fixInternalLinks();
-});
-
-function fixInternalLinks() {
-    const pages = ['gallery', 'socials', 'wallpapers', 'projects', 'news', 'fun'];
-
-    document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-
-        if (!href ||
-            href.startsWith('http') ||
-            href.startsWith('https') ||
-            href.startsWith('#') ||
-            href.startsWith('mailto:') ||
-            href.startsWith('javascript:') ||
-            href.endsWith('.html') ||
-            href.endsWith('/')) {
-            return;
-        }
-
-        for (const page of pages) {
-            if (href === page || href.startsWith(page + '/') || href.startsWith(page + '?')) {
-                if (isLocal) {
-                    if (href === page) {
-                        link.href = page + '.html';
-                    } else if (href.startsWith(page + '/')) {
-                        const rest = href.substring(page.length + 1);
-                        if (!rest.includes('.')) {
-                            link.href = page + '/' + rest + '.html';
-                        }
-                    } else if (href.startsWith(page + '?')) {
-                        link.href = page + '.html' + href.substring(page.length);
-                    }
-                }
-                break;
-            }
-        }
-    });
+function storageGet(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
 }
 
-function pageUrl(page) {
-    return isLocal ? `${page}.html` : page;
+function storageSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* private mode etc. */ }
 }
 
-function getModPageUrl(mod, version) {
-    const base = isLocal ? 'mod.html' : 'projects/mod';
-    const params = new URLSearchParams();
-    if (mod) params.set('mod', mod);
-    if (version) params.set('v', version);
-    const query = params.toString();
-    return query ? `${base}?${query}` : base;
+function currentSection() {
+    const first = location.pathname.replace(/\.html$/, "").split("/").filter(Boolean)[0] || "";
+    return first === "index" ? "" : first;
 }
 
-function getBasePath() {
-    return isLocal ? '' : '../';
+function siteUrl(path) {
+    return /^(https?:)?\/\//.test(path) ? path : "/" + path.replace(/^\.?\//, "");
 }
 
-async function createNav() {
+function createNav() {
     const container = document.getElementById("topnav-container");
     if (!container) return;
 
-    const response = await fetch("/navbar/navbar.html");
-    const html = await response.text();
-    container.innerHTML = html;
+    const section = currentSection();
+    const linksHtml = NAV_LINKS.map(({ href, label }) => {
+        const isActive = href.slice(1) === section;
+        return `<a href="${href}"${isActive ? ' class="active" aria-current="page"' : ""}>${label}</a>`;
+    }).join("");
 
-    container.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('http') || href.startsWith('https') ||
-            href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) {
-            return;
-        }
+    container.innerHTML = `
+        <nav class="topnav" aria-label="Main">
+            <div class="txt">Joalor64's Website</div>
+            <div class="topnav-middle">
+                <div class="nav-links">${linksHtml}</div>
+                <div class="topnav-right">
+                    <button type="button" class="navLinesBurger" aria-label="Menu" aria-expanded="false"
+                        aria-controls="mobile-nav">${ICONS.bars}</button>
+                    <button type="button" id="toggle-text" class="theme-toggle"></button>
+                </div>
+                <div class="mobile-nav" id="mobile-nav">${linksHtml}</div>
+            </div>
+        </nav>`;
 
-        if (href.startsWith('/')) {
-            if (isLocal) {
-                if (href === '/') {
-                    link.href = '/index.html';
-                } else {
-                    const page = href.substring(1);
-                    if (page && !page.includes('.')) {
-                        link.href = '/' + page + '.html';
-                    }
-                }
-            }
-        }
-    });
-
-    toggleTextChange();
-
-    const pathname = window.location.pathname;
-    const pathParts = pathname.split("/").filter(p => p);
-    const suffix = isLocal ? ".html" : "";
-    let currentPage = pathParts[0] || "index";
-
-    if (pathParts.length > 1) {
-        const directory = pathParts[pathParts.length - 2];
-        const directoryMap = {
-            "fun": "fun" + suffix,
-            "projects": "projects" + suffix
-        };
-        if (directoryMap[directory]) {
-            currentPage = directoryMap[directory];
-        }
-    }
-
-    const links = container.querySelectorAll(".topnav a[href]");
-    links.forEach(link => {
-        let href = link.getAttribute("href");
-        if (!href) return;
-
-        let linkPage = href
-            .replace("../", "")
-            .replace(/^\/+/, "")
-            .replace(/\.html$/, "");
-
-        if (linkPage === "") linkPage = "index";
-
-        if (linkPage === currentPage.replace(".html", "")) {
-            link.classList.add("active");
-            link.removeAttribute("href");
-        }
-    });
+    updateThemeButton();
+    container.querySelector("#toggle-text").addEventListener("click", toggleTheme);
 
     const burger = container.querySelector(".navLinesBurger");
     const mobileNav = container.querySelector(".mobile-nav");
-    if (burger && mobileNav) {
-        burger.addEventListener("click", () => {
-            mobileNav.classList.toggle("open");
-        });
-        mobileNav.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                mobileNav.classList.remove("open");
-            });
-        });
-    }
+    const setOpen = (open) => {
+        mobileNav.classList.toggle("open", open);
+        burger.setAttribute("aria-expanded", String(open));
+    };
+    burger.addEventListener("click", () => setOpen(!mobileNav.classList.contains("open")));
+    mobileNav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+}
 
-    container.querySelectorAll(".dropbtn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const dropdown = btn.parentElement;
-            dropdown.classList.toggle("active");
-            container.querySelectorAll(".dropdown").forEach(other => {
-                if (other !== dropdown) other.classList.remove("active");
-            });
-        });
-    });
+function isLightMode() {
+    return document.documentElement.classList.contains("lightmode");
+}
+
+function toggleTheme() {
+    const light = !isLightMode();
+    document.documentElement.classList.toggle("lightmode", light);
+    storageSet("lightmode", light ? "enabled" : "disabled");
+    updateThemeButton();
+}
+
+function updateThemeButton() {
+    const button = document.getElementById("toggle-text");
+    if (!button) return;
+    const light = isLightMode();
+    button.textContent = light ? "🌙" : "☀️";
+    button.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
 }
 
 async function loadBanner() {
     try {
         const response = await fetch("/data/banner.json");
         const banner = await response.json();
-        if (banner.enabled) {
-            createAnnouncementBanner(banner.text, banner.className);
-        }
+        if (banner.enabled) createAnnouncementBanner(banner.text, banner.className);
     } catch (e) {
     }
 }
 
 function createAnnouncementBanner(text, className = "") {
     if (!text) return;
-    const banner = document.createElement('div');
-    banner.className = 'announcement-banner';
-    if (className && className.trim() !== "") {
-        banner.classList.add(className);
-    }
+    const banner = document.createElement("div");
+    banner.className = "announcement-banner";
+    if (className && className.trim()) banner.classList.add(className.trim());
     banner.innerHTML = text;
 
-    const navContainer = document.getElementById('topnav-container');
-    if (navContainer && navContainer.parentNode) {
-        navContainer.parentNode.insertBefore(banner, navContainer.nextSibling);
-    } else {
-        document.body.insertBefore(banner, document.body.firstChild);
-    }
-}
-
-function toggleTheme() {
-    if (body.classList.contains('lightmode')) {
-        body.classList.remove('lightmode');
-        localStorage.setItem('lightmode', 'disabled');
-    } else {
-        body.classList.add('lightmode');
-        localStorage.setItem('lightmode', 'enabled');
-    }
-    toggleTextChange();
-}
-
-function toggleTextChange() {
-    const toggleText = document.getElementById("toggle-text");
-    if (!toggleText) return;
-    toggleText.innerText = localStorage.getItem('lightmode') === 'enabled' ? "🌙" : "☀️";
+    const navContainer = document.getElementById("topnav-container");
+    if (navContainer) navContainer.after(banner);
+    else document.body.prepend(banner);
 }
 
 function createFooterAndProgress() {
-    const footerHTML = `
+    const radius = 18;
+    const circumference = 2 * Math.PI * radius;
+
+    document.body.insertAdjacentHTML("beforeend", `
         <footer>
             <br>
             <p id="copyright">
-                © 2021-<span id="currentYear"></span> Joalor64, All rights reserved.<br>
+                © 2021-${new Date().getFullYear()} Joalor64, All rights reserved.<br>
                 Since March 21, 2021
             </p>
         </footer>
-        <div class="progress-circle-wrapper" id="progressCircle">
-            <div class="progress-circle">
-                <svg width="40" height="40">
-                    <circle cx="20" cy="20" r="18" stroke="#1976d2" stroke-width="4" fill="none" opacity="0.15" />
-                    <circle id="progressBar" cx="20" cy="20" r="18" stroke="#1976d2" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="113.097" stroke-dashoffset="113.097" />
+        <button type="button" class="progress-circle-wrapper" id="progressCircle" aria-label="Back to top">
+            <span class="progress-circle">
+                <svg width="40" height="40" aria-hidden="true">
+                    <circle cx="20" cy="20" r="${radius}" stroke="#1976d2" stroke-width="4" fill="none" opacity="0.15" />
+                    <circle id="progressBar" cx="20" cy="20" r="${radius}" stroke="#1976d2" stroke-width="4" fill="none"
+                        stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${circumference}" />
                 </svg>
-                <span class="progress-arrow"><i class="fa fa-caret-up"></i></span>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML("beforeend", footerHTML);
-}
+                <span class="progress-arrow">${ICONS.caretUp}</span>
+            </span>
+        </button>`);
 
-function initFooterAndProgress() {
-    const progressCircle = document.getElementById('progressCircle');
-    const progressBar = document.getElementById('progressBar');
-    const yearSpan = document.getElementById('currentYear');
-    const circumference = 2 * Math.PI * 18;
+    const progressCircle = document.getElementById("progressCircle");
+    const progressBar = document.getElementById("progressBar");
+    let ticking = false;
 
     function updateProgress() {
-        const scrollY = window.scrollY;
+        ticking = false;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? Math.min(scrollY / docHeight, 1) : 0;
+        const progress = docHeight > 0 ? Math.min(window.scrollY / docHeight, 1) : 0;
         progressBar.style.strokeDashoffset = circumference * (1 - progress);
-        progressCircle.classList.toggle('visible', progress > 0.01);
+        progressCircle.classList.toggle("visible", progress > 0.01);
     }
 
-    window.addEventListener('scroll', updateProgress);
-    window.addEventListener('resize', updateProgress);
-    progressCircle.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    yearSpan.textContent = new Date().getFullYear();
+    const requestUpdate = () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateProgress);
+        }
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    progressCircle.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
     updateProgress();
 }
 
-const css = document.createElement('style');
-css.innerHTML = `* { transition: none !important; }`;
-document.head.appendChild(css);
-window.addEventListener('load', () => {
-    document.head.removeChild(css);
-});
+function renderNewsGroup(group, posts = group.posts || []) {
+    const dateGroup = document.createElement("section");
+    dateGroup.className = "news-date-group";
+
+    const dateHeader = document.createElement("h2");
+    dateHeader.className = "news-date-header";
+    dateHeader.textContent = group.date;
+    dateGroup.appendChild(dateHeader);
+
+    posts.forEach((post) => {
+        const newsPost = document.createElement("article");
+        newsPost.className = "news-post";
+
+        if (post.img) {
+            const newsImg = document.createElement("div");
+            newsImg.className = "news-img";
+            const img = document.createElement("img");
+            img.src = previewSrc(post.img);
+            img.onerror = () => { img.onerror = null; img.src = siteUrl(post.img); };
+            img.alt = "";
+            img.loading = "lazy";
+            const size = imageSize(post.img);
+            if (size) {
+                img.width = size[0];
+                img.height = size[1];
+            }
+            newsImg.appendChild(img);
+            newsPost.appendChild(newsImg);
+        }
+
+        const newsContent = document.createElement("div");
+        newsContent.className = "news-content";
+
+        const newsTitle = document.createElement("h3");
+        newsTitle.className = "news-title";
+        newsTitle.textContent = post.title;
+        newsContent.appendChild(newsTitle);
+
+        const newsInfo = document.createElement("div");
+        newsInfo.className = "news-info";
+        newsInfo.innerHTML = post.info;
+        newsContent.appendChild(newsInfo);
+
+        if (post.buttons && post.buttons.length) {
+            const newsButtons = document.createElement("div");
+            newsButtons.className = "news-buttons";
+            post.buttons.forEach((button) => {
+                const a = document.createElement("a");
+                a.href = button.link;
+                a.textContent = button.text;
+                a.target = "_blank";
+                a.rel = "noopener";
+                newsButtons.appendChild(a);
+            });
+            newsContent.appendChild(newsButtons);
+        }
+
+        newsPost.appendChild(newsContent);
+        dateGroup.appendChild(newsPost);
+    });
+
+    return dateGroup;
+}
+
+const LINK_LABELS = {
+    page: "Project page",
+    itch: "itch.io",
+    github: "GitHub",
+    gamebanana: "GameBanana",
+    modio: "mod.io",
+    windows: "Download for Windows",
+    android: "Download for Android",
+    mega: "MEGA",
+    website: "Website"
+};
+
+function renderLinkIcons(links = {}) {
+    return Object.entries(links)
+        .filter(([type, url]) => type !== "page" && url)
+        .map(([type, url]) => `<a class="link-icon" data-type="${type}" href="${url}" target="_blank" rel="noopener"
+            aria-label="${LINK_LABELS[type] || type}" title="${LINK_LABELS[type] || type}"></a>`)
+        .join("");
+}
+
+const PREVIEW_FOLDERS = ["comics", "wallpapers", "gallery", "thumbnails", "news", "foreverbox/splashes", "foreverbox/albums",
+    "foreverbox/icons", "dreambox/splashes", "dreambox/icons"];
+
+function previewSrc(path) {
+    const rel = path.replace(/^\.?\//, "").replace(/^img\//, "");
+    if (/^(https?:)?\/\//.test(path) || !PREVIEW_FOLDERS.some((folder) => rel.startsWith(folder + "/"))) {
+        return siteUrl(path);
+    }
+    return "/img/previews/" + rel.replace(/\.\w+$/, ".webp");
+}
+
+let IMAGE_SIZES = {};
+const imageSizesReady = fetchJSON("/img/previews/sizes.json")
+    .then((sizes) => { IMAGE_SIZES = sizes; })
+    .catch(() => { });
+
+function imageSize(path) {
+    return IMAGE_SIZES[path.replace(/^\.?\//, "").replace(/^img\//, "")] || null;
+}
+
+function previewImg(path, alt = "", extra = "") {
+    const original = siteUrl(path);
+    const size = imageSize(path);
+    const dims = size ? ` width="${size[0]}" height="${size[1]}"` : "";
+    return `<img src="${previewSrc(path)}" alt="${alt}"${dims} loading="lazy" decoding="async" ${extra}
+        onerror="this.onerror=null;this.src='${original}'">`;
+}
+
+async function fetchJSON(url) {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+    return response.json();
+}
+
+createNav();
+loadBanner();
+createFooterAndProgress();
+
+window.addEventListener("load", () => document.documentElement.classList.remove("preload"));

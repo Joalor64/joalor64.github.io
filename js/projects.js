@@ -1,198 +1,57 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const controls = document.getElementById('categoryControls');
-    if (!controls) return;
+(function () {
+    const gallery = document.getElementById("creationsGallery");
+    const controls = document.getElementById("categoryControls");
+    if (!gallery || !controls) return;
 
-    const buttons = controls.querySelectorAll('.category-btn');
-    const items = document.querySelectorAll('#creationsGallery .game-gallery-item');
+    function renderProject(project) {
+        const thumb = project.thumb
+            ? previewImg(project.thumb, "", 'class="img"')
+            : '<div class="img"></div>';
+        const name = project.page
+            ? `<a class="card-link" href="${project.page}">${project.name}</a>`
+            : project.name;
 
-    function setActive(btn) {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        return `
+            <article class="game-gallery-item${project.page ? " has-page" : ""}" id="${project.id}"
+                data-category="${project.category}">
+                <div class="game-thumbnail">${thumb}</div>
+                <h3 class="game-name">${name}</h3>
+                <div class="game-links">${renderLinkIcons(project.links)}</div>
+            </article>`;
     }
 
     function filter(cat) {
-        let visibleCount = 0;
+        const button = controls.querySelector(`.category-btn[data-cat="${cat}"]`) ||
+            controls.querySelector('.category-btn[data-cat="all"]');
+        cat = button.dataset.cat;
 
-        items.forEach(i => {
-            const cats = (i.getAttribute('data-category') || '')
-                .split(',')
-                .map(s => s.trim());
-
-            if (cat === 'all' || cats.indexOf(cat) !== -1) {
-                i.style.display = '';
-                visibleCount++;
-            } else {
-                i.style.display = 'none';
-            }
+        controls.querySelectorAll(".category-btn").forEach((b) => {
+            const active = b === button;
+            b.classList.toggle("active", active);
+            b.setAttribute("aria-pressed", String(active));
         });
 
-        adjustFooter(visibleCount);
+        gallery.querySelectorAll(".game-gallery-item").forEach((item) => {
+            const cats = item.dataset.category.split(",").map((s) => s.trim());
+            item.hidden = !(cat === "all" || cats.includes(cat));
+        });
     }
 
-    function adjustFooter(count) {
-        const footer = document.querySelector("footer");
-        if (!footer) return;
-
-        footer.style.marginTop = (count <= 5) ? "200px" : "0px";
-    }
-
-    controls.addEventListener('click', function (e) {
-        const btn = e.target.closest('.category-btn');
+    controls.addEventListener("click", (e) => {
+        const btn = e.target.closest(".category-btn");
         if (!btn) return;
-
-        const cat = btn.getAttribute('data-cat');
-        setActive(btn);
+        const cat = btn.dataset.cat;
         filter(cat);
+        history.replaceState(null, "", cat === "all" ? location.pathname : `#${cat}`);
     });
 
-    filter('all');
-});
-
-const thumbnails = {
-    "JTA": "img/thumbnails/JTA_logo.png",
-    "rhythmo": "img/thumbnails/rhythmo.png",
-    "math-game": "img/thumbnails/math-game.png",
-    "2048-clicker": "img/thumbnails/2048-clicker.png",
-    "percush": "img/thumbnails/percush.png",
-    "foreverbox": "img/thumbnails/foreverbox.png",
-    "dreambox": "img/thumbnails/dreambox.png",
-    "VSRobReboot": "img/thumbnails/vs-rob-rebooted.png",
-    "VSJoalor64": "img/thumbnails/vs-joalor64.png",
-    "ChocolateEngine": "img/wallpapers/CE.png",
-    "Joalor64Engine": "img/wallpapers/J64EREgitcover1.png",
-    "Joalor64EngineLegacy": "img/wallpapers/J64EL.png",
-    "SynapseEngine": "img/thumbnails/synapse-engine.png",
-    "jmb": "img/thumbnails/JMB.png",
-    "modbox": "img/thumbnails/modbox.png",
-    "alura": "img/thumbnails/alura.png",
-    "visionsphere": "img/thumbnails/visionsphere.png",
-    "processCreations": "img/thumbnails/processing-creations.png",
-    "FlashCreations": "img/thumbnails/flash-creations.png",
-};
-
-document.querySelectorAll(".game-gallery-item").forEach(item => {
-    const thumb = item.querySelector(".game-thumbnail .img");
-    if (!thumb) return;
-
-    const id = item.id;
-    if (thumbnails[id]) {
-        thumb.style.backgroundImage = `url(${thumbnails[id]})`;
-        thumb.style.backgroundSize = "contain";
-        thumb.style.backgroundPosition = "center";
-    }
-});
-
-const links = {
-    "JTA": {
-        itch: "https://joalor64.itch.io/journey-through-aubekhia",
-        github: "https://github.com/JoaTH-Team/JTA/"
-    },
-    "rhythmo": {
-        itch: "https://joalor64.itch.io/rhythmo",
-        github: "https://github.com/JoaTH-Team/Rhythmo"
-    },
-    "2DHorror": {
-        github: "https://github.com/Joalor64/Simple2DHorror"
-    },
-    "math-game": {
-        github: "https://github.com/Joalor64/SimpleMathGame"
-    },
-    "2048-clicker": {
-        github: "https://github.com/Joalor64/2048-Clicker"
-    },
-    percush: {
-        modio: "https://mod.io/g/incredibox/m/percush",
-        windows: "https://www.mediafire.com/file/r6mntviyazlgla4/Percush+PC.zip/file",
-        android: "https://www.mediafire.com/file/5oepi4i0hkkc2mp/Percush_signed.apk/file"
-    },
-    foreverbox: {
-        page: "projects/mod.html?mod=foreverbox",
-        modio: "https://mod.io/g/incredibox/c/foreverbox",
-        itch: "https://joalor64.itch.io/foreverbox"
-    },
-    dreambox: {
-        page: "projects/mod.html?mod=dreambox",
-        modio: "https://mod.io/g/incredibox/m/dreambox"
-    },
-    "VSRobReboot": {
-        itch: "https://joalor64.itch.io/vs-rob-rebooted-demo",
-        github: "https://github.com/Joalor64/VS-Rob-Rebooted/",
-        gamebanana: "https://gamebanana.com/mods/602704"
-    },
-    "Joalor64Engine": {
-        itch: "https://joalor64.itch.io/joalor64-engine-rewritten",
-        github: "https://github.com/Joalor64/Joalor64-Engine-Rewrite",
-        gamebanana: "https://gamebanana.com/tools/17185"
-    },
-    "VSJoalor64": {
-        itch: "https://joalor64.itch.io/vs-joalor64",
-        github: "https://github.com/Joalor64/VSJoalor64-SourceCode",
-        gamebanana: "https://gamebanana.com/mods/417238"
-    },
-    "ChocolateEngine": {
-        itch: "https://joalor64.itch.io/chocolate-engine",
-        github: "https://github.com/Joalor64/Chocolate-Engine",
-        gamebanana: "https://gamebanana.com/tools/10774",
-        mega: "https://mega.nz/folder/CXwCSbzI#Wzro2ssEjDNsw0-KBy0gSQ"
-    },
-    "Joalor64EngineLegacy": {
-        itch: "https://joalor64.itch.io/joalor64-engine",
-        github: "https://github.com/Joalor64/Joalor64-Engine"
-    },
-    "SynapseEngine": {
-        gamebanana: "https://gamebanana.com/tools/22532",
-        github: "https://github.com/Joalor64/FNF-SynapseEngine"
-    },
-    "HaxeTemplate": {
-        github: "https://github.com/Joalor64/Haxe-Template"
-    },
-    "SimpleLocalization": {
-        github: "https://github.com/Joalor64/SimpleLocalization"
-    },
-    "jmb": {
-        github: "https://github.com/Joalor64/Joalor64s-Modding-Build"
-    },
-    "modbox": {
-        website: "https://joalor64.github.io/Modbox",
-        github: "https://github.com/Joalor64/Modbox"
-    },
-    "alura": {
-        github: "https://github.com/Joalor64/alura"
-    },
-    "visionsphere": {
-        github: "https://github.com/Joalor64/VisionSphere"
-    },
-    "processCreations": {
-        github: "https://github.com/Joalor64/Processing-Creations"
-    },
-    "BandlabRadioPlayer": {
-        github: "https://github.com/Joalor64/BandLab-Radio-Player"
-    },
-    "FlashCreations": {
-        website: "https://joalor64.github.io/FlashCreationsWebsite",
-        github: "https://github.com/Joalor64/Flash-Creations"
-    },
-    "BandlabOSTPlayer": {
-        github: "https://github.com/Joalor64/BandLabOST-Player"
-    }
-};
-
-document.addEventListener("click", (e) => {
-    const item = e.target.closest(".game-gallery-item");
-    if (!item) return;
-
-    const linkIcon = e.target.closest(".link-icon");
-    const id = item.id;
-
-    if (linkIcon) {
-        const type = linkIcon.id;
-        const url = links[id]?.[type];
-        if (url) window.open(url, "_blank");
-        return;
-    }
-
-    const page = links[id]?.page;
-    if (page) {
-        window.location.href = page;
-    }
-});
+    fetchJSON("/data/projects.json")
+        .then((data) => {
+            gallery.innerHTML = data.projects.map(renderProject).join("");
+            filter(location.hash.slice(1) || "all");
+        })
+        .catch((error) => {
+            console.error("Error loading projects:", error);
+            gallery.textContent = "Couldn't load the projects right now. Please try again later.";
+        });
+})();

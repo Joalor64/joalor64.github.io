@@ -1,0 +1,561 @@
+:root {
+    --fun-label: #fff;
+}
+
+html.lightmode {
+    --fun-label: #222;
+}
+
+.fun-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.fun-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 325px;
+}
+
+.fun-item .thumbnail {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.fun-item .thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.fun-item .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.fun-item .fun-label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 1em;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--fun-label);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fun-item .fun-label i {
+    margin-right: 6px;
+}
+
+.fun-item.coming-soon .thumbnail {
+    position: relative;
+    opacity: 0.6;
+}
+
+.fun-item.coming-soon .thumbnail::after {
+    content: "🔜 Coming Soon";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .fun-grid {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .fun-item {
+        width: 160px;
+    }
+
+    .fun-item .fun-label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fun-grid {
+        gap: 15px;
+    }
+
+    .fun-item {
+        width: 130px;
+    }
+
+    .fun-item .fun-label {
+        font-size: 12px;
+    }
+}
+
+#comic-generator {
+    text-align: center;
+    margin: 30px auto 30px auto;
+    padding: 30px 20px 20px 20px;
+    background: linear-gradient(135deg, #3a7cff 0%, #a1c4fd 100%);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(58, 124, 255, 0.15);
+    max-width: 1200px;
+    border: 3px solid #fff;
+    position: relative;
+}
+
+.panel-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.comic-panel {
+    position: relative;
+    border: 3px solid #1976d2;
+    border-radius: 18px;
+    padding: 10px 10px 6px 10px;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(58, 124, 255, 0.18);
+    transition: box-shadow 0.2s;
+}
+
+.comic-panel:hover {
+    box-shadow: 0 8px 32px rgba(58, 124, 255, 0.28);
+}
+
+.comic-panel img {
+    width: 340px;
+    height: 340px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    background: #e3e8ff;
+}
+
+.comic-panel button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.5em;
+    background: #3a7cff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 8px rgba(58, 124, 255, 0.18);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.comic-panel button:hover {
+    background: #1976d2;
+}
+
+.controls#comic button {
+    margin: 8px 12px;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border-radius: 16px;
+    background: #fff;
+    color: #1976d2;
+    border: 2px solid #1976d2;
+    font-family: 'Poppins', 'Jua', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(58, 124, 255, 0.10);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.controls#comic button:hover {
+    background: #1976d2;
+    color: #fff;
+}
+
+.comic-id-controls {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(58, 124, 255, 0.10);
+    padding: 18px 0 12px 0;
+    display: inline-block;
+    width: 350px;
+}
+
+.comic-id-controls #comicIdDisplay {
+    font-weight: bold;
+    color: #1976d2;
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+.comic-id-controls #comicIdInput {
+    margin-left: 10px;
+}
+
+.submit-panel-section {
+    background: linear-gradient(135deg, #fff 60%, #a1c4fd 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(58, 124, 255, 0.10);
+    padding: 24px 0 18px 0;
+    margin: 30px auto 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.submit-panel-section h2 {
+    font-family: 'Jua', 'Poppins', sans-serif;
+    color: #3a7cff;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #a1c4fd88;
+}
+
+.submit-panel-section p {
+    color: #22232f;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.submit-panel-section a {
+    color: #1976d2;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.submit-panel-section a:hover {
+    color: #3a7cff;
+}
+
+.submit-panel-section h3 {
+    color: #1976d2;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-size: 1.2em;
+    font-family: 'Poppins', 'Jua', sans-serif;
+}
+
+.submit-panel-section p:last-child {
+    color: #444;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.wordle-shell {
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px 48px;
+}
+
+.wordle-panel {
+    width: min(100%, 500px);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 18px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    width: min(100%, 360px);
+    margin: 0 auto;
+}
+
+.tile {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 2px solid #4b5563;
+    background: #1d2333;
+    color: #f5f7ff;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    user-select: none;
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tile.filled {
+    border-color: #7c879d;
+}
+
+.tile.correct {
+    background: #538d4e;
+    border-color: #538d4e;
+}
+
+.tile.present {
+    background: #b59f3b;
+    border-color: #b59f3b;
+}
+
+.tile.absent {
+    background: #3a3a3c;
+    border-color: #3a3a3c;
+}
+
+.tile.revealed {
+    animation: pop 0.18s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.96);
+    }
+
+    60% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.message {
+    min-height: 28px;
+    margin-top: 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f2f8;
+    text-align: center;
+}
+
+.message.error {
+    color: #ff8b8b;
+}
+
+.wordle-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.wordle-actions button {
+    background: linear-gradient(180deg, #3f7cff, #2d5cdf);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.wordle-actions button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+}
+
+.keyboard {
+    width: min(100%, 500px);
+    margin: 22px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.key {
+    min-width: 0;
+    flex: 1 1 auto;
+    max-width: 44px;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    background: #d3d6da;
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.1s ease, background-color 0.15s ease;
+}
+
+.key.wide {
+    flex: 1.8 1 auto;
+    max-width: 72px;
+}
+
+.key.correct {
+    background: #538d4e;
+    color: white;
+}
+
+.key.present {
+    background: #b59f3b;
+    color: white;
+}
+
+.key.absent {
+    background: #3a3a3c;
+    color: white;
+}
+
+.key:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 420px) {
+    .wordle-panel {
+        padding: 16px 12px 20px;
+    }
+
+    .game-board {
+        gap: 6px;
+    }
+
+    .key {
+        max-width: 34px;
+        height: 46px;
+        font-size: 0.8rem;
+    }
+
+    .key.wide {
+        max-width: 58px;
+    }
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+    .panel-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .comic-panel img {
+        width: 90vw;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .panel-container {
+        gap: 10px;
+    }
+}
+
+/* Comic generator buttons (these used to borrow the radio player's .controls styles). */
+#comic {
+    margin-top: 10px;
+}
+
+#comic button:hover {
+    transform: translateY(-1px);
+}
+
+.comic-id-error {
+    color: #c62828;
+    font-size: 0.9em;
+    margin: 6px 12px 0;
+    min-height: 1em;
+}
+
+.comic-id-error:empty {
+    display: none;
+}
+
+/* ---- Bubble Pop ---- */
+
+#bubble-game-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 500px;
+    margin: 20px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(58, 124, 255, 0.2);
+    border: 3px solid #fff;
+    background: linear-gradient(135deg, #a1c4fd 0%, #3a7cff 100%);
+}
+
+#bubbleCanvas {
+    display: block;
+    touch-action: none;
+    cursor: pointer;
+}
+
+.bubble-hud {
+    position: absolute;
+    top: 12px;
+    font-family: 'Poppins', 'Jua', sans-serif;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    user-select: none;
+}
+
+.bubble-hud-left {
+    left: 20px;
+}
+
+.bubble-hud-right {
+    right: 20px;
+    text-align: right;
+}
+
+.bubble-score {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.bubble-best {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.bubble-combo,
+.bubble-frenzy {
+    opacity: 0;
+    font-weight: bold;
+    margin-top: 4px;
+    transition: opacity 0.3s;
+}
+
+.bubble-combo {
+    font-size: 1.3em;
+    color: #ffeb3b;
+}
+
+.bubble-hint {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.bubble-frenzy {
+    font-size: 1.2em;
+    color: #ff4081;
+}

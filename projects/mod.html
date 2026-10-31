@@ -3,104 +3,87 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Joalor64's Website - Mods</title>
-    <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="My personal website where I share my projects, art, and more!">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allan'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Urbanist'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>Joalor64's Website - Mods</title>
+    <meta name="author" content="Joalor64">
+    <meta name="description" content="Joalor64's Incredibox mods: versions, characters, previews, and downloads.">
+    <meta name="theme-color" content="#0000ff">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://joalor64.github.io">
-    <meta property="og:title" content="Joalor64's Website">
-    <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
-    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+    <meta property="og:site_name" content="Joalor64's Website">
+    <meta property="og:url" content="https://joalor64.github.io/projects/mod">
+    <meta property="og:title" content="Joalor64's Website - Mods">
+    <meta property="og:description" content="Joalor64's Incredibox mods: versions, characters, previews, and downloads.">
+    <meta property="og:image" content="https://joalor64.github.io/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Joalor64's Website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/img/favicon-64.png" type="image/png">
+    <script>(function () { var d = document.documentElement; d.classList.add("preload"); try { if (localStorage.getItem("lightmode") === "enabled") d.classList.add("lightmode"); } catch (e) { } })();</script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/mod.css">
 </head>
 
 <body>
     <div id="topnav-container"></div>
+    <main>
     <h1 class="logo">Mods</h1>
-    <h2 class="sub-head">Loading...</h2>
+    <p class="sub-head">Loading...</p>
     <hr>
-    <h1 id="header" class="headerMove">Select a Version</h1>
+    <h2 id="header" class="headerMove">
+        <span class="header-text">Select a Version</span>
+        <a class="header-back" href="" hidden>Back to Main Page</a>
+    </h2>
 
     <div class="fvbxVersionsArray">
-        <div class="foreverbox-icons-row">
-            <div class="foreverbox-icon-col" data-icon="1">
-                <div class="foreverbox-icon"></div>
-                <div class="foreverbox-icon-label">Loading...</div>
-            </div>
-            <div class="foreverbox-icon-col" data-icon="2">
-                <div class="foreverbox-icon"></div>
-                <div class="foreverbox-icon-label">Loading...</div>
-            </div>
-            <div class="foreverbox-icon-col" data-icon="3">
-                <div class="foreverbox-icon"></div>
-                <div class="foreverbox-icon-label">Loading...</div>
-            </div>
-            <div class="foreverbox-icon-col" data-icon="4">
-                <div class="foreverbox-icon"></div>
-                <div class="foreverbox-icon-label">Loading...</div>
-            </div>
-            <div class="foreverbox-icon-col" data-icon="5">
-                <div class="foreverbox-icon"></div>
-                <div class="foreverbox-icon-label">Loading...</div>
-            </div>
-            <div class="foreverbox-icon-col" data-icon="6">
-                <div class="foreverbox-icon"></div>
-                <div class="foreverbox-icon-label">Loading...</div>
-            </div>
-        </div>
+        <div class="foreverbox-icons-row" id="versionIcons"></div>
     </div>
 
-    <div id="version-dynamic-content"></div>
-    <div id="characters-header" style="display: none">
-        <div class="hr-container"><span>• Characters •</span></div>
+    <div id="version-view" hidden>
+        <hr id="version-hr">
+        <br>
+        <div id="version-dynamic-content"></div>
+        <div id="characters-header">
+            <h2 class="hr-container"><span>• Characters •</span></h2>
+        </div>
+        <div id="characters-grid"></div>
     </div>
-    <div id="characters-grid"></div>
-    <div id="character-modal" class="character-modal" style="display: none;"></div>
-    <div id="downloadModal" class="modal">
+    </main>
+
+    <div id="downloadModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle" hidden>
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2>Select your Platform</h2>
+            <button type="button" class="close-btn" data-close aria-label="Close">&times;</button>
+            <h2 id="downloadModalTitle">Select your Platform</h2>
             <div class="modal-buttons">
-                <a id="windowsDownload" target="_blank">
-                    <div class="platform-icon" id="windows"></div>
+                <a id="windowsDownload" aria-label="Download for Windows">
+                    <span class="platform-icon" data-type="windows"></span>
                 </a>
-                <a id="androidDownload" target="_blank">
-                    <div class="platform-icon" id="android"></div>
+                <a id="androidDownload" aria-label="Download for Android">
+                    <span class="platform-icon" data-type="android"></span>
                 </a>
-                <a id="modIoDownload" target="_blank">
-                    <div class="platform-icon" id="modio"></div>
+                <a id="modIoDownload" aria-label="Get it on mod.io">
+                    <span class="platform-icon" data-type="modio"></span>
                 </a>
             </div>
         </div>
     </div>
-    <div id="previewModal" class="modal">
+    <div id="previewModal" class="modal" role="dialog" aria-modal="true" aria-label="Preview video" hidden>
         <div class="modal-content preview-modal-content">
-            <span class="close-btn" onclick="closePreviewModal()">&times;</span>
-            <div class="video-wrapper">
-                <iframe id="previewVideo" src="" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-            </div>
+            <button type="button" class="close-btn" data-close aria-label="Close">&times;</button>
+            <!-- The video <iframe> is created when the modal opens (see js/mod.js) -->
+            <div class="video-wrapper" id="previewVideoWrap"></div>
         </div>
     </div>
-    <div id="blankIconModal" class="modal" style="display:none;">
+    <div id="blankIconModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="blankModalTitle" hidden>
         <div class="modal-content">
-            <span class="close-btn"
-                onclick="document.getElementById('blankIconModal').style.display='none'">&times;</span>
-            <h2>Hey you!</h2>
-            <p style="color: black">This version is not available.</p>
+            <button type="button" class="close-btn" data-close aria-label="Close">&times;</button>
+            <h2 id="blankModalTitle">Hey you!</h2>
+            <p>This version is not available.</p>
         </div>
     </div>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/mod/loader.js"></script>
-    <script src="../js/mod/main.js"></script>
-    <script src="../js/mod/icons.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/mod.js"></script>
 </body>
 
 </html>

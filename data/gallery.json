@@ -1,104 +1,214 @@
 {
     "gallery": [
         {
+            "name": "Jiro",
+            "img": "img/gallery/jiro.png",
+            "desc": "Melody 3 from Dreambox V3: Eternyx",
+            "date": "2026-09-06",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3muvigdgpos2m"
+        },
+        {
+            "name": "Dexter",
+            "img": "img/gallery/dexter.png",
+            "desc": "Sea scientist dude<br>Character belongs to <u><a href=\"https://www.tiktok.com/@scenekitt\" target=\"_blank\">@scenekitt</a></u> on TikTok!",
+            "date": "2026-09-04",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3mupnt2tofc2c"
+        },
+        {
+            "name": "Pete and Gabriel",
+            "img": "img/gallery/gabe-n-pete.png",
+            "desc": "Characters belong to <u><a href=\"https://www.tiktok.com/@toonsforlife\" target=\"_blank\">@toonsforlife</a></u> on TikTok!",
+            "date": "2026-08-31",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3muggel7jn22n"
+        },
+        {
+            "name": "Cloud Quartz (2026)",
+            "img": "img/gallery/cloudquartz-new.png",
+            "desc": "Remake of an old gemsona since my Steven Universe hyperfixation returned",
+            "date": "2026-08-30",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3muduobiwgc2c"
+        },
+        {
+            "name": "Daemon",
+            "img": "img/gallery/flame-guy.png",
+            "desc": "Epic flame dude<br>Character belongs to <u><a href=\"https://www.tiktok.com/@scenekitt\" target=\"_blank\">@scenekitt</a></u> on TikTok!",
+            "date": "2026-08-28",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3mu6i7hiem22t"
+        },
+        {
+            "name": "Thoughts",
+            "img": "img/gallery/thoughts.png",
+            "desc": "Based on real events",
+            "date": "2026-08-15",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3mt4uj3pak22e"
+        },
+        {
             "name": "Sun Monk",
-            "img": "img/gallery/sun-monk.png"
+            "img": "img/gallery/sun-monk.png",
+            "desc": "chill sun monk guy :)",
+            "date": "2026-08-04",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3msbyo2xdf22k"
+        },
+        {
+            "name": "See no, Hear no, Speak no Evil",
+            "img": "img/gallery/see-hear-speak.png",
+            "desc": "Another random idea I had<br>Simply my own twist on the three wise monkeys",
+            "date": "2026-08-04",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3mtxcb6ndms27"
+        },
+        {
+            "name": "Bouba, Kiki, and some Others",
+            "img": "img/gallery/boubaandkiki_allcharacters.png",
+            "desc": "Based on the bouba-kiki effect in linguistics",
+            "date": "2026-07-24",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3mrlvkwtu7s2z"
+        },
+        {
+            "name": "Baldi's Basics",
+            "img": "img/gallery/baldis-basics.png",
+            "desc": "A quick drawing of the guys from Baldi's Basics (Classic)",
+            "date": "2026-07-14",
+            "link": "https://bsky.app/profile/joalor64.bsky.social/post/3mqnasjbxds2u"
         },
         {
             "name": "Saro",
-            "img": "img/gallery/saro.png"
+            "img": "img/gallery/saro.png",
+            "desc": "Beat 3 from Dreambox V2: Soleil",
+            "date": "2026-06-29",
+            "link": ""
         },
         {
             "name": "Memphis (New)",
-            "img": "img/gallery/ayyitsMEE.png"
-        },
-        {
-            "name": "Bouba, Kiki and some Others",
-            "img": "img/gallery/boubaandkiki_allcharacters.png"
+            "img": "img/gallery/ayyitsMEE.png",
+            "desc": "My persona as of 2026!",
+            "date": "2026-06-29",
+            "link": ""
         },
         {
             "name": "Cyrus, Nekoro, Yurei, and Jiro",
-            "img": "img/gallery/myfellas.png"
+            "img": "img/gallery/myfellas.png",
+            "desc": "Just some random guys I felt like doodling",
+            "date": "2026-05-22",
+            "link": ""
         },
         {
             "name": "Michael and Fang (Wonderland)",
-            "img": "img/gallery/wonderland.png"
+            "img": "img/gallery/wonderland.png",
+            "desc": "Some fanart of Wonderland made for <u><a href=\"https://www.youtube.com/@ZodaSlushy.Incredibox\" target=\"_blank\">ZodaSlushy</a></u>!",
+            "date": "2026-05-09",
+            "link": ""
         },
         {
             "name": "Kodon's Haven",
-            "img": "img/gallery/kodon.png"
+            "img": "img/gallery/kodon.png",
+            "desc": "A relaxing dreamscape you don't want to leave... (5th AP Art Digital Project)",
+            "date": "2026-04-23",
+            "link": ""
         },
         {
             "name": "Neosurf",
-            "img": "img/gallery/neosurf.png"
+            "img": "img/gallery/neosurf.png",
+            "desc": "Some neat little cityscape background, I don't actually do these often but maybe I should (4th AP Art Digital Project)",
+            "date": "2026-04-14",
+            "link": ""
         },
         {
             "name": "Ho-Ho (2 Much 2mfoolery)",
-            "img": "img/gallery/hoho.png"
+            "img": "img/gallery/hoho.png",
+            "desc": "Some fanart of 2 Much 2mfoolery made for <u><a href=\"https://www.youtube.com/@ArtemiyKopych\" target=\"_blank\">Artemiy Kopych</a></u>!",
+            "date": "2026-04-02",
+            "link": ""
+        },
+        {
+            "name": "Square Root Guy",
+            "img": "img/gallery/squarerootguy.png",
+            "desc": "Fanart for <u><a href=\"https://www.tiktok.com/@squarerootof1x\" target=\"_blank\">@squarerootof1x</a></u>!",
+            "date": "2026-03-29",
+            "link": ""
         },
         {
             "name": "Cyrus, God of Lightning",
-            "img": "img/gallery/cyrus.png"
-        },
-        {
-            "name": "Piter and Zotta",
-            "img": "img/gallery/piter-and-zotta.png"
-        },
-        {
-            "name": "Kino's Harvest",
-            "img": "img/gallery/kino.png"
+            "img": "img/gallery/cyrus.png",
+            "desc": "An angel dude with lightning powers (3rd AP Art Digital Project)",
+            "date": "2026-03-27",
+            "link": ""
         },
         {
             "name": "Lyrian",
-            "img": "img/gallery/the-fallen.png"
+            "img": "img/gallery/the-fallen.png",
+            "desc": "Some sad fallen angel dude",
+            "date": "2026-03-20",
+            "link": ""
+        },
+        {
+            "name": "Piter and Zotta",
+            "img": "img/gallery/piter-and-zotta.png",
+            "desc": "I might be a fan of the angel/devil duo trope (2nd AP Art Digital Project)",
+            "date": "2026-03-16",
+            "link": ""
+        },
+        {
+            "name": "Kino's Harvest",
+            "img": "img/gallery/kino.png",
+            "desc": "Silly little mushroom guy going for a bountiful harvest (1st AP Art Digital Project)",
+            "date": "2026-03-05",
+            "link": ""
         },
         {
             "name": "Reggie, Mozaika, and Aayam",
-            "img": "img/gallery/mygang.png"
+            "img": "img/gallery/mygang.png",
+            "desc": "Some characters from Sunlight Shore, Eternyx, and Soleil respectively",
+            "date": "2026-01-26",
+            "link": ""
         },
         {
-            "name": "Voyager (JTA)",
-            "img": "img/gallery/voyager.png"
+            "name": "Kino",
+            "img": "img/gallery/mushroom.png",
+            "desc": "Silly little mushroom guy",
+            "date": "2026-01-09",
+            "link": ""
         },
         {
             "name": "Shpongle",
-            "img": "img/gallery/shpongleyay.png"
-        },
-        {
-            "name": "Uike",
-            "img": "img/gallery/uike.png"
+            "img": "img/gallery/shpongleyay.png",
+            "desc": "The head thing from the cover of Divine Moments of Truth",
+            "date": "2024-07-20",
+            "link": ""
         },
         {
             "name": "Full Body Attempt",
-            "img": "img/gallery/vic.png"
-        },
-        {
-            "name": "Elemonsters Logo",
-            "img": "img/gallery/elemonsters_logo.png"
-        },
-        {
-            "name": "Mendil Cutlogs",
-            "img": "img/gallery/mendil.png"
-        },
-        {
-            "name": "BANAN",
-            "img": "img/gallery/banan.png"
-        },
-        {
-            "name": "he",
-            "img": "img/gallery/he.png"
+            "img": "img/gallery/vic.png",
+            "desc": "I rarely did full-body character arts, this one was basically a test",
+            "date": "2024-05-11",
+            "link": ""
         },
         {
             "name": "Memphis (2023-2026)",
-            "img": "img/gallery/memphis-2023.png"
+            "img": "img/gallery/memphis-2023.png",
+            "desc": "My persona from 2023-2026!",
+            "date": "2023-08-27",
+            "link": ""
         },
         {
             "name": "Memphis Redesign Concept (2023)",
-            "img": "img/gallery/concept.png"
+            "img": "img/gallery/concept.png",
+            "desc": "Concepts for my persona redraw in 2023",
+            "date": "2023-08-26",
+            "link": ""
+        },
+        {
+            "name": "Cloud Quartz",
+            "img": "img/gallery/cloudquartz.png",
+            "desc": "A fanmade Steven Universe character I made when my hyperfixation was at its peak",
+            "date": "2023-06-26",
+            "link": ""
         },
         {
             "name": "Memphis (2022-2023)",
-            "img": "img/gallery/memphis-2022.png"
+            "img": "img/gallery/memphis-2022.png",
+            "desc": "My persona from 2022-2023!",
+            "date": "Exact date unknown",
+            "link": ""
         }
     ]
 }

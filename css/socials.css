@@ -1,0 +1,156 @@
+.section {
+    margin-top: 26px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin: 0 0 12px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.grid>.card {
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - 36px) / 3);
+    min-width: 0;
+}
+
+@media (max-width: 815px) {
+    .grid>.card {
+        flex-basis: calc((100% - 18px) / 2);
+    }
+}
+
+@media (max-width: 557px) {
+    .grid>.card {
+        flex-basis: 100%;
+    }
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: linear-gradient(180deg, rgb(255, 255, 255, 0.4), rgba(255, 255, 255, 0.02));
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    border-left: 6px solid transparent;
+    transition: transform .16s ease, box-shadow .16s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card .img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.card.brand-strawpage .img {
+    border-radius: 3px;
+}
+
+.meta {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sub {
+    font-size: 13px;
+    word-break: break-all;
+}
+
+.brand-youtube {
+    border-left-color: #ff3b30;
+}
+
+.brand-bilibili {
+    border-left-color: #4C93FF;
+}
+
+.brand-strawpage {
+    border-left-color: #df001d;
+}
+
+.brand-tiktok {
+    border-left-color: #FE2C55;
+}
+
+.brand-discord {
+    border-left-color: #5865f2;
+}
+
+.brand-bluesky {
+    border-left-color: #0096ff;
+}
+
+.brand-playstation {
+    border-left-color: #003791;
+}
+
+.brand-xbox {
+    border-left-color: #2ca243;
+}
+
+.brand-roblox {
+    border-left-color: #353535;
+}
+
+.brand-nintendo-switch {
+    border-left-color: #E70009;
+}
+
+.brand-steam {
+    border-left-color: #39196c;
+}
+
+.brand-itch {
+    border-left-color: #fa5c5c;
+}
+
+.brand-github {
+    border-left-color: #6e7681;
+}
+
+.brand-modio {
+    border-left-color: #07c1d8;
+}
+
+.brand-gamebanana {
+    border-left-color: #ffcc00;
+}
+
+.brand-scratch {
+    border-left-color: #f7a028;
+}
+
+.brand-bandlab {
+    border-left-color: #f12d19;
+}
+
+.brand-tumblr {
+    border-left-color: #36465d;
+}

@@ -3,186 +3,193 @@
     const lightbox = document.getElementById('gallery-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxShare = document.getElementById('lightbox-share');
     const lightboxCounter = document.getElementById('lightbox-counter');
 
     let items = [];
     let currentIndex = 0;
 
-    const defaultData = [
-        {
-            name: "Sun Monk",
-            img: "img/gallery/sun-monk.png"
-        },
-        {
-            name: "Saro",
-            img: "img/gallery/saro.png"
-        },
-        {
-            name: "Memphis (New)",
-            img: "img/gallery/ayyitsMEE.png"
-        },
-        {
-            name: "Bouba and Kiki",
-            img: "img/gallery/boubaandkiki.png"
-        },
-        {
-            name: "Cyrus, Nekoro, Yurei, and Jiro",
-            img: "img/gallery/myfellas.png"
-        },
-        {
-            name: "Michael and Fang (Wonderland)",
-            img: "img/gallery/wonderland.png"
-        },
-        {
-            name: "Kodon's Haven",
-            img: "img/gallery/kodon.png"
-        },
-        {
-            name: "Neosurf",
-            img: "img/gallery/neosurf.png"
-        },
-        {
-            name: "Ho-Ho (2 Much 2mfoolery)",
-            img: "img/gallery/hoho.png"
-        },
-        {
-            name: "Cyrus, God of Lightning",
-            img: "img/gallery/cyrus.png"
-        },
-        {
-            name: "Piter and Zotta",
-            img: "img/gallery/piter-and-zotta.png"
-        },
-        {
-            name: "Kino's Harvest",
-            img: "img/gallery/kino.png"
-        },
-        {
-            name: "Lyrian",
-            img: "img/gallery/the-fallen.png"
-        },
-        {
-            name: "Reggie, Mozaika, and Aayam",
-            img: "img/gallery/mygang.png"
-        },
-        {
-            name: "Voyager (JTA)",
-            img: "img/gallery/voyager.png"
-        },
-        {
-            name: "Shpongle",
-            img: "img/gallery/shpongleyay.png"
-        },
-        {
-            name: "Uike",
-            img: "img/gallery/uike.png"
-        },
-        {
-            name: "Full Body Attempt",
-            img: "img/gallery/vic.png"
-        },
-        {
-            name: "Elemonsters Logo",
-            img: "img/gallery/elemonsters_logo.png"
-        },
-        {
-            name: "Mendil Cutlogs",
-            img: "img/gallery/mendil.png"
-        },
-        {
-            name: "BANAN",
-            img: "img/gallery/banan.png"
-        },
-        {
-            name: "he",
-            img: "img/gallery/he.png"
-        },
-        {
-            name: "Memphis (2023-2026)",
-            img: "img/gallery/memphis-2023.png"
-        },
-        {
-            name: "Memphis Redesign Concept (2023)",
-            img: "img/gallery/concept.png"
-        },
-        {
-            name: "Memphis (2022-2023)",
-            img: "img/gallery/memphis-2022.png"
+    function normalizeItem(item) {
+        return {
+            name: item.name || 'Untitled',
+            img: item.img ? siteUrl(item.img) : '',
+            desc: item.desc || item.description || '',
+            date: item.date || '',
+            link: item.link || ''
+        };
+    }
+
+    function formatDate(dateString) {
+        if (!dateString) return '';
+
+        const date = new Date(`${dateString}T12:00:00`);
+        if (Number.isNaN(date.getTime())) return dateString;
+
+        return new Intl.DateTimeFormat('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        }).format(date);
+    }
+
+    function getShareLabel(url) {
+        if (!url) return 'Original post';
+
+        try {
+            const hostname = new URL(url).hostname.replace(/^www\./, '');
+            if (hostname.includes('bsky.app')) return 'Bluesky';
+            if (hostname.includes('youtube.com')) return 'YouTube';
+            return hostname;
+        } catch (error) {
+            return 'Original post';
         }
-    ];
+    }
 
     async function init() {
         try {
-            const res = await fetch('data/gallery.json');
-            const data = await res.json();
-            items = (data.gallery && data.gallery.length) ? data.gallery : defaultData;
-        } catch (e) {
-            items = defaultData;
+            const [data] = await Promise.all([fetchJSON('/data/gallery.json'), imageSizesReady]);
+            items = Array.isArray(data.gallery)
+                ? data.gallery
+                    .map(normalizeItem)
+                    .filter((item) => item.img)
+                : [];
+        } catch (error) {
+            console.warn('Gallery data could not be loaded:', error);
+            items = [];
         }
+
         render();
         setupLightbox();
     }
 
     function render() {
         wall.innerHTML = '';
+
+        if (!items.length) {
+            wall.innerHTML = '<div class="gallery-empty">No gallery items available.</div>';
+            return;
+        }
+
         items.forEach((item, index) => {
-            const frame = document.createElement('div');
+            const frame = document.createElement('button');
+            frame.type = 'button';
             frame.className = 'gallery-frame';
             frame.setAttribute('data-index', index);
+            frame.setAttribute('aria-label', `View ${item.name}`);
+
+            const dateText = item.date ? `<span class="frame-date">${formatDate(item.date)}</span>` : '';
             frame.innerHTML = `
-                <img src="${item.img}" alt="${item.name}" loading="lazy">
-                <div class="frame-overlay"><i class="fa fa-search-plus"></i></div>
-                <div class="frame-caption">${item.name}</div>
+                ${previewImg(item.img, item.name)}
+                <span class="frame-overlay">${ICONS.zoom}</span>
+                <span class="frame-caption">
+                    <span class="frame-title">${item.name}</span>
+                    ${dateText}
+                </span>
             `;
             frame.addEventListener('click', () => openLightbox(index));
             wall.appendChild(frame);
         });
     }
 
+    let lastFocused = null;
+
     function openLightbox(index) {
+        if (!items.length) return;
+
+        lastFocused = document.activeElement;
         currentIndex = index;
         updateLightbox();
+        lightbox.hidden = false;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
+        lightbox.querySelector('.lightbox-close').focus();
     }
 
     function closeLightbox() {
+        if (lightbox.hidden) return;
         lightbox.classList.remove('active');
+        lightbox.hidden = true;
         document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
     }
 
     function updateLightbox() {
+        if (!items.length) return;
+
         const item = items[currentIndex];
+        const dateText = formatDate(item.date);
+
         lightboxImg.src = item.img;
         lightboxImg.alt = item.name;
-        lightboxCaption.textContent = item.name;
+
+        lightboxCaption.innerHTML = `
+            <div class="lightbox-title">${item.name}</div>
+            ${dateText ? `<div class="lightbox-date">${dateText}</div>` : ''}
+            ${item.desc ? `<div class="lightbox-desc">${item.desc}</div>` : ''}
+        `;
+
+        const shareButtons = [
+            `<button class="lightbox-share-btn" type="button" data-share="direct">Direct</button>`
+        ];
+
+        if (item.link) {
+            shareButtons.push(`<button class="lightbox-share-btn" type="button" data-share="custom">${getShareLabel(item.link)}</button>`);
+        }
+
+        lightboxShare.innerHTML = 'Share: ' + shareButtons.join('');
+        lightboxShare.querySelectorAll('button').forEach((button) => {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const action = button.getAttribute('data-share');
+
+                if (action === 'direct') {
+                    window.open(item.img, '_blank', 'noopener,noreferrer');
+                    return;
+                }
+
+                if (action === 'custom' && item.link) {
+                    window.open(item.link, '_blank', 'noopener,noreferrer');
+                }
+            });
+        });
+
         lightboxCounter.textContent = `${currentIndex + 1} / ${items.length}`;
     }
 
     function next() {
+        if (!items.length) return;
         currentIndex = (currentIndex + 1) % items.length;
         updateLightbox();
     }
 
     function prev() {
+        if (!items.length) return;
         currentIndex = (currentIndex - 1 + items.length) % items.length;
         updateLightbox();
     }
 
     function setupLightbox() {
+        document.querySelector('.lightbox-prev').innerHTML = ICONS.chevronLeft;
+        document.querySelector('.lightbox-next').innerHTML = ICONS.chevronRight;
         document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-        document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); next(); });
-        document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
+        document.querySelector('.lightbox-next').addEventListener('click', (event) => {
+            event.stopPropagation();
+            next();
+        });
+        document.querySelector('.lightbox-prev').addEventListener('click', (event) => {
+            event.stopPropagation();
+            prev();
         });
 
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowRight') next();
-            if (e.key === 'ArrowLeft') prev();
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (lightbox.hidden) return;
+            if (event.key === 'Escape') closeLightbox();
+            if (event.key === 'ArrowRight') next();
+            if (event.key === 'ArrowLeft') prev();
         });
     }
 

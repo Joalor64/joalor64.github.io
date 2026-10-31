@@ -3,119 +3,104 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Joalor64's Website</title>
-    <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joalor64's Website</title>
+    <meta name="author" content="Joalor64">
     <meta name="description" content="My personal website where I share my projects, art, and more!">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <meta name="theme-color" content="#0000ff">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://joalor64.github.io">
+    <meta property="og:site_name" content="Joalor64's Website">
+    <meta property="og:url" content="https://joalor64.github.io/">
     <meta property="og:title" content="Joalor64's Website">
     <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
-    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+    <meta property="og:image" content="https://joalor64.github.io/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Joalor64's Website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/img/favicon-64.png" type="image/png">
+    <script>(function () { var d = document.documentElement; d.classList.add("preload"); try { if (localStorage.getItem("lightmode") === "enabled") d.classList.add("lightmode"); } catch (e) { } })();</script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/projects.css">
+    <link rel="stylesheet" href="/css/news.css">
 </head>
 
 <body>
     <div id="topnav-container"></div>
-    <header class="banner"></header>
-    <h1>Welcome to my website!</h1>
-    <p style="font-size: 20px;">Here, you can find all of my projects, art, and a lot more!</p>
-    <hr>
-    <div class="content">
-        <a href="gallery" id="img01">
-            <div class="box-select01">
-                <img src="img/buttons/main/gallery.png" class="menu-image">
-                <p id="small-title">Gallery</p>
-            </div>
-        </a>
-        <a href="socials" id="img01">
-            <div class="box-select01">
-                <img src="img/buttons/main/socials.png" class="menu-image">
-                <p id="small-title">Socials</p>
-            </div>
-        </a>
-        <a href="wallpapers" id="img01">
-            <div class="box-select01">
-                <img src="img/buttons/main/wallpapers.png" class="menu-image">
-                <p id="small-title">Wallpapers</p>
-            </div>
-        </a>
-        <a href="projects" id="img01">
-            <div class="box-select01">
-                <img src="img/buttons/main/projects.png" class="menu-image">
-                <p id="small-title">Projects</p>
-            </div>
-        </a>
-        <a href="news" id="img01">
-            <div class="box-select01">
-                <img src="img/buttons/main/news.png" class="menu-image">
-                <p id="small-title">News</p>
-            </div>
-        </a>
-    </div>
-    <div class="hr-container"><span>• About Me •</span></div>
-    <p class="about-me">Hello! I'm Joalor64, an 18-year-old
-        developer and artist from the US. I simply love
-        creating things and sharing them. This website is a hub for all my projects, art, and everything else. I mostly
-        code, using either HaxeFlixel or JavaScript (currently learning), but I sometimes also make art and music. I've
-        actually been coding since 2022, so since then I've made a few cool projects which I think you should check out!
-        I'm trying to learn a whole bunch of new things to make my content better and it really means a lot to me when
-        you guys support me. ❤</p>
-    <div class="hr-container"><span>• Featured Projects •</span></div>
-    <div id="featuredProjects" class="game-gallery featured-gallery"></div>
-    <div class="hr-container"><span>• Latest News •</span></div>
-    <div class="news-container home-news-container"></div>
-    <div class="hr-container"><span>• More •</span></div>
-    <div class="content2">
-        <div class="box-container">
-            <div class="icon-container">
-                <a href="https://sites.google.com/view/joalor64website-new/" target="_blank">
-                    <img src="img/buttons/main/website.png" class="menu-image">
-                </a>
-            </div>
-            <div class="text-container">
-                <p class="small-title">Old Website</p>
-                <p class="info-text">The older version of my website from 2023-2025, which will no longer get any
-                    updates. So
-                    it's basically kept up for archival purposes.</p>
-            </div>
-        </div>
-        <br>
-        <div class="box-container">
-            <div class="icon-container">
-                <a href="https://discord.gg/rd7ZnnfN5c" target="_blank">
-                    <img src="img/buttons/socials/discord.png" class="menu-image">
-                </a>
-            </div>
-            <div class="text-container">
-                <p class="small-title">My Discord Server</p>
-                <p class="info-text">My nice little community with a few people at the time of writing. Join and have
-                    some fun with everyone else!</p>
-            </div>
-        </div>
-        <br>
-        <div class="box-container">
-            <div class="icon-container">
-                <a href="mailto:rhgarcon@gmail.com">
-                    <img src="img/buttons/socials/gmail.png" class="menu-image">
-                </a>
-            </div>
-            <div class="text-container">
-                <p class="small-title">Contact Me</p>
-                <p class="info-text">If you have any questions or have issues, contact me at <u><a
-                            href="mailto:rhgarcon@gmail.com">rhgarcon@gmail.com</a></u>.
-                    I may take a while to respond, but I am mostly active on <u style="color: #5865F2;"><a
-                            href="https://discordapp.com/users/584516163296559117/"
-                            style="color:#5865F2;">Discord</a></u>.</p>
-            </div>
-        </div>
-    </div>
+    <main>
+        <header class="banner"></header>
+        <h1>Welcome to my website!</h1>
+        <p class="lead">Here, you can find all of my projects, art, and a lot more!</p>
+        <hr>
+        <nav class="content" aria-label="Sections">
+            <a href="/gallery" class="box-select01">
+                <img src="/img/buttons/main/gallery.webp" class="menu-image" alt="">
+                <p>Gallery</p>
+            </a>
+            <a href="/socials" class="box-select01">
+                <img src="/img/buttons/main/socials.webp" class="menu-image" alt="">
+                <p>Socials</p>
+            </a>
+            <a href="/wallpapers" class="box-select01">
+                <img src="/img/buttons/main/wallpapers.webp" class="menu-image" alt="">
+                <p>Wallpapers</p>
+            </a>
+            <a href="/projects" class="box-select01">
+                <img src="/img/buttons/main/projects.webp" class="menu-image" alt="">
+                <p>Projects</p>
+            </a>
+            <a href="/news" class="box-select01">
+                <img src="/img/buttons/main/news.webp" class="menu-image" alt="">
+                <p>News</p>
+            </a>
+        </nav>
 
-    <script src="js/script.js"></script>
-    <script src="js/index.js"></script>
+        <h2 class="hr-container"><span>• About Me •</span></h2>
+        <!-- Set data-birthdate (YYYY-MM-DD) on the span below and the age will update itself every year. -->
+        <p class="about-me">Hello! I'm Joalor64, an <span id="age" data-birthdate="">18</span>-year-old
+            developer and artist from the US. I simply love
+            creating things and sharing them. This website is a hub for all my projects, art, and everything else. I
+            mostly code, using either HaxeFlixel or JavaScript (currently learning), but I sometimes also make art and
+            music. I've actually been coding since 2022, so since then I've made a few cool projects which I think you
+            should check out! I'm trying to learn a whole bunch of new things to make my content better and it really
+            means a lot to me when you guys support me. ❤</p>
+
+        <h2 class="hr-container"><span>• Featured Projects •</span></h2>
+        <div id="featuredProjects" class="game-gallery featured-gallery"></div>
+
+        <h2 class="hr-container"><span>• Latest News •</span></h2>
+        <div class="news-container home-news-container"></div>
+
+        <h2 class="hr-container"><span>• More •</span></h2>
+        <div class="content2">
+            <div class="box-container">
+                <a class="icon-container" href="https://sites.google.com/view/joalor64website-new/" target="_blank"
+                    rel="noopener">
+                    <img src="/img/buttons/main/website.webp" class="menu-image" alt="Old website">
+                </a>
+                <div class="text-container">
+                    <p class="small-title">Old Website</p>
+                    <p class="info-text">The older version of my website from 2023-2025, which will no longer get any
+                        updates. So it's basically kept up for archival purposes.</p>
+                </div>
+            </div>
+            <br>
+            <div class="box-container">
+                <a class="icon-container" href="https://discord.gg/rd7ZnnfN5c" target="_blank" rel="noopener">
+                    <img src="/img/buttons/socials/discord.png" class="menu-image" alt="Discord server">
+                </a>
+                <div class="text-container">
+                    <p class="small-title">My Discord Server</p>
+                    <p class="info-text">My nice little community with a few people at the time of writing. Join and
+                        have some fun with everyone else!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

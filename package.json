@@ -1,0 +1,14 @@
+{
+    "name": "joalor64.github.io",
+    "private": true,
+    "description": "Joalor64's personal website.",
+    "type": "module",
+    "scripts": {
+        "dev": "serve . -l 5502",
+        "previews": "node tools/make-previews.mjs"
+    },
+    "devDependencies": {
+        "serve": "^14.2.4",
+        "sharp": "^0.35.0"
+    }
+}

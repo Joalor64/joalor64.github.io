@@ -1,0 +1,254 @@
+{
+    "projects": [
+        {
+            "id": "JTA",
+            "name": "Journey Through Aubekhia",
+            "category": "games",
+            "thumb": "img/thumbnails/JTA_logo.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/journey-through-aubekhia",
+                "github": "https://github.com/JoaTH-Team/JTA/"
+            }
+        },
+        {
+            "id": "rhythmo",
+            "name": "Rhythmo",
+            "category": "games",
+            "thumb": "img/thumbnails/rhythmo.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/rhythmo",
+                "github": "https://github.com/JoaTH-Team/Rhythmo"
+            }
+        },
+        {
+            "id": "2DHorror",
+            "name": "Simple 2D Horror",
+            "category": "games",
+            "links": {
+                "github": "https://github.com/Joalor64/Simple2DHorror"
+            }
+        },
+        {
+            "id": "math-game",
+            "name": "The Simple Math Game",
+            "category": "games",
+            "thumb": "img/thumbnails/math-game.png",
+            "links": {
+                "github": "https://github.com/Joalor64/SimpleMathGame"
+            }
+        },
+        {
+            "id": "2048-clicker",
+            "name": "2048 Clicker",
+            "category": "games",
+            "thumb": "img/thumbnails/2048-clicker.png",
+            "links": {
+                "github": "https://github.com/Joalor64/2048-Clicker"
+            }
+        },
+        {
+            "id": "oktober",
+            "name": "Oktober",
+            "category": "incredibox-mods",
+            "thumb": "img/thumbnails/oktober.png",
+            "links": {
+                "modio": "https://mod.io/g/incredibox/m/oktober",
+                "windows": "https://www.mediafire.com/file/689dlb72b6zpk4n/Oktober-PC.zip/file",
+                "android": "https://www.mediafire.com/file/cf0ul9bupygi5pt/Oktober_signed.apk/file"
+            }
+        },
+        {
+            "id": "dreambox",
+            "name": "Dreambox",
+            "category": "incredibox-mods",
+            "thumb": "img/thumbnails/dreambox.png",
+            "page": "/projects/mod?mod=dreambox",
+            "links": {
+                "modio": "https://mod.io/g/incredibox/m/dreambox"
+            }
+        },
+        {
+            "id": "percush",
+            "name": "Joalor64's Beatbox",
+            "category": "incredibox-mods",
+            "thumb": "img/thumbnails/percush.png",
+            "links": {
+                "modio": "https://mod.io/g/incredibox/m/percush",
+                "windows": "https://www.mediafire.com/file/r6mntviyazlgla4/Percush+PC.zip/file",
+                "android": "https://www.mediafire.com/file/5oepi4i0hkkc2mp/Percush_signed.apk/file"
+            }
+        },
+        {
+            "id": "foreverbox",
+            "name": "Foreverbox",
+            "category": "incredibox-mods",
+            "thumb": "img/thumbnails/foreverbox.png",
+            "page": "/projects/mod?mod=foreverbox",
+            "links": {
+                "modio": "https://mod.io/g/incredibox/c/foreverbox",
+                "itch": "https://joalor64.itch.io/foreverbox"
+            }
+        },
+        {
+            "id": "SynapseEngine",
+            "name": "Synapse Engine",
+            "category": "fnf-mods",
+            "thumb": "img/thumbnails/synapse-engine.png",
+            "links": {
+                "github": "https://github.com/Joalor64/FNF-SynapseEngine",
+                "gamebanana": "https://gamebanana.com/tools/22532"
+            }
+        },
+        {
+            "id": "VSRobReboot",
+            "name": "VS Rob: Rebooted! (DEMO)",
+            "category": "fnf-mods",
+            "thumb": "img/thumbnails/vs-rob-rebooted.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/vs-rob-rebooted-demo",
+                "github": "https://github.com/Joalor64/VS-Rob-Rebooted/",
+                "gamebanana": "https://gamebanana.com/mods/602704"
+            }
+        },
+        {
+            "id": "Joalor64Engine",
+            "name": "Joalor64 Engine Rewritten",
+            "category": "fnf-mods",
+            "thumb": "img/wallpapers/J64EREgitcover1.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/joalor64-engine-rewritten",
+                "github": "https://github.com/Joalor64/Joalor64-Engine-Rewrite",
+                "gamebanana": "https://gamebanana.com/tools/17185"
+            }
+        },
+        {
+            "id": "VSJoalor64",
+            "name": "VS Joalor64",
+            "category": "fnf-mods",
+            "thumb": "img/thumbnails/vs-joalor64.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/vs-joalor64",
+                "github": "https://github.com/Joalor64/VSJoalor64-SourceCode",
+                "gamebanana": "https://gamebanana.com/mods/417238"
+            }
+        },
+        {
+            "id": "ChocolateEngine",
+            "name": "Chocolate Engine",
+            "category": "fnf-mods",
+            "thumb": "img/wallpapers/CE.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/chocolate-engine",
+                "github": "https://github.com/Joalor64/Chocolate-Engine",
+                "gamebanana": "https://gamebanana.com/tools/10774",
+                "mega": "https://mega.nz/folder/CXwCSbzI#Wzro2ssEjDNsw0-KBy0gSQ"
+            }
+        },
+        {
+            "id": "Joalor64EngineLegacy",
+            "name": "Joalor64 Engine Legacy",
+            "category": "fnf-mods",
+            "thumb": "img/wallpapers/J64EL.png",
+            "links": {
+                "itch": "https://joalor64.itch.io/joalor64-engine",
+                "github": "https://github.com/Joalor64/Joalor64-Engine"
+            }
+        },
+        {
+            "id": "jmb",
+            "name": "Joalor64's Modding Build",
+            "category": "templates",
+            "thumb": "img/thumbnails/JMB.png",
+            "links": {
+                "github": "https://github.com/Joalor64/Joalor64s-Modding-Build"
+            }
+        },
+        {
+            "id": "HaxeTemplate",
+            "name": "Haxe Template",
+            "category": "templates",
+            "links": {
+                "github": "https://github.com/Joalor64/Haxe-Template"
+            }
+        },
+        {
+            "id": "HaxeFlixelTemplate",
+            "name": "HaxeFlixel Template",
+            "category": "templates",
+            "links": {
+                "github": "https://github.com/Joalor64/HaxeFlixel-Template"
+            }
+        },
+        {
+            "id": "modbox",
+            "name": "Joalor64's Modbox",
+            "category": "tools",
+            "thumb": "img/thumbnails/modbox.png",
+            "links": {
+                "website": "https://joalor64.github.io/Modbox",
+                "github": "https://github.com/Joalor64/Modbox"
+            }
+        },
+        {
+            "id": "SimpleLocalization",
+            "name": "Simple Localization™",
+            "category": "tools",
+            "links": {
+                "github": "https://github.com/Joalor64/SimpleLocalization"
+            }
+        },
+        {
+            "id": "alura",
+            "name": "Alura",
+            "category": "misc",
+            "thumb": "img/thumbnails/alura.png",
+            "links": {
+                "github": "https://github.com/Joalor64/alura"
+            }
+        },
+        {
+            "id": "visionsphere",
+            "name": "VisionSphere",
+            "category": "misc",
+            "thumb": "img/thumbnails/visionsphere.png",
+            "links": {
+                "github": "https://github.com/Joalor64/VisionSphere"
+            }
+        },
+        {
+            "id": "processCreations",
+            "name": "Processing Creations",
+            "category": "misc",
+            "thumb": "img/thumbnails/processing-creations.png",
+            "links": {
+                "github": "https://github.com/Joalor64/Processing-Creations"
+            }
+        },
+        {
+            "id": "BandlabRadioPlayer",
+            "name": "BandLab Radio Player",
+            "category": "misc",
+            "links": {
+                "github": "https://github.com/Joalor64/BandLab-Radio-Player"
+            }
+        },
+        {
+            "id": "FlashCreations",
+            "name": "Flash Creations",
+            "category": "misc",
+            "thumb": "img/thumbnails/flash-creations.png",
+            "links": {
+                "website": "https://joalor64.github.io/FlashCreationsWebsite",
+                "github": "https://github.com/Joalor64/Flash-Creations"
+            }
+        },
+        {
+            "id": "BandlabOSTPlayer",
+            "name": "BandLab OST Player",
+            "category": "misc",
+            "links": {
+                "github": "https://github.com/Joalor64/BandLabOST-Player"
+            }
+        }
+    ]
+}

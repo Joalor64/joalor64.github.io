@@ -3,28 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Joalor64's Website - Bubble Pop</title>
-    <meta name='author' content='Joalor64'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>Joalor64's Website - Bubble Pop</title>
+    <meta name="author" content="Joalor64">
+    <meta name="description" content="Pop as many bubbles as you can in this little browser game.">
+    <meta name="theme-color" content="#0000ff">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://joalor64.github.io">
-    <meta property="og:title" content="Joalor64's Website">
-    <meta property="og:description" content="My personal website where I share my projects, art, and more!">
-    <meta property="og:image" content="https://joalor64.github.io/img/favicon.png">
-    <meta data-react-helmet="true" name="theme-color" content="#0000ff">
+    <meta property="og:site_name" content="Joalor64's Website">
+    <meta property="og:url" content="https://joalor64.github.io/fun/bubble">
+    <meta property="og:title" content="Joalor64's Website - Bubble Pop">
+    <meta property="og:description" content="Pop as many bubbles as you can in this little browser game.">
+    <meta property="og:image" content="https://joalor64.github.io/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Joalor64's Website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/img/favicon-64.png" type="image/png">
+    <script>(function () { var d = document.documentElement; d.classList.add("preload"); try { if (localStorage.getItem("lightmode") === "enabled") d.classList.add("lightmode"); } catch (e) { } })();</script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/fun.css">
 </head>
 
 <body>
     <div id="topnav-container"></div>
+    <main>
     <h1 class="header">Bubble Pop</h1>
-    <h2 class="sub-head">Pop as many bubbles as you can!</h2>
+    <p class="sub-head">Pop as many bubbles as you can!</p>
     <hr>
+    <div id="bubble-game-wrapper"></div>
+    </main>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/fun/bubble.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/fun/bubble.js"></script>
 </body>
 
 </html>

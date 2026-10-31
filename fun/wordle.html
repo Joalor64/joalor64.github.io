@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joalor64's Website - Wordle</title>
+    <meta name="author" content="Joalor64">
+    <meta name="description" content="Play a simple recreation of Wordle in your browser.">
+    <meta name="theme-color" content="#0000ff">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Joalor64's Website">
+    <meta property="og:url" content="https://joalor64.github.io/fun/wordle">
+    <meta property="og:title" content="Joalor64's Website - Wordle">
+    <meta property="og:description" content="Play a simple recreation of Wordle in your browser.">
+    <meta property="og:image" content="https://joalor64.github.io/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Joalor64's Website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/img/favicon-64.png" type="image/png">
+    <script>(function () { var d = document.documentElement; d.classList.add("preload"); try { if (localStorage.getItem("lightmode") === "enabled") d.classList.add("lightmode"); } catch (e) { } })();</script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/fun.css">
+</head>
+
+<body>
+    <div id="topnav-container"></div>
+    <main>
+    <h1 class="header">Wordle</h1>
+    <p class="sub-head">A simple recreation of Wordle!</p>
+    <hr>
+
+    <div class="wordle-shell">
+        <div class="wordle-panel">
+            <div id="gameBoard" class="game-board" role="group" aria-label="Wordle board"></div>
+            <div id="message" class="message" aria-live="polite"></div>
+            <div class="wordle-actions">
+                <button id="resetButton" type="button">Reset</button>
+            </div>
+            <div id="keyboard" class="keyboard" role="group" aria-label="On-screen keyboard"></div>
+        </div>
+    </div>
+    </main>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/fun/wordle.js"></script>
+</body>
+
+</html>
