@@ -18,7 +18,7 @@
             dataPath: "/data/dreambox/",
             versionNames: ["Sprunki", "Soleil", "Eternyx", "???", "???", "???", "???", "???"],
             availableVersions: ["1", "2", "3"],
-            unavailableVersions: ["4", "5", "6", "7". "8"],
+            unavailableVersions: ["4", "5", "6", "7", "8"],
             colors: { "1": "#04a", "2": "#ff6657", "3": "#6100bb" }
         }
     };
