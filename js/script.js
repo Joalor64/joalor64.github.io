@@ -23,7 +23,7 @@ function storageGet(key) {
 }
 
 function storageSet(key, value) {
-    try { localStorage.setItem(key, value); } catch (e) { /* private mode etc. */ }
+    try { localStorage.setItem(key, value); } catch (e) { }
 }
 
 function currentSection() {

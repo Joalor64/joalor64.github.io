@@ -1,9 +1,3 @@
-/*
- * Wallpapers page, built from data/wallpapers.json:
- *   sections[] -> { title, rows[] }
- *   rows[]     -> { items[], compact? }   (compact = narrower items, used for album covers)
- *   items[]    -> { name, img, alt?: { label, img } }   (alt = an extra download, e.g. "Old")
- */
 (function () {
     const container = document.getElementById("wallpapers");
     if (!container) return;

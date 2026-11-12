@@ -1,18 +1,3 @@
-/*
- * Makes small WebP previews of big images, so pages load fast while download
- * links still point at the full-size originals.
- *
- *   npm install        (once)
- *   npm run previews   (after adding or changing images)
- *
- * img/<folder>/<name>.png  ->  img/previews/<folder>/<name>.webp
- * Only images that are new or changed since their preview was made are processed.
- * Pages load previews through previewSrc()/previewImg() in js/script.js, which fall
- * back to the original if a preview doesn't exist yet.
- *
- * It also writes img/previews/sizes.json (width and height of every image), so pages can
- * reserve the right amount of space for images before they load and don't jump around.
- */
 import { readdir, stat, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
@@ -20,9 +5,6 @@ import sharp from "sharp";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, "$1")), "..");
 const OUT = path.join(ROOT, "img", "previews");
 
-// folder (relative to img/) -> max width of the preview in pixels
-// (or { width, quality } to override the default quality of 82).
-// Keep in sync with PREVIEW_FOLDERS in js/script.js.
 const TARGETS = {
     "comics": { width: 2400, quality: 90 },
     "wallpapers": 640,

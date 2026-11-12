@@ -1,10 +1,3 @@
-/*
- * Random Comic Generator.
- * Each panel slot has its own sprite sheet (img/comics/panelN.png, exported from Funkin Packer):
- * a grid of 400x400 tiles,
- * numbered left-to-right, top-to-bottom starting at 1. Add tiles to a sheet and bump its size
- * below, and they become available automatically.
- */
 (function () {
     const TILE = 400;
     const SHEETS = [
@@ -19,10 +12,9 @@
         const img = new Image();
         img.onload = () => resolve(img);
         img.onerror = () => {
-            if (img.src.endsWith('.webp')) { img.src = sheet.path; return; } // no WebP copy yet: use the PNG
+            if (img.src.endsWith('.webp')) { img.src = sheet.path; return; }
             reject(new Error(`Failed to load ${sheet.path}`));
         };
-        // The WebP copy made by `npm run previews` is ~60% smaller than the PNG.
         img.src = previewSrc(sheet.path);
     }));
 
@@ -37,7 +29,7 @@
         panelImgs[slot].dataset.panelNumber = number;
         try {
             const sprite = await sheetImages[slot];
-            if (current[slot] !== number) return; // a newer roll replaced this one
+            if (current[slot] !== number) return;
             const index = number - 1;
             const canvas = document.createElement('canvas');
             canvas.width = TILE;
